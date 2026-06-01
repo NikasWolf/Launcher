@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Launcher.Views.MyView">
+
+	<!-- ВЕСЬ ТВОЙ КОД ИЗ MAINWINDOW (левая панель, кнопки, прямоугольники) -->
+	<Grid>
+		<!-- фон -->
+		<StackPanel Orientation="Horizontal" Spacing="10">
+			<Rectangle Width="162" Height="732" Fill="#4A4949"/>
+			<Rectangle Width="780" Height="732" Fill="#4A4949"/>
+		</StackPanel>
+
+		<!-- Левый список -->
+		<StackPanel>
+			<TextBlock Text="Игры" Foreground="White"/>
+			<Button Content="Р*бота" Foreground="#C8C8C8" Background="Transparent" Width="162" Height="30" HorizontalContentAlignment="Left"/>
+			<Button Content="Супер важная..." Foreground="#C8C8C8" Background="Transparent" Width="162" Height="30" HorizontalContentAlignment="Left"/>
+			<Button Content="Метаморфозы..." Foreground="#C8C8C8" Background="Transparent" Width="162" Height="30" HorizontalContentAlignment="Left"/>
+			<TextBlock Text="Программы" Foreground="White"/>
+			<Button Content="Калькулятор" Foreground="#C8C8C8" Background="Transparent" Width="162" Height="30" HorizontalContentAlignment="Left"/>
+			<Button Content="Таймер" Foreground="#C8C8C8" Background="Transparent" Width="162" Height="30" HorizontalContentAlignment="Left"/>
+			<Button Content="Секундомер" Foreground="#C8C8C8" Background="Transparent" Width="162" Height="30" HorizontalContentAlignment="Left"/>
+			<Button Content="счётчик" Foreground="#C8C8C8" Background="Transparent" Width="162" Height="30" HorizontalContentAlignment="Left"/>
+
+			<Button x:Name="GameButton" Content="Показать игру" Click="OnGameClick" Background="Gray" Foreground="White" Height="30" Margin="5,5,5,0" HorizontalContentAlignment="Left"/>
+			<Button x:Name="NewsButton" Content="Показать новость" Click="OnNewsClick" Background="Gray" Foreground="White" Height="30" Margin="5,5,5,0" HorizontalContentAlignment="Left"/>
+			<StackPanel x:Name="Container" Margin="0,20,0,0"/>
+		</StackPanel>
+	</Grid>
+</UserControl>

@@ -1,70 +1,32 @@
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Media;
 
 namespace Launcher.Views;
 
 public partial class MainWindow : Window
 {
-    private Border? _currentBox;
+    private MyView _myView;
+    private GamesView _gamesView;
 
     public MainWindow()
     {
         InitializeComponent();
-        ShowGameBox(); // Показываем игру при запуске
+
+        // Создаём оба представления
+        _myView = new MyView();
+        _gamesView = new GamesView();
+
+        // Показываем "Моё" при запуске
+        MainContent.Content = _myView;
     }
 
-    private void OnGameClick(object? sender, RoutedEventArgs e) => ShowGameBox();
-    private void OnNewsClick(object? sender, RoutedEventArgs e) => ShowNewsBox();
-
-    private void ShowGameBox()
+    private void OnMyClick(object? sender, RoutedEventArgs e)
     {
-        // Удаляем старый
-        if (_currentBox != null) Container.Children.Remove(_currentBox);
-
-        // Создаём новый
-        _currentBox = new Border
-        {
-            Background = Brushes.LightBlue,
-            CornerRadius = new CornerRadius(10),
-            Padding = new Thickness(20),
-            Margin = new Thickness(0, 10, 0, 0),
-            Child = new TextBlock
-            {
-                Text = "Игра",
-                FontSize = 16,
-                FontWeight = FontWeight.Bold,
-                Foreground = Brushes.DarkBlue,
-                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
-            }
-        };
-
-        Container.Children.Add(_currentBox);
+        MainContent.Content = _myView;
     }
 
-    private void ShowNewsBox()
+    private void OnGamesClick(object? sender, RoutedEventArgs e)
     {
-        // Удаляем старый
-        if (_currentBox != null) Container.Children.Remove(_currentBox);
-
-        // Создаём новый
-        _currentBox = new Border
-        {
-            Background = Brushes.LightGreen,
-            CornerRadius = new CornerRadius(10),
-            Padding = new Thickness(20),
-            Margin = new Thickness(0, 10, 0, 0),
-            Child = new TextBlock
-            {
-                Text = "Новость",
-                FontSize = 16,
-                FontWeight = FontWeight.Bold,
-                Foreground = Brushes.DarkGreen,
-                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
-            }
-        };
-
-        Container.Children.Add(_currentBox);
+        MainContent.Content = _gamesView;
     }
 }

@@ -29,5 +29,11 @@ build_property.EnableCodeStyleSeverity =
 [X:/Cods/LauncherGit/Launcher/Launcher/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[X:/Cods/LauncherGit/Launcher/Launcher/Views/GamesView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [X:/Cods/LauncherGit/Launcher/Launcher/Views/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[X:/Cods/LauncherGit/Launcher/Launcher/Views/MyView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

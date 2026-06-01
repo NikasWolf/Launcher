@@ -271,10 +271,10 @@ X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.GeneratedMSBuild
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.AssemblyInfoInputs.cache
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.AssemblyInfo.cs
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.csproj.CoreCompileInputs.cache
+X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.sourcelink.json
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.csproj.Up2Date
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.dll
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\refint\Launcher.dll
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.pdb
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.genruntimeconfig.cache
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\ref\Launcher.dll
-X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.sourcelink.json

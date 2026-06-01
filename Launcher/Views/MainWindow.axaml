@@ -1,87 +1,31 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:Launcher.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:views="using:Launcher.Views"
         x:Class="Launcher.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
         Title="Launcher"
-		CanResize = "false"
-		Width ="960" Height ="777"
-        Background="#1E1E1E"
-		
-		>
-	<!-- Это однострочный комментарий в XAML -->
-	<!-- -->
+        Width="960" Height="777"
+        CanResize="false"
+        Background="#1E1E1E">
 
+	<DockPanel>
+		<!-- Верхняя панель -->
+		<Border DockPanel.Dock="Top" Height="45" Background="#2B2B2B">
+			<StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center" Margin="10,0">
+				<Button x:Name="MyButton"
+                        Content="Моё"
+                        Click="OnMyClick"
+                        Foreground="#C8C8C8"
+                        Background="Transparent"/>
 
-	<!-- Вертикальный стак-->
-	<StackPanel >
-		<!-- Верхняя часть-->
-		<!-- Z стак-->
-		<Grid>
-			<Rectangle Width="960" Height="45" Fill="#2B2B2B"/> <!-- прямоугольник -->
-			<!-- Горизонтальный стак-->
-			<StackPanel Orientation="Horizontal" Spacing="10">
-				<Button Content="Моё"			Foreground="#C8C8C8"	Background="Transparent"	/>
-				<Button Content="Игры"			Foreground="#C8C8C8"	Background="Transparent"	/>
-				<Button Content="Приложения"	Foreground="#C8C8C8"	Background="Transparent"	/>
-				<Button Content="Новости"		Foreground="#C8C8C8"	Background="Transparent"	/>
+				<Button x:Name="GamesButton"
+                        Content="Игры"
+                        Click="OnGamesClick"
+                        Foreground="#C8C8C8"
+                        Background="Transparent"/>
 			</StackPanel>
-		</Grid>
+		</Border>
 
-		<Grid>
-			<!--фон -->
-			<StackPanel Orientation="Horizontal" Spacing="10">
-				<Rectangle Width="162" Height="732" Fill="#4A4949"/>
-				<Rectangle Width="780" Height="732" Fill="#4A4949"/>
-			</StackPanel>
-			<!-- Левый список-->
-			<StackPanel>
-				<TextBlock Text="Игры"/>
-				<Button Content="Р*бота"			Foreground="#C8C8C8"	Background="Transparent"	Width ="162" Height ="30"	HorizontalContentAlignment="Left"/>
-				<Button Content="Супер важная..."	Foreground="#C8C8C8"	Background="Transparent"	Width ="162" Height ="30"	HorizontalContentAlignment="Left"/>
-				<Button Content="Метаморфозы..."	Foreground="#C8C8C8"	Background="Transparent"	Width ="162" Height ="30"	HorizontalContentAlignment="Left"/>
-				<TextBlock Text="Программы"/>
-				<Button Content="Калькулятор"		Foreground="#C8C8C8"	Background="Transparent"	Width ="162" Height ="30"	HorizontalContentAlignment="Left"/>
-				<Button Content="Таймер"			Foreground="#C8C8C8"	Background="Transparent"	Width ="162" Height ="30"	HorizontalContentAlignment="Left"/>
-				<Button Content="Секундомер"		Foreground="#C8C8C8"	Background="Transparent"	Width ="162" Height ="30"	HorizontalContentAlignment="Left"/>
-				<Button Content="счётчик"			Foreground="#C8C8C8"	Background="Transparent"	Width ="162" Height ="30"	HorizontalContentAlignment="Left"/>
-				
-				<!-- Кнопка для отображения "Игра" -->
-				<Button x:Name="GameButton"
-                        Content="Показать игру"
-                        Click="OnGameClick"
-                        Background="Gray"
-                        Foreground="White"
-                        Height="30"
-                        Margin="5,5,5,0"
-                        HorizontalContentAlignment="Left"/>
-
-				<!-- Кнопка для отображения "Новость" -->
-				<Button x:Name="NewsButton"
-                        Content="Показать новость"
-                        Click="OnNewsClick"
-                        Background="Gray"
-                        Foreground="White"
-                        Height="30"
-                        Margin="5,5,5,0"
-                        HorizontalContentAlignment="Left"/>
-
-				<!-- Контейнер для прямоугольника (всегда один) -->
-				<StackPanel x:Name="Container" Margin="0,20,0,0"/>
-			</StackPanel>
-				
-				
-			
-
-		</Grid>
-		
-
-	</StackPanel>
-	
-	
-
+		<!-- Здесь будет меняться содержимое -->
+		<ContentControl x:Name="MainContent"/>
+	</DockPanel>
 </Window>
