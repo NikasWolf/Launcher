@@ -1,12 +1,48 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="Launcher.Views.GamesView">
+             x:Class="Launcher.Views.GamesView"
+			 Background="#1E1E1E">
+	<ScrollViewer  VerticalScrollBarVisibility="Auto">
+		<WrapPanel>
+			<!-- Элементы сами переносятся на новую строку -->
+			<Panel Margin="5">
+				<Rectangle Width="464" Height="342" Fill="#4A4949" />
+				<StackPanel>
+				<StackPanel Margin ="5" Orientation="Horizontal">
+					
+					<Image Source="/Assets/072.png" Width="379" Height="213" VerticalAlignment="Top"/>
+					
+					<ScrollViewer Height="213" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top">
+						<StackPanel>
+							<Image Source="/Assets/065.png" Width="75" Height="42"/>
+							<Image Source="/Assets/066.png" Width="75" Height="42"/>
+							<Image Source="/Assets/067.png" Width="75" Height="42"/>
+							<Image Source="/Assets/068.png" Width="75" Height="42"/>
+							<Image Source="/Assets/069.png" Width="75" Height="42"/>
+							<Image Source="/Assets/070.png" Width="75" Height="42"/>
+							<Image Source="/Assets/071.png" Width="75" Height="42"/>
+						</StackPanel>
+					</ScrollViewer>
+						
+				</StackPanel>
+					<TextBlock Text ="Tanki Online — это бесплатная MMO-игра в жанре шутера с PvP-битвами в реальном времени. Игроки участвуют в танковых сражениях, соревнуясь с реальными противниками со всего мира. Цель — уничтожать вражеские танки, совершенствовать свои навыки и создавать уникальную боевую машину."
+							   MaxWidth="450"
+							   MaxHeight="60"
+							   TextWrapping="Wrap"
+							   TextTrimming="CharacterEllipsis"/>
+				</StackPanel>
+			</Panel>
+			
+			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
+			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
+			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
+			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
+			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
+			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
+			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
+			<!-- Добавляй сколько хочешь - строки создадутся автоматически -->
+		</WrapPanel>
+	</ScrollViewer>
 
-	<StackPanel Background="#4A4949" Height="732">
-		<TextBlock Text="Это окно ИГРЫ"
-                   Foreground="White"
-                   FontSize="24"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
-	</StackPanel>
+	
 </UserControl>
