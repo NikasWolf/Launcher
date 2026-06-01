@@ -1715,11 +1715,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "X:\\Cods\\Launcher4\\Launcher\\Launcher\\Launcher.csproj",
+      "projectUniqueName": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Launcher.csproj",
       "projectName": "Launcher",
-      "projectPath": "X:\\Cods\\Launcher4\\Launcher\\Launcher\\Launcher.csproj",
+      "projectPath": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Launcher.csproj",
       "packagesPath": "C:\\Users\\Никита Батунин\\.nuget\\packages\\",
-      "outputPath": "X:\\Cods\\Launcher4\\Launcher\\Launcher\\obj\\",
+      "outputPath": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -49,6 +49,7 @@
 				<Button Content="Таймер"			Foreground="#C8C8C8"	Background="Transparent"	Width ="162" Height ="30"	HorizontalContentAlignment="Left"/>
 				<Button Content="Секундомер"		Foreground="#C8C8C8"	Background="Transparent"	Width ="162" Height ="30"	HorizontalContentAlignment="Left"/>
 				<Button Content="счётчик"			Foreground="#C8C8C8"	Background="Transparent"	Width ="162" Height ="30"	HorizontalContentAlignment="Left"/>
+				<Button Content="счётчик"			Foreground="#C8C8C8"	Background="Transparent"	Width ="162" Height ="30"	HorizontalContentAlignment="Left"/>
 
 				<!-- Кнопка для отображения "Игра" -->
 				<Button x:Name="GameButton"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g7O/KBs5Kwo=",
+  "dgSpecHash": "P65DS/Ro3cU=",
   "success": true,
-  "projectFilePath": "X:\\Cods\\Launcher4\\Launcher\\Launcher\\Launcher.csproj",
+  "projectFilePath": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Launcher.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\avalonia\\12.0.3\\avalonia.12.0.3.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.25547.20250602\\avalonia.angle.windows.natives.2.1.25547.20250602.nupkg.sha512",
