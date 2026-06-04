@@ -7,8 +7,16 @@
       "RelativeMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|solutionrelative:launcher\\views\\gamesview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|x:\\cods\\launchergit\\launcher\\launcher\\games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|solutionrelative:launcher\\games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|x:\\cods\\launchergit\\launcher\\launcher\\views\\myview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|solutionrelative:launcher\\views\\myview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|x:\\cods\\launchergit\\launcher\\launcher\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|solutionrelative:launcher\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|x:\\cods\\launchergit\\launcher\\launcher\\models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,14 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|x:\\cods\\launchergit\\launcher\\launcher\\views\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|solutionrelative:launcher\\views\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|x:\\cods\\launchergit\\launcher\\launcher\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|solutionrelative:launcher\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|x:\\cods\\launchergit\\launcher\\launcher\\games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|solutionrelative:launcher\\games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,46 +58,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "games.json",
               "DocumentMoniker": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\games.json",
               "RelativeDocumentMoniker": "Launcher\\games.json",
               "ToolTip": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\games.json",
               "RelativeToolTip": "Launcher\\games.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-06-04T01:42:41.123Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "GameService.cs",
               "DocumentMoniker": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Services\\GameService.cs",
               "RelativeDocumentMoniker": "Launcher\\Services\\GameService.cs",
               "ToolTip": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Services\\GameService.cs",
               "RelativeToolTip": "Launcher\\Services\\GameService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-03T13:08:50.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Game.cs",
               "DocumentMoniker": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Models\\Game.cs",
               "RelativeDocumentMoniker": "Launcher\\Models\\Game.cs",
               "ToolTip": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Models\\Game.cs",
               "RelativeToolTip": "Launcher\\Models\\Game.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAA8wBkAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAcwBkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T13:07:25.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-03T13:07:25.552Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "MyView.axaml",
               "DocumentMoniker": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Views\\MyView.axaml",
               "RelativeDocumentMoniker": "Launcher\\Views\\MyView.axaml",
@@ -105,12 +104,11 @@
               "RelativeToolTip": "Launcher\\Views\\MyView.axaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-01T03:22:22.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-01T03:22:22.65Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MyView.axaml.cs",
               "DocumentMoniker": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Views\\MyView.axaml.cs",
               "RelativeDocumentMoniker": "Launcher\\Views\\MyView.axaml.cs",
@@ -129,14 +127,14 @@
               "RelativeDocumentMoniker": "Launcher\\Views\\GamesView.axaml",
               "ToolTip": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Views\\GamesView.axaml*",
               "RelativeToolTip": "Launcher\\Views\\GamesView.axaml*",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAowGoAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-06-01T03:10:45.585Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "GamesView.axaml.cs",
               "DocumentMoniker": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Views\\GamesView.axaml.cs",
               "RelativeDocumentMoniker": "Launcher\\Views\\GamesView.axaml.cs",
@@ -144,12 +142,11 @@
               "RelativeToolTip": "Launcher\\Views\\GamesView.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T03:10:45.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-01T03:10:45.51Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "MainWindow.axaml.cs",
               "DocumentMoniker": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Views\\MainWindow.axaml.cs",
               "RelativeDocumentMoniker": "Launcher\\Views\\MainWindow.axaml.cs",
@@ -157,12 +154,11 @@
               "RelativeToolTip": "Launcher\\Views\\MainWindow.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T14:42:40.582Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T14:42:40.582Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "MainWindow.axaml",
               "DocumentMoniker": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Views\\MainWindow.axaml",
               "RelativeDocumentMoniker": "Launcher\\Views\\MainWindow.axaml",
@@ -170,12 +166,11 @@
               "RelativeToolTip": "Launcher\\Views\\MainWindow.axaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-31T11:07:07.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T11:07:07.376Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "MainWindowViewModel.cs",
               "DocumentMoniker": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\ViewModels\\MainWindowViewModel.cs",
               "RelativeDocumentMoniker": "Launcher\\ViewModels\\MainWindowViewModel.cs",
@@ -183,8 +178,7 @@
               "RelativeToolTip": "Launcher\\ViewModels\\MainWindowViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T11:07:05.693Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T11:07:05.693Z"
             }
           ]
         }
