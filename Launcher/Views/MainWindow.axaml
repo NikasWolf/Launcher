@@ -3,7 +3,7 @@
         xmlns:views="using:Launcher.Views"
         x:Class="Launcher.Views.MainWindow"
         Title="Launcher"
-        Width="960" Height="777"
+        Width="960" Height="577"
         CanResize="false"
         Background="#1E1E1E">
 

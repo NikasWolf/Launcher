@@ -1,48 +1,55 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:models="clr-namespace:Launcher.Models"
              x:Class="Launcher.Views.GamesView"
-			 Background="#1E1E1E">
-	<ScrollViewer  VerticalScrollBarVisibility="Auto">
-		<WrapPanel>
-			<!-- Элементы сами переносятся на новую строку -->
-			<Panel Margin="5">
-				<Rectangle Width="464" Height="342" Fill="#4A4949" />
-				<StackPanel>
-				<StackPanel Margin ="5" Orientation="Horizontal">
-					
-					<Image Source="/Assets/072.png" Width="379" Height="213" VerticalAlignment="Top"/>
-					
-					<ScrollViewer Height="213" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top">
-						<StackPanel>
-							<Image Source="/Assets/065.png" Width="75" Height="42"/>
-							<Image Source="/Assets/066.png" Width="75" Height="42"/>
-							<Image Source="/Assets/067.png" Width="75" Height="42"/>
-							<Image Source="/Assets/068.png" Width="75" Height="42"/>
-							<Image Source="/Assets/069.png" Width="75" Height="42"/>
-							<Image Source="/Assets/070.png" Width="75" Height="42"/>
-							<Image Source="/Assets/071.png" Width="75" Height="42"/>
-						</StackPanel>
-					</ScrollViewer>
-						
-				</StackPanel>
-					<TextBlock Text ="Tanki Online — это бесплатная MMO-игра в жанре шутера с PvP-битвами в реальном времени. Игроки участвуют в танковых сражениях, соревнуясь с реальными противниками со всего мира. Цель — уничтожать вражеские танки, совершенствовать свои навыки и создавать уникальную боевую машину."
-							   MaxWidth="450"
-							   MaxHeight="60"
-							   TextWrapping="Wrap"
-							   TextTrimming="CharacterEllipsis"/>
-				</StackPanel>
-			</Panel>
-			
-			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
-			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
-			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
-			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
-			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
-			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
-			<Rectangle Width="464" Height="342" Fill="#4A4949" Margin="5"/>
-			<!-- Добавляй сколько хочешь - строки создадутся автоматически -->
-		</WrapPanel>
-	</ScrollViewer>
+             Background="#1E1E1E">
 
-	
+	<ScrollViewer VerticalScrollBarVisibility="Auto">
+		<ItemsControl x:Name="GamesItemsControl">
+			<ItemsControl.ItemsPanel>
+				<ItemsPanelTemplate>
+					<WrapPanel/>
+				</ItemsPanelTemplate>
+			</ItemsControl.ItemsPanel>
+
+			<ItemsControl.ItemTemplate>
+				<DataTemplate DataType="models:Game">
+					<!-- Карточка игры -->
+					<Border Width="464" Height="342"
+                            Background="#4A4949"
+                            CornerRadius="10"
+                            Margin="5">
+
+						<StackPanel>
+							<!-- Изображение игры -->
+							<Image Source="{Binding ImageBitmap}"
+											Width="464"
+											Height="200"
+											Stretch="UniformToFill"/>
+							<StackPanel Margin="10">
+								<!-- Название игры -->
+								<TextBlock Text="{Binding Name}"
+                                           FontSize="18"
+                                           FontWeight="Bold"
+                                           Foreground="White"/>
+
+								<!-- Жанр -->
+								<TextBlock Text="{Binding Genre}"
+                                           FontSize="12"
+                                           Foreground="Gray"
+                                           Margin="0,5,0,0"/>
+
+								<!-- Описание -->
+								<TextBlock Text="{Binding Description}"
+                                           FontSize="12"
+                                           Foreground="#C8C8C8"
+                                           TextWrapping="Wrap"
+                                           MaxHeight="50"/>
+							</StackPanel>
+						</StackPanel>
+					</Border>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+	</ScrollViewer>
 </UserControl>

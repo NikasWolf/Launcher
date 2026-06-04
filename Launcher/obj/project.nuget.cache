@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "P65DS/Ro3cU=",
+  "dgSpecHash": "N/7DUsQ5UL8=",
   "success": true,
   "projectFilePath": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Launcher.csproj",
   "expectedPackageFiles": [
@@ -34,7 +34,9 @@
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\skiasharp.nativeassets.macos\\3.119.4-preview.1.1\\skiasharp.nativeassets.macos.3.119.4-preview.1.1.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\skiasharp.nativeassets.webassembly\\3.119.4-preview.1.1\\skiasharp.nativeassets.webassembly.3.119.4-preview.1.1.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\skiasharp.nativeassets.win32\\3.119.4-preview.1.1\\skiasharp.nativeassets.win32.3.119.4-preview.1.1.nupkg.sha512",
-    "C:\\Users\\Никита Батунин\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\system.io.pipelines\\10.0.8\\system.io.pipelines.10.0.8.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\system.text.encodings.web\\10.0.8\\system.text.encodings.web.10.0.8.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\system.text.json\\10.0.8\\system.text.json.10.0.8.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\tmds.dbus.protocol\\0.92.0\\tmds.dbus.protocol.0.92.0.nupkg.sha512"
   ],
   "logs": []

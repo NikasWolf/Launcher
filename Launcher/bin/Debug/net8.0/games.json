@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "Name": "Tanki Online",
+    "Description": "Танковый шутер с PvP-битвами в реальном времени",
+    "Genre": "Shooter",
+    "Year": 2009,
+    "ImagePath": "avares://Launcher/Assets/ImagePath/066.png",
+    "ExecutablePath": ""
+  },
+  {
+    "Id": 2,
+    "Name": "The Witcher 3",
+    "Description": "RPG с открытым миром",
+    "Genre": "RPG",
+    "Year": 2015,
+    "ImagePath": "avares://Launcher/Assets/ImagePath/066.png",
+    "ExecutablePath": ""
+  },
+  {
+    "Id": 3,
+    "Name": "The Witcher 3",
+    "Description": "RPG с открытым миром",
+    "Genre": "RPG",
+    "Year": 2015,
+    "ImagePath": "avares://Launcher/Assets/ImagePath/066.png",
+    "ExecutablePath": ""
+  }
+]
