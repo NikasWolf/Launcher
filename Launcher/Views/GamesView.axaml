@@ -14,39 +14,108 @@
 
 			<ItemsControl.ItemTemplate>
 				<DataTemplate DataType="models:Game">
-					<!-- Карточка игры -->
-					<Border Width="464" Height="342"
-                            Background="#4A4949"
-                            CornerRadius="10"
-                            Margin="5">
+					<Border Width="464" Height="342" Background="#4A4949" CornerRadius="10" Margin="5">
 
 						<StackPanel>
-							<!-- Изображение игры -->
-							<Image Source="{Binding ImageBitmap}"
-											Width="464"
-											Height="200"
-											Stretch="UniformToFill"/>
+
+							<!-- Верхняя часть: картинки -->
+							<DockPanel Height="230">
+
+								<!-- Маленькие картинки (справа) -->
+								<Border DockPanel.Dock="Right" Width="80" Margin="5">
+									<ScrollViewer VerticalScrollBarVisibility="Auto">
+										<StackPanel Spacing="5">
+
+											<Border CornerRadius="5" ClipToBounds="True" Height="40">
+												<Button Background="Transparent"
+												        BorderThickness="0"
+												        Padding="0"
+												        Click="SmallImage1_Click"
+												        Tag="{Binding}">
+													<Image Source="{Binding SmallImage1}" Stretch="UniformToFill"/>
+												</Button>
+											</Border>
+
+											<Border CornerRadius="5" ClipToBounds="True" Height="40">
+												<Button Background="Transparent"
+												        BorderThickness="0"
+												        Padding="0"
+												        Click="SmallImage2_Click"
+												        Tag="{Binding}">
+													<Image Source="{Binding SmallImage2}" Stretch="UniformToFill"/>
+												</Button>
+											</Border>
+
+											<Border CornerRadius="5" ClipToBounds="True" Height="40">
+												<Button Background="Transparent"
+												        BorderThickness="0"
+												        Padding="0"
+												        Click="SmallImage3_Click"
+												        Tag="{Binding}">
+													<Image Source="{Binding SmallImage3}" Stretch="UniformToFill"/>
+												</Button>
+											</Border>
+
+											<Border CornerRadius="5" ClipToBounds="True" Height="40">
+												<Button Background="Transparent"
+												        BorderThickness="0"
+												        Padding="0"
+												        Click="SmallImage4_Click"
+												        Tag="{Binding}">
+													<Image Source="{Binding SmallImage4}" Stretch="UniformToFill"/>
+												</Button>
+											</Border>
+
+											<Border CornerRadius="5" ClipToBounds="True" Height="40">
+												<Button Background="Transparent"
+												        BorderThickness="0"
+												        Padding="0"
+												        Click="SmallImage5_Click"
+												        Tag="{Binding}">
+													<Image Source="{Binding SmallImage5}" Stretch="UniformToFill"/>
+												</Button>
+											</Border>
+
+										</StackPanel>
+									</ScrollViewer>
+								</Border>
+
+								<!-- БОЛЬШАЯ КАРТИНКА (слева) - с сохранением пропорций -->
+								<Border CornerRadius="10,0,0,0"
+								        Background="#4A4949"
+								        ClipToBounds="True">
+									<Image Source="{Binding MainImage}"
+									       Stretch="Uniform"
+									       HorizontalAlignment="Center"
+									       VerticalAlignment="Center"/>
+								</Border>
+
+							</DockPanel>
+
+							<!-- Нижняя часть: текст -->
 							<StackPanel Margin="10">
-								<!-- Название игры -->
+								<StackPanel Orientation="Horizontal">
 								<TextBlock Text="{Binding Name}"
-                                           FontSize="18"
-                                           FontWeight="Bold"
-                                           Foreground="White"/>
+										   FontSize="16"
+										   FontWeight="Bold"
+										   Foreground="White"
+										   TextWrapping="Wrap"/>
 
-								<!-- Жанр -->
-								<TextBlock Text="{Binding Genre}"
-                                           FontSize="12"
-                                           Foreground="Gray"
-                                           Margin="0,5,0,0"/>
+								<TextBlock Text="{Binding Condition}"
+										   FontSize="12"
+										   Foreground="White"
+										   Margin="20,5,0,0"/>
+								</StackPanel>
 
-								<!-- Описание -->
 								<TextBlock Text="{Binding Description}"
-                                           FontSize="12"
-                                           Foreground="#C8C8C8"
-                                           TextWrapping="Wrap"
-                                           MaxHeight="50"/>
+										   FontSize="11"
+										   Foreground="#C8C8C8"
+										   TextWrapping="Wrap"
+										   MaxHeight="50"/>
 							</StackPanel>
+
 						</StackPanel>
+
 					</Border>
 				</DataTemplate>
 			</ItemsControl.ItemTemplate>
