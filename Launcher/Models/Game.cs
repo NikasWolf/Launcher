@@ -2,8 +2,8 @@
 using Avalonia.Platform;
 using System;
 using System.ComponentModel;
-using System.Runtime.CompilerServices; 
-namespace Launcher.Models;        
+using System.Runtime.CompilerServices;
+namespace Launcher.Models;
 
 
 // INotifyPropertyChanged - уведомляет UI об изменениях свойств (чтобы обновлялись картинки)

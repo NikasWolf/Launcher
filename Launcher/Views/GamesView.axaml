@@ -11,13 +11,10 @@
 					<WrapPanel/>
 				</ItemsPanelTemplate>
 			</ItemsControl.ItemsPanel>
-
 			<ItemsControl.ItemTemplate>
 				<DataTemplate DataType="models:Game">
 					<Border Width="464" Height="342" Background="#4A4949" CornerRadius="10" Margin="5">
-
 						<StackPanel>
-
 							<!-- Верхняя часть: картинки -->
 							<DockPanel Height="230">
 
@@ -79,7 +76,6 @@
 										</StackPanel>
 									</ScrollViewer>
 								</Border>
-
 								<!-- БОЛЬШАЯ КАРТИНКА (слева) - с сохранением пропорций -->
 								<Border CornerRadius="10,0,0,0"
 								        Background="#4A4949"
@@ -89,38 +85,44 @@
 									       HorizontalAlignment="Center"
 									       VerticalAlignment="Center"/>
 								</Border>
-
 							</DockPanel>
-
+							<!--  -->
 							<!-- Нижняя часть: текст -->
 							<StackPanel Margin="10">
+								<!-- Строка имя, состояние, кнопка -->
 								<StackPanel Orientation="Horizontal">
-								<TextBlock Text="{Binding Name}"
-										   FontSize="16"
-										   FontWeight="Bold"
-										   Foreground="White"
-										   TextWrapping="Wrap"/>
+									<TextBlock Text="{Binding Name}"
+											   FontSize="16"
+											   FontWeight="Bold"
+											   Foreground="White"
+											   TextWrapping="Wrap"/>
 
-								<TextBlock Text="{Binding Condition}"
-										   FontSize="12"
-										   Foreground="White"
-										   Margin="20,5,0,0"/>
+									<TextBlock Text="{Binding Condition}"
+											   FontSize="12"
+											   Foreground="White"
+											   Margin="20,5,0,0"/>
+
+									<Button x:Name="AddButton"
+												Content="добавить себе"
+												Foreground="#A8D514"
+												Background="#4C6B22"
+												Click="OnAddToSelfClick"
+												Tag="{Binding}"/>
 								</StackPanel>
+								<!-- Строка тип, год релиза -->
 								<TextBlock  FontSize="12" Foreground="#C8C8C8" Margin="0,5,0,0">
 									<Run Text="{Binding Genre}"/>
 									<Run Text=" Год релиза: "/>
 									<Run Text="{Binding Year}"/>
 								</TextBlock>
-
+								<!-- описание -->
 								<TextBlock Text="{Binding Description}"
 										   FontSize="11"
 										   Foreground="#C8C8C8"
 										   TextWrapping="Wrap"
 										   MaxHeight="50"/>
 							</StackPanel>
-
 						</StackPanel>
-
 					</Border>
 				</DataTemplate>
 			</ItemsControl.ItemTemplate>

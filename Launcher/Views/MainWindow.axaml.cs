@@ -12,21 +12,23 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-        // Создаём оба представления
         _myView = new MyView();
         _gamesView = new GamesView();
 
-        // Показываем "Моё" при запуске
+        _gamesView.SetMyView(_myView);
+
         MainContent.Content = _myView;
     }
 
     private void OnMyClick(object? sender, RoutedEventArgs e)
     {
         MainContent.Content = _myView;
+        _myView.LoadUserGames();  // обновляем список при возврате
     }
 
     private void OnGamesClick(object? sender, RoutedEventArgs e)
     {
         MainContent.Content = _gamesView;
+        _gamesView.UpdateAllButtons();  // обновляем кнопки при открытии
     }
 }

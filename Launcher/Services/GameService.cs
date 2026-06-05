@@ -1,11 +1,11 @@
-﻿using System;                      
-using System.Collections.ObjectModel; 
-using System.IO;                   
-using System.Text.Json;            
-using System.Collections.Generic;  
-using Launcher.Models;              
+﻿using System;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Text.Json;
+using System.Collections.Generic;
+using Launcher.Models;
 
-namespace Launcher.Services;        
+namespace Launcher.Services;
 
 public class GameService
 {
