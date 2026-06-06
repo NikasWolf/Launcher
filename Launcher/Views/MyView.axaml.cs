@@ -2,8 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 using Launcher.Models;
 using Launcher.Services;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -11,7 +14,6 @@ namespace Launcher.Views;
 
 public partial class MyView : UserControl
 {
-    private Border? _currentBox;
     private UserGameService _userGameService;
     private ObservableCollection<Game> _userGames;
     private GameService _gameService;
@@ -19,7 +21,6 @@ public partial class MyView : UserControl
     public MyView()
     {
         InitializeComponent();
-        ShowGameBox();
 
         _userGameService = new UserGameService();
         _gameService = new GameService();
@@ -48,13 +49,13 @@ public partial class MyView : UserControl
     public void AddGame(Game game)
     {
         _userGameService.AddGame(game.Id);
-        LoadUserGames();  // обновляем список
+        LoadUserGames();
     }
 
     public void RemoveGame(Game game)
     {
         _userGameService.RemoveGame(game.Id);
-        LoadUserGames();  // обновляем список
+        LoadUserGames();
     }
 
     public bool IsGameAdded(Game game)
@@ -62,52 +63,39 @@ public partial class MyView : UserControl
         return _userGameService.IsGameAdded(game.Id);
     }
 
-    private void OnGameClick(object? sender, RoutedEventArgs e) => ShowGameBox();
-    private void OnNewsClick(object? sender, RoutedEventArgs e) => ShowNewsBox();
-
-    private void ShowGameBox()
+    // Открыть информацию об игре
+    public void ShowGameInfo(Game game)
     {
-        if (_currentBox != null) Container.Children.Remove(_currentBox);
+        if (game == null) return;
 
-        _currentBox = new Border
+        GameInfoPanel.IsVisible = true;
+
+        GameName.Text = game.Name;
+        GameGenre.Text = $"Жанр: {game.Genre}";
+        GameYear.Text = $"Год: {game.Year}";
+        GameCondition.Text = $"Статус: {game.Condition}";
+        GameDescription.Text = game.Description;
+
+        if (!string.IsNullOrEmpty(game.ImagePath))
         {
-            Background = Brushes.LightBlue,
-            CornerRadius = new CornerRadius(10),
-            Padding = new Thickness(20),
-            Margin = new Thickness(0, 10, 0, 0),
-            Child = new TextBlock
+            try
             {
-                Text = "Игра",
-                FontSize = 16,
-                FontWeight = FontWeight.Bold,
-                Foreground = Brushes.DarkBlue,
-                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
+                var uri = new Uri(game.ImagePath);
+                GameImage.Source = new Bitmap(AssetLoader.Open(uri));
             }
-        };
-
-        Container.Children.Add(_currentBox);
+            catch
+            {
+                GameImage.Source = null;
+            }
+        }
     }
 
-    private void ShowNewsBox()
+    // Обработчик клика по игре в списке
+    private void OnGameClick(object? sender, RoutedEventArgs e)
     {
-        if (_currentBox != null) Container.Children.Remove(_currentBox);
-
-        _currentBox = new Border
+        if (sender is Button btn && btn.Tag is Game game)
         {
-            Background = Brushes.LightGreen,
-            CornerRadius = new CornerRadius(10),
-            Padding = new Thickness(20),
-            Margin = new Thickness(0, 10, 0, 0),
-            Child = new TextBlock
-            {
-                Text = "Новость",
-                FontSize = 16,
-                FontWeight = FontWeight.Bold,
-                Foreground = Brushes.DarkGreen,
-                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
-            }
-        };
-
-        Container.Children.Add(_currentBox);
+            ShowGameInfo(game);
+        }
     }
 }

@@ -4,17 +4,18 @@
              x:Class="Launcher.Views.MyView">
 
 	<Grid>
-		<StackPanel Orientation="Horizontal" Spacing="10">
-			<Rectangle Width="162" Height="732" Fill="#4A4949"/>
-			<Rectangle Width="780" Height="732" Fill="#4A4949"/>
-		</StackPanel>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="162"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
 
-		<ScrollViewer VerticalScrollBarVisibility="Auto">
+		<!-- Левая панель (список) -->
+		
+		<ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Background="#4A4949">
 			<StackPanel>
 
 				<TextBlock Text="Мои игры" Foreground="White" Margin="5,10,5,5"/>
 
-				<!-- Список добавленных игр -->
 				<ItemsControl x:Name="UserGamesList" Margin="0,0,0,10">
 					<ItemsControl.ItemTemplate>
 						<DataTemplate DataType="models:Game">
@@ -24,17 +25,75 @@
                                     Width="162"
                                     Height="30"
                                     HorizontalContentAlignment="Left"
-                                    Margin="5,2"/>
+                                    Margin="5,2"
+                                    Click="OnGameClick"
+                                    Tag="{Binding}"/>
 						</DataTemplate>
 					</ItemsControl.ItemTemplate>
 				</ItemsControl>
-	
-
-				<Button x:Name="GameButton" Content="Показать игру" Click="OnGameClick" Background="Gray" Foreground="White" Height="30" Margin="5,5,5,0" HorizontalContentAlignment="Left"/>
-				<Button x:Name="NewsButton" Content="Показать новость" Click="OnNewsClick" Background="Gray" Foreground="White" Height="30" Margin="5,5,5,0" HorizontalContentAlignment="Left"/>
-				<StackPanel x:Name="Container" Margin="0,20,0,0"/>
 
 			</StackPanel>
 		</ScrollViewer>
+
+		<!-- Правая панель (информация об игре) -->
+		<Border Grid.Column="1" Background="#4A4949" Margin="10">
+			<ScrollViewer VerticalScrollBarVisibility="Auto">
+				<StackPanel x:Name="GameInfoPanel" Margin="20" IsVisible="False">
+
+					
+					<Border CornerRadius="10,0,0,0"
+							Background="#4A4949"
+							ClipToBounds="True"
+							Height="251">
+						<Image x:Name="GameImage"
+							   Stretch="Uniform"
+							   HorizontalAlignment="Center"
+							   VerticalAlignment="Center"/>
+					</Border>
+					
+					
+					<!-- ВОТ ЭТИ ЭЛЕМЕНТЫ должны быть с x:Name -->
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<!-- колонка 0 (название) -->
+							<ColumnDefinition Width="Auto"/>
+							<!-- колонка 1 (Скачать) -->
+							<ColumnDefinition Width="Auto"/>
+							<!-- колонка 2 (Удалить) -->
+						</Grid.ColumnDefinitions>
+
+						<TextBlock x:Name="GameName" FontSize="24" FontWeight="Bold" Foreground="White" Grid.Column="0"/>
+
+						<Button Content="Скачать"
+								Foreground="#9DC815"
+								Background="#4C6B22"
+								Grid.Column="1"
+								Padding="20,10"
+								Margin="5,0"
+								HorizontalContentAlignment="Center"
+								VerticalContentAlignment="Center"/>
+
+						<Button Content="Удалить из списка"
+								Foreground="#B85454"
+								Background="#7C0505"
+								Grid.Column="2"
+								Padding="20,10"
+								Margin="5,0"
+								HorizontalContentAlignment="Center"
+								VerticalContentAlignment="Center"/>
+					</Grid>
+					<TextBlock x:Name="GameGenre" FontSize="14" Foreground="#C8C8C8" Margin="0,10,0,0"/>
+					<TextBlock x:Name="GameYear" FontSize="14" Foreground="#C8C8C8"/>
+					<TextBlock x:Name="GameCondition" FontSize="14" Foreground="#C8C8C8"/>
+					<TextBlock x:Name="GameDescription"	FontSize="12" Foreground="#C8C8C8" TextWrapping="Wrap" Margin="0,10,0,0"/>
+
+					
+					
+
+				</StackPanel>
+			</ScrollViewer>
+		</Border>
+
 	</Grid>
 </UserControl>

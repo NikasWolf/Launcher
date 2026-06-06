@@ -259,20 +259,11 @@
     <AppxPackagedFile Include="C:\Users\Никита Батунин\.nuget\packages\system.text.encodings.web\10.0.8\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll">
       <PackagePath>Launcher\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.deps.json">
-      <PackagePath>Launcher\Launcher.deps.json</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="X:\Cods\LauncherGit\Launcher\Launcher\games.json">
       <PackagePath>Launcher\games.json</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="X:\Cods\LauncherGit\Launcher\Launcher\obj\Release\net8.0\apphost.exe">
       <PackagePath>Launcher\Launcher.exe</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.runtimeconfig.json">
-      <PackagePath>Launcher\Launcher.runtimeconfig.json</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.dll">
-      <PackagePath>Launcher\Launcher.dll</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

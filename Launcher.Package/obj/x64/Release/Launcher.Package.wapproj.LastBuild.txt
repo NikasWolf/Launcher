@@ -80,9 +80,5 @@ C:\Users\Никита Батунин\.nuget\packages\skiasharp.nativeassets.win3
 C:\Users\Никита Батунин\.nuget\packages\skiasharp.nativeassets.win32\3.119.4-preview.1.1\runtimes\win-x86\native\libSkiaSharp.dll
 C:\Users\Никита Батунин\.nuget\packages\skiasharp.nativeassets.win32\3.119.4-preview.1.1\runtimes\win-x86\native\libSkiaSharp.pdb
 C:\Users\Никита Батунин\.nuget\packages\system.text.encodings.web\10.0.8\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
-X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.deps.json
 X:\Cods\LauncherGit\Launcher\Launcher\games.json
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Release\net8.0\apphost.exe
-X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.runtimeconfig.json
-X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.dll
-X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.pdb
