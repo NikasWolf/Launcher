@@ -1,0 +1,8 @@
+X:\Cods\LauncherGit\Launcher\Launcher\publish_fix\Launcher.pdb
+X:\Cods\LauncherGit\Launcher\Launcher\publish_fix\games.json
+X:\Cods\LauncherGit\Launcher\Launcher\publish_fix\av_libglesv2.dll
+X:\Cods\LauncherGit\Launcher\Launcher\publish_fix\libHarfBuzzSharp.dll
+X:\Cods\LauncherGit\Launcher\Launcher\publish_fix\libHarfBuzzSharp.pdb
+X:\Cods\LauncherGit\Launcher\Launcher\publish_fix\libSkiaSharp.dll
+X:\Cods\LauncherGit\Launcher\Launcher\publish_fix\libSkiaSharp.pdb
+X:\Cods\LauncherGit\Launcher\Launcher\publish_fix\Launcher.exe

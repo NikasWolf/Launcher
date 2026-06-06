@@ -1,0 +1,8 @@
+X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\publish\Launcher.pdb
+X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\publish\games.json
+X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\publish\av_libglesv2.dll
+X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\publish\libHarfBuzzSharp.dll
+X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\publish\libHarfBuzzSharp.pdb
+X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\publish\libSkiaSharp.dll
+X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\publish\libSkiaSharp.pdb
+X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\publish\Launcher.exe

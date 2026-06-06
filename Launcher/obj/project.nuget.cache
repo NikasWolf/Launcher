@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "N/7DUsQ5UL8=",
+  "dgSpecHash": "7g2KeYOIrs0=",
   "success": true,
   "projectFilePath": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Launcher.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.1\\microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.27\\microsoft.net.illink.tasks.8.0.27.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\skiasharp\\3.119.4-preview.1.1\\skiasharp.3.119.4-preview.1.1.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\skiasharp.nativeassets.linux\\3.119.4-preview.1.1\\skiasharp.nativeassets.linux.3.119.4-preview.1.1.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\skiasharp.nativeassets.macos\\3.119.4-preview.1.1\\skiasharp.nativeassets.macos.3.119.4-preview.1.1.nupkg.sha512",
@@ -37,7 +38,10 @@
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\system.io.pipelines\\10.0.8\\system.io.pipelines.10.0.8.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\system.text.encodings.web\\10.0.8\\system.text.encodings.web.10.0.8.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\system.text.json\\10.0.8\\system.text.json.10.0.8.nupkg.sha512",
-    "C:\\Users\\Никита Батунин\\.nuget\\packages\\tmds.dbus.protocol\\0.92.0\\tmds.dbus.protocol.0.92.0.nupkg.sha512"
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\tmds.dbus.protocol\\0.92.0\\tmds.dbus.protocol.0.92.0.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.27\\microsoft.netcore.app.runtime.win-x64.8.0.27.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.27\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.27.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.27\\microsoft.aspnetcore.app.runtime.win-x64.8.0.27.nupkg.sha512"
   ],
   "logs": []
 }
