@@ -1,5 +1,6 @@
 ﻿using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using Launcher.Services;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -106,4 +107,44 @@ public class Game : INotifyPropertyChanged
     {
         CurrentMainImagePath = imagePath;
     }
+
+
+    // обновление кнопок
+
+    private string _buttonText = "добавить себе";
+    public string ButtonText
+    {
+        get => _buttonText;
+        set
+        {
+            _buttonText = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _buttonColor = "#A8D514";
+    public string ButtonColor
+    {
+        get => _buttonColor;
+        set
+        {
+            _buttonColor = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public void UpdateButtonState(UserGameService userGameService)
+    {
+        if (userGameService.IsGameAdded(Id))
+        {
+            ButtonText = "добавлено";
+            ButtonColor = "#808080";
+        }
+        else
+        {
+            ButtonText = "добавить себе";
+            ButtonColor = "#A8D514";
+        }
+    }
+
 }

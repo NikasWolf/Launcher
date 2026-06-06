@@ -1,5 +1,7 @@
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Media;
 using Launcher.Models;
 using Launcher.Services;
 
@@ -14,21 +16,33 @@ public partial class GamesView : UserControl
         InitializeComponent();
 
         var gameService = new GameService();
+        var userGameService = new UserGameService();
         var games = gameService.LoadGames();
+
+        foreach (var game in games)
+        {
+            game.UpdateButtonState(userGameService);
+        }
+
         GamesItemsControl.ItemsSource = games;
     }
 
     public void SetMyView(MyView myView)
     {
         _myView = myView;
-        UpdateAllButtons();
     }
 
     public void UpdateAllButtons()
     {
-        // Перезагружаем ItemsControl, чтобы обновить состояние кнопок
+        var userGameService = new UserGameService();
         var gameService = new GameService();
         var games = gameService.LoadGames();
+
+        foreach (var game in games)
+        {
+            game.UpdateButtonState(userGameService);
+        }
+
         GamesItemsControl.ItemsSource = null;
         GamesItemsControl.ItemsSource = games;
     }
@@ -37,10 +51,11 @@ public partial class GamesView : UserControl
     {
         if (sender is Button btn && btn.Tag is Game game && _myView != null)
         {
-            if (!_myView.IsGameAdded(game))
+            var userGameService = new UserGameService();
+            if (!userGameService.IsGameAdded(game.Id))
             {
                 _myView.AddGame(game);
-                UpdateAllButtons();  // обновляем все кнопки
+                game.UpdateButtonState(userGameService);
             }
         }
     }

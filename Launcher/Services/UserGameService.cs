@@ -59,4 +59,5 @@ public class UserGameService
         var ids = LoadUserGameIds();
         return ids.Contains(gameId);
     }
+    
 }

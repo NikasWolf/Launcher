@@ -1,5 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Launcher.Models;
+using Launcher.Services;
 
 namespace Launcher.Views;
 
@@ -29,6 +31,16 @@ public partial class MainWindow : Window
     private void OnGamesClick(object? sender, RoutedEventArgs e)
     {
         MainContent.Content = _gamesView;
-        _gamesView.UpdateAllButtons();  // обновляем кнопки при открытии
+
+        // Обновляем состояние всех кнопок при переходе на вкладку
+        var userGameService = new UserGameService();
+        var games = _gamesView.GamesItemsControl.ItemsSource as System.Collections.IEnumerable;
+        if (games != null)
+        {
+            foreach (Game game in games)
+            {
+                game.UpdateButtonState(userGameService);
+            }
+        }
     }
 }
