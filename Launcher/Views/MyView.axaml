@@ -1,7 +1,8 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:models="clr-namespace:Launcher.Models"
-             x:Class="Launcher.Views.MyView">
+             x:Class="Launcher.Views.MyView"
+			 x:DataType="models:Game">
 
 	<Grid>
 		<Grid.ColumnDefinitions>
@@ -75,13 +76,14 @@
 								VerticalContentAlignment="Center"/>
 
 						<Button Content="Удалить из списка"
-								Foreground="#B85454"
-								Background="#7C0505"
-								Grid.Column="2"
-								Padding="20,10"
-								Margin="5,0"
-								HorizontalContentAlignment="Center"
-								VerticalContentAlignment="Center"/>
+        Foreground="#B85454"
+        Background="#7C0505"
+        Grid.Column="2"
+        Padding="20,10"
+        Margin="5,0"
+        HorizontalContentAlignment="Center"
+        VerticalContentAlignment="Center"
+        Click="OnRemoveFromListClick"/>
 					</Grid>
 					<TextBlock x:Name="GameGenre" FontSize="14" Foreground="#C8C8C8" Margin="0,10,0,0"/>
 					<TextBlock x:Name="GameYear" FontSize="14" Foreground="#C8C8C8"/>

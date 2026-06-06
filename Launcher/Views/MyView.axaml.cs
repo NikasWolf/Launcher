@@ -17,6 +17,7 @@ public partial class MyView : UserControl
     private UserGameService _userGameService;
     private ObservableCollection<Game> _userGames;
     private GameService _gameService;
+    private Game? _currentDisplayedGame;
 
     public MyView()
     {
@@ -68,6 +69,8 @@ public partial class MyView : UserControl
     {
         if (game == null) return;
 
+        _currentDisplayedGame = game;  //  сохраняем текущую игру
+
         GameInfoPanel.IsVisible = true;
 
         GameName.Text = game.Name;
@@ -96,6 +99,27 @@ public partial class MyView : UserControl
         if (sender is Button btn && btn.Tag is Game game)
         {
             ShowGameInfo(game);
+        }
+    }
+
+    // Обработчик кнопки "Удалить из списка"
+    private void OnRemoveFromListClick(object? sender, RoutedEventArgs e)
+    {
+        if (_currentDisplayedGame != null)
+        {
+            RemoveGame(_currentDisplayedGame);
+
+            // Очищаем панель
+            GameInfoPanel.IsVisible = false;
+            _currentDisplayedGame = null;
+
+            // Очищаем данные
+            GameName.Text = "";
+            GameGenre.Text = "";
+            GameYear.Text = "";
+            GameCondition.Text = "";
+            GameDescription.Text = "";
+            GameImage.Source = null;
         }
     }
 }
