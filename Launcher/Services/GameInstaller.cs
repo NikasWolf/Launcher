@@ -89,11 +89,17 @@ public class GameInstaller
     {
         if (!IsInstalled) return false;
 
+        string exePath = GetExecutablePath();
+        string workingDirectory = Path.GetDirectoryName(exePath); // Рабочая папка = где лежит exe
+
+        System.Diagnostics.Debug.WriteLine($"Launch: exePath={exePath}");
+        System.Diagnostics.Debug.WriteLine($"Launch: workingDirectory={workingDirectory}");
+
         var processStartInfo = new ProcessStartInfo
         {
-            FileName = GetExecutablePath(),
+            FileName = exePath,
             UseShellExecute = true,
-            WorkingDirectory = _installPath
+            WorkingDirectory = workingDirectory
         };
 
         Process.Start(processStartInfo);
