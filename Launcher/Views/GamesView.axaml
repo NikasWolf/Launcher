@@ -72,6 +72,24 @@
 													<Image Source="{Binding SmallImage5}" Stretch="UniformToFill"/>
 												</Button>
 											</Border>
+											<Border CornerRadius="5" ClipToBounds="True" Height="40">
+												<Button Background="Transparent"
+												        BorderThickness="0"
+												        Padding="0"
+												        Click="SmallImage6_Click"
+												        Tag="{Binding}">
+													<Image Source="{Binding SmallImage6}" Stretch="UniformToFill"/>
+												</Button>
+											</Border>
+											<Border CornerRadius="5" ClipToBounds="True" Height="40">
+												<Button Background="Transparent"
+												        BorderThickness="0"
+												        Padding="0"
+												        Click="SmallImage7_Click"
+												        Tag="{Binding}">
+													<Image Source="{Binding SmallImage7}" Stretch="UniformToFill"/>
+												</Button>
+											</Border>
 
 										</StackPanel>
 									</ScrollViewer>
@@ -103,10 +121,10 @@
 											   Margin="20,5,0,0"/>
 									<!-- Чёртова кнопка -->
 									<Button Content="{Binding ButtonText}"
-        Foreground="{Binding ButtonColor}"
-        Background="#4C6B22"
-        Click="OnAddToSelfClick"
-        Tag="{Binding}"/>
+										Foreground="{Binding ButtonColor}"
+										Background="#4C6B22"
+										Click="OnAddToSelfClick"
+										Tag="{Binding}"/>
 								</StackPanel>
 								<!-- Строка тип, год релиза -->
 								<TextBlock  FontSize="12" Foreground="#C8C8C8" Margin="0,5,0,0">

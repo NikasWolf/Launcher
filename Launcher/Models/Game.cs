@@ -39,6 +39,8 @@ public class Game : INotifyPropertyChanged
     public string ImagePath3 { get; set; } = string.Empty;  // Путь к маленькой картинке 3
     public string ImagePath4 { get; set; } = string.Empty;  // Путь к маленькой картинке 4
     public string ImagePath5 { get; set; } = string.Empty;  // Путь к маленькой картинке 5
+    public string ImagePath6 { get; set; } = string.Empty;  // Путь к маленькой картинке 5
+    public string ImagePath7 { get; set; } = string.Empty;  // Путь к маленькой картинке 5
 
     // ========== ЧАСТЬ 4: Текущая большая картинка (с уведомлением) ==========
 
@@ -76,6 +78,8 @@ public class Game : INotifyPropertyChanged
     public Bitmap? SmallImage3 => LoadImage(ImagePath3);
     public Bitmap? SmallImage4 => LoadImage(ImagePath4);
     public Bitmap? SmallImage5 => LoadImage(ImagePath5);
+    public Bitmap? SmallImage6 => LoadImage(ImagePath5);
+    public Bitmap? SmallImage7 => LoadImage(ImagePath5);
 
     // ========== ЧАСТЬ 6: Загрузка картинки ==========
 
