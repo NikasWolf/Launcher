@@ -52,11 +52,12 @@
 							<ColumnDefinition Width="*"/>
 							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<!-- добавили колонку -->
 						</Grid.ColumnDefinitions>
 
 						<TextBlock x:Name="GameName" FontSize="24" FontWeight="Bold" Foreground="White" Grid.Column="0"/>
 
-						<!-- Кнопка "Скачать" / "Запустить" -->
 						<Button x:Name="InstallButton"
 								Grid.Column="1"
 								Padding="20,10"
@@ -65,12 +66,22 @@
 								VerticalContentAlignment="Center"
 								Click="OnInstallClick"/>
 
-						<!-- Кнопка "Удалить из списка" -->
-						<Button x:Name="RemoveButton"
-								Content="Удалить из списка"
+						<Button x:Name="DeleteButton"
+								Content="Удалить игру"
 								Foreground="#B85454"
 								Background="#7C0505"
 								Grid.Column="2"
+								Padding="20,10"
+								Margin="5,0"
+								HorizontalContentAlignment="Center"
+								VerticalContentAlignment="Center"
+								Click="OnDeleteClick"/>
+
+						<Button x:Name="RemoveFromListButton"
+								Content="Убрать из списка"
+								Foreground="#C8C8C8"
+								Background="#4A4949"
+								Grid.Column="3"
 								Padding="20,10"
 								Margin="5,0"
 								HorizontalContentAlignment="Center"

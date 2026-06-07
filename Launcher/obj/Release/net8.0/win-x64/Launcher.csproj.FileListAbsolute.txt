@@ -1,4 +1,3 @@
-X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\games.json
 X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\Launcher.exe
 X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\Launcher.deps.json
 X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\Launcher.runtimeconfig.json
@@ -234,3 +233,5 @@ X:\Cods\LauncherGit\Launcher\Launcher\obj\Release\net8.0\win-x64\refint\Launcher
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Release\net8.0\win-x64\Launcher.pdb
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Release\net8.0\win-x64\Launcher.genruntimeconfig.cache
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Release\net8.0\win-x64\ref\Launcher.dll
+X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\DialogHost.Avalonia.dll
+X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\win-x64\MsBox.Avalonia.dll

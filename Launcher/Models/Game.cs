@@ -194,4 +194,10 @@ public class Game : INotifyPropertyChanged
             IsGameInstalled = false;
         }
     }
+
+    public void DeleteGame()
+    {
+        Installer.DeleteGameFiles();
+        RefreshInstallationState();
+    }
 }

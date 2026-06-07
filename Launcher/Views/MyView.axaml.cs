@@ -7,10 +7,12 @@ using Avalonia.Platform;
 using Launcher.Models;
 using Launcher.Services;
 using System;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System;
+using System.Collections.ObjectModel;
 using System.Diagnostics;  // если нет
+using System.Linq;
+using MsBox.Avalonia;
+using MsBox.Avalonia.Enums;
 
 namespace Launcher.Views;
 
@@ -194,4 +196,31 @@ public partial class MyView : UserControl
         }
     }
 
+
+    private async void OnDeleteClick(object? sender, RoutedEventArgs e)
+    {
+        if (_currentDisplayedGame == null) return;
+
+        var box = MessageBoxManager.GetMessageBoxStandard(
+            "Подтверждение удаления",
+            $"Вы уверены, что хотите удалить игру \"{_currentDisplayedGame.Name}\" с компьютера?",
+            ButtonEnum.YesNo
+        );
+
+        var result = await box.ShowAsync();
+
+        if (result == ButtonResult.Yes)
+        {
+            try
+            {
+                _currentDisplayedGame.DeleteGame();
+                UpdateInstallButtonState();
+                System.Diagnostics.Debug.WriteLine("Игра удалена");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Ошибка удаления: {ex.Message}");
+            }
+        }
+    }
 }

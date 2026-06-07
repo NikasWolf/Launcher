@@ -1,5 +1,4 @@
 X:\Cods\LauncherGit\Launcher\Launcher\publish\Launcher.pdb
-X:\Cods\LauncherGit\Launcher\Launcher\publish\games.json
 X:\Cods\LauncherGit\Launcher\Launcher\publish\av_libglesv2.dll
 X:\Cods\LauncherGit\Launcher\Launcher\publish\libHarfBuzzSharp.dll
 X:\Cods\LauncherGit\Launcher\Launcher\publish\libHarfBuzzSharp.pdb

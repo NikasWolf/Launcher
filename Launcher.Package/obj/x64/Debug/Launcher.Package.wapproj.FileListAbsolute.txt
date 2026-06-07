@@ -1,3 +1,4 @@
+X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\runtimes\win-x86\native\libSkiaSharp.pdb
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\Avalonia.Base.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\Avalonia.Controls.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\Avalonia.DesignerSupport.dll
@@ -23,7 +24,9 @@ X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\Avalonia.Wi
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\Avalonia.X11.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\AvaloniaUI.DiagnosticsSupport.Avalonia.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\CommunityToolkit.Mvvm.dll
+X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\DialogHost.Avalonia.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\HarfBuzzSharp.dll
+X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\MsBox.Avalonia.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\MicroCom.Runtime.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\Microsoft.Extensions.Logging.Abstractions.dll
@@ -74,17 +77,11 @@ X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\runtimes\wi
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\runtimes\win-x64\native\libSkiaSharp.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\runtimes\win-x64\native\libSkiaSharp.pdb
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\runtimes\win-x86\native\libSkiaSharp.dll
-X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\runtimes\win-x86\native\libSkiaSharp.pdb
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
-X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\Launcher.deps.json
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\Launcher.exe
-X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\Launcher.runtimeconfig.json
-X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\Launcher.dll
-X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher\Launcher.pdb
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\resources.pri
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\AppxManifest.xml
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Debug\Launcher.Package.build.appxrecipe
-X:\Cods\LauncherGit\Launcher\Launcher.Package\obj\x64\Debug\Launcher.Package.wapproj.AssemblyReference.cache
 X:\Cods\LauncherGit\Launcher\Launcher.Package\obj\x64\Debug\Avalonia\Resources.Inputs.cache
 X:\Cods\LauncherGit\Launcher\Launcher.Package\obj\x64\Debug\Launcher.Package.wapproj.CoreCompileInputs.cache
 X:\Cods\LauncherGit\Launcher\Launcher.Package\obj\x64\Debug\priconfig.xml

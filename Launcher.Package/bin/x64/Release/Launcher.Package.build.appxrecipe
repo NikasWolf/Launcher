@@ -127,8 +127,14 @@
     <AppxPackagedFile Include="C:\Users\Никита Батунин\.nuget\packages\communitytoolkit.mvvm\8.4.1\lib\net8.0\CommunityToolkit.Mvvm.dll">
       <PackagePath>Launcher\CommunityToolkit.Mvvm.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Никита Батунин\.nuget\packages\dialoghost.avalonia\0.12.1-nightly.0.1\lib\net8.0\DialogHost.Avalonia.dll">
+      <PackagePath>Launcher\DialogHost.Avalonia.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Никита Батунин\.nuget\packages\harfbuzzsharp\8.3.1.3\lib\net8.0\HarfBuzzSharp.dll">
       <PackagePath>Launcher\HarfBuzzSharp.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Никита Батунин\.nuget\packages\messagebox.avalonia\12.0.0\lib\net8.0\MsBox.Avalonia.dll">
+      <PackagePath>Launcher\MsBox.Avalonia.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Никита Батунин\.nuget\packages\microcom.runtime\0.11.4\lib\net5.0\MicroCom.Runtime.dll">
       <PackagePath>Launcher\MicroCom.Runtime.dll</PackagePath>
@@ -259,17 +265,8 @@
     <AppxPackagedFile Include="C:\Users\Никита Батунин\.nuget\packages\system.text.encodings.web\10.0.8\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll">
       <PackagePath>Launcher\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.deps.json">
-      <PackagePath>Launcher\Launcher.deps.json</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="X:\Cods\LauncherGit\Launcher\Launcher\obj\Release\net8.0\apphost.exe">
       <PackagePath>Launcher\Launcher.exe</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.runtimeconfig.json">
-      <PackagePath>Launcher\Launcher.runtimeconfig.json</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.dll">
-      <PackagePath>Launcher\Launcher.dll</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -169,6 +169,24 @@ public class GameInstaller
             catch { }
         }
     }
-    
+    /// <summary>
+    /// Удаляет игру с диска
+    /// </summary>
+    public void DeleteGameFiles()
+    {
+        if (Directory.Exists(_installPath))
+        {
+            try
+            {
+                Directory.Delete(_installPath, true); // true = рекурсивное удаление
+                System.Diagnostics.Debug.WriteLine($"Игра удалена: {_installPath}");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Ошибка удаления: {ex.Message}");
+                throw;
+            }
+        }
+    }
 
 }

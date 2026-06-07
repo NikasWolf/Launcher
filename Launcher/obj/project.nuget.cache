@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "N/7DUsQ5UL8=",
+  "dgSpecHash": "bBtASMw1S0Q=",
   "success": true,
   "projectFilePath": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Launcher.csproj",
   "expectedPackageFiles": [
@@ -20,11 +20,13 @@
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\avalonia.x11\\12.0.3\\avalonia.x11.12.0.3.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\avaloniaui.diagnosticssupport\\2.2.1\\avaloniaui.diagnosticssupport.2.2.1.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.1\\communitytoolkit.mvvm.8.4.1.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\dialoghost.avalonia\\0.12.1-nightly.0.1\\dialoghost.avalonia.0.12.1-nightly.0.1.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\harfbuzzsharp\\8.3.1.3\\harfbuzzsharp.8.3.1.3.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\harfbuzzsharp.nativeassets.linux\\8.3.1.3\\harfbuzzsharp.nativeassets.linux.8.3.1.3.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\8.3.1.3\\harfbuzzsharp.nativeassets.macos.8.3.1.3.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\harfbuzzsharp.nativeassets.webassembly\\8.3.1.3\\harfbuzzsharp.nativeassets.webassembly.8.3.1.3.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\8.3.1.3\\harfbuzzsharp.nativeassets.win32.8.3.1.3.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\messagebox.avalonia\\12.0.0\\messagebox.avalonia.12.0.0.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\microcom.runtime\\0.11.4\\microcom.runtime.0.11.4.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",

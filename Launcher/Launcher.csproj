@@ -12,19 +12,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <AvaloniaXaml Remove="publish_fix\**" />
+    <Compile Remove="publish_fix\**" />
+    <EmbeddedResource Remove="publish_fix\**" />
+    <None Remove="publish_fix\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="games.json" />
-    <None Remove="publish_fix\games.json" />
-    <None Remove="publish_fix\user_games.json" />
   </ItemGroup>
 
   <ItemGroup>
     <AvaloniaResource Include="games.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AvaloniaResource>
-    <AvaloniaResource Include="publish_fix\games.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AvaloniaResource>
-    <AvaloniaResource Include="publish_fix\user_games.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AvaloniaResource>
   </ItemGroup>
@@ -39,6 +38,7 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.1" />
+    <PackageReference Include="MessageBox.Avalonia" Version="12.0.0" />
     <PackageReference Include="System.Text.Json" Version="10.0.8" />
   </ItemGroup>
 
