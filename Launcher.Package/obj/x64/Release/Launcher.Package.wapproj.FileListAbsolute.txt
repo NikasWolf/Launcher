@@ -1,3 +1,4 @@
+X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\win-x64\native\libSkiaSharp.pdb
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\Avalonia.Base.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\Avalonia.Controls.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\Avalonia.DesignerSupport.dll
@@ -68,12 +69,10 @@ X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\win-arm64\native\libSkiaSharp.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\win-arm64\native\libSkiaSharp.pdb
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\win-x64\native\libSkiaSharp.dll
-X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\win-x64\native\libSkiaSharp.pdb
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\win-x86\native\libSkiaSharp.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\win-x86\native\libSkiaSharp.pdb
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\Launcher.deps.json
-X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\games.json
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\Launcher.exe
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\Launcher.runtimeconfig.json
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\Launcher.dll

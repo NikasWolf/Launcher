@@ -5,6 +5,10 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 namespace Launcher.Models;
+using System.IO; // Для работы с путями и файлами
+using System.Net.Http; // Для скачивания
+using System.IO.Compression; // Для распаковки архивов
+using System.Diagnostics; // Для запуска процессов
 
 
 // INotifyPropertyChanged - уведомляет UI об изменениях свойств (чтобы обновлялись картинки)
@@ -151,4 +155,43 @@ public class Game : INotifyPropertyChanged
         }
     }
 
+    // Добавь эти поля в секцию с путями к картинкам (где ImagePath1-7)
+    public string ExecutableName { get; set; } = string.Empty;
+    public string DownloadUrl { get; set; } = string.Empty;
+
+    // Добавь свойства для состояния установки
+    private bool _isGameInstalled;
+    public bool IsGameInstalled
+    {
+        get => _isGameInstalled;
+        set
+        {
+            _isGameInstalled = value;
+            OnPropertyChanged();
+            OnPropertyChanged(nameof(InstallButtonText));
+        }
+    }
+
+    public string InstallButtonText => IsGameInstalled ? "Запустить" : "Скачать";
+
+    // Добавь поле для установщика и метод обновления состояния
+    private GameInstaller? _installer;
+    public GameInstaller Installer => _installer ??= new GameInstaller(Name, DownloadUrl, ExecutableName);
+
+    public void RefreshInstallationState()
+    {
+        try
+        {
+            IsGameInstalled = Installer.IsInstalled;
+        }
+        catch (DirectoryNotFoundException)
+        {
+            IsGameInstalled = false;
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"RefreshInstallationState error: {ex.Message}");
+            IsGameInstalled = false;
+        }
+    }
 }

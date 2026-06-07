@@ -20,6 +20,12 @@ public class GameService
 
         // Объединяем путь к папке с именем файла "games.json"
         _filePath = Path.Combine(appDirectory, "games.json");
+        // Выводим путь в окно Output
+        System.Diagnostics.Debug.WriteLine("=========================================");
+        System.Diagnostics.Debug.WriteLine($"AppContext.BaseDirectory: {appDirectory}");
+        System.Diagnostics.Debug.WriteLine($"Полный путь к games.json: {_filePath}");
+        System.Diagnostics.Debug.WriteLine($"Файл существует: {File.Exists(_filePath)}");
+        System.Diagnostics.Debug.WriteLine("=========================================");
     }
 
     // Метод загрузки игр из JSON файла

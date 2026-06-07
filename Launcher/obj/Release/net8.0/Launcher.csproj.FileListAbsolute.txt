@@ -1,4 +1,3 @@
-X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\games.json
 X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.exe
 X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.deps.json
 X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.runtimeconfig.json

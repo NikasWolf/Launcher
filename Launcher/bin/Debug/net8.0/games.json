@@ -12,6 +12,8 @@
     "ImagePath3": "avares://Launcher/Assets/ImagePath/Rbota/03.jpg",
     "ImagePath4": "avares://Launcher/Assets/ImagePath/Rbota/04.jpg",
     "ImagePath5": "avares://Launcher/Assets/ImagePath/Rbota/05.jpg",
+    "ImagePath6": "avares://Launcher/Assets/ImagePath/Rbota/06.jpg",
+    "ImagePath7": "avares://Launcher/Assets/ImagePath/Rbota/08.jpg",
     "ExecutablePath": ""
   },
   {
@@ -27,6 +29,8 @@
     "ImagePath3": "avares://Launcher/Assets/ImagePath/042.png",
     "ImagePath4": "avares://Launcher/Assets/ImagePath/042.png",
     "ImagePath5": "avares://Launcher/Assets/ImagePath/042.png",
+    "ImagePath6": "avares://Launcher/Assets/ImagePath/042.png",
+    "ImagePath7": "avares://Launcher/Assets/ImagePath/042.png",
     "ExecutablePath": ""
   },
   {
@@ -42,7 +46,27 @@
     "ImagePath3": "avares://Launcher/Assets/ImagePath/042.png",
     "ImagePath4": "avares://Launcher/Assets/ImagePath/042.png",
     "ImagePath5": "avares://Launcher/Assets/ImagePath/042.png",
+    "ImagePath6": "avares://Launcher/Assets/ImagePath/042.png",
+    "ImagePath7": "avares://Launcher/Assets/ImagePath/042.png",
     "ExecutablePath": ""
+  },
+  {
+    "Id": 4,
+    "Name": "Лаунчер",
+    "Description": "По заветам WarTunder-а, в лаунчере можно скачать лаунчер",
+    "Genre": "Лаунчер",
+    "Condition": "V1.0",
+    "Year": 2026,
+    "ImagePath": "avares://Launcher/Assets/ImagePath/Launcher/65.png",
+    "ImagePath1": "avares://Launcher/Assets/ImagePath/Launcher/59.png",
+    "ImagePath2": "avares://Launcher/Assets/ImagePath/Launcher/61.png",
+    "ImagePath3": "avares://Launcher/Assets/ImagePath/Launcher/62.png",
+    "ImagePath4": "avares://Launcher/Assets/ImagePath/Launcher/63.png",
+    "ImagePath5": "avares://Launcher/Assets/ImagePath/Launcher/64.png",
+    "ImagePath6": "avares://Launcher/Assets/ImagePath/Launcher/60.png",
+    "ImagePath7": "avares://Launcher/Assets/ImagePath/Launcher/65.png",
+    "ExecutableName": "Launcher.exe",
+    "DownloadUrl": "https://github.com/NikasWolf/Launcher/releases/download/V0.1/exe_Test_Launcher.zip"
   }
 ]
 

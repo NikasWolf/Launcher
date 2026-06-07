@@ -262,9 +262,6 @@
     <AppxPackagedFile Include="X:\Cods\LauncherGit\Launcher\Launcher\bin\Release\net8.0\Launcher.deps.json">
       <PackagePath>Launcher\Launcher.deps.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="X:\Cods\LauncherGit\Launcher\Launcher\games.json">
-      <PackagePath>Launcher\games.json</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="X:\Cods\LauncherGit\Launcher\Launcher\obj\Release\net8.0\apphost.exe">
       <PackagePath>Launcher\Launcher.exe</PackagePath>
     </AppxPackagedFile>

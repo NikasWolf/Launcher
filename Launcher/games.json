@@ -65,7 +65,8 @@
     "ImagePath5": "avares://Launcher/Assets/ImagePath/Launcher/64.png",
     "ImagePath6": "avares://Launcher/Assets/ImagePath/Launcher/60.png",
     "ImagePath7": "avares://Launcher/Assets/ImagePath/Launcher/65.png",
-    "ExecutablePath": ""
+    "ExecutableName": "Launcher.exe",
+    "DownloadUrl": "https://github.com/NikasWolf/Launcher/releases/download/V0.1/exe_Test_Launcher.zip"
   }
 ]
 

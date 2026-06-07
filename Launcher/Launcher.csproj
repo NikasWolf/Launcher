@@ -12,6 +12,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="games.json" />
+    <None Remove="publish_fix\games.json" />
+    <None Remove="publish_fix\user_games.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="games.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="publish_fix\games.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="publish_fix\user_games.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Avalonia" Version="12.0.3" />
     <PackageReference Include="Avalonia.Desktop" Version="12.0.3" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="12.0.3" />
@@ -25,21 +43,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AvaloniaResource Update="Assets\ImagePath\066.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AvaloniaResource>
-    <AvaloniaResource Update="Assets\ImagePath\067.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AvaloniaResource>
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Assets\Games\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="games.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 </Project>
