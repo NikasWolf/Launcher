@@ -74,10 +74,15 @@ X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\win-x86\native\libSkiaSharp.dll
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\win-x86\native\libSkiaSharp.pdb
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\Launcher.deps.json
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\Launcher.exe
+X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\Launcher.runtimeconfig.json
+X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\Launcher.dll
+X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher\Launcher.pdb
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\resources.pri
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\AppxManifest.xml
 X:\Cods\LauncherGit\Launcher\Launcher.Package\bin\x64\Release\Launcher.Package.build.appxrecipe
+X:\Cods\LauncherGit\Launcher\Launcher.Package\obj\x64\Release\Launcher.Package.wapproj.AssemblyReference.cache
 X:\Cods\LauncherGit\Launcher\Launcher.Package\obj\x64\Release\Avalonia\Resources.Inputs.cache
 X:\Cods\LauncherGit\Launcher\Launcher.Package\obj\x64\Release\Launcher.Package.wapproj.CoreCompileInputs.cache
 X:\Cods\LauncherGit\Launcher\Launcher.Package\obj\x64\Release\priconfig.xml

@@ -36,6 +36,23 @@
     "DownloadUrl": "https://github.com/NikasWolf/Launcher/releases/download/V0.1/exe_Test_Launcher.zip"
   },
   {
+    "Id": 6,
+    "Name": "Расклад",
+    "Description": "Приложение для раскладов таро. В нём можно выбрать тему рассклада, сделать сам расклад и трактовать его, это позволяет даже новичку разобраться, что значит та или иная карта. В будущем можно будет загружать свои колоды карт за отдельную плату. На данный момент оно находится в разработке.",
+    "Genre": "Обман",
+    "Condition": "В разработке",
+    "Year": 2026,
+    "ImagePath": "avares://Launcher/Assets/ImagePath/Rasklad/1.png",
+    "ImagePath1": "avares://Launcher/Assets/ImagePath/Rasklad/2.png",
+    "ImagePath2": "avares://Launcher/Assets/ImagePath/Rasklad/3.png",
+    "ImagePath3": "avares://Launcher/Assets/ImagePath/Rasklad/1.png",
+    "ImagePath4": "avares://Launcher/Assets/ImagePath/Rasklad/2.png",
+    "ImagePath5": "avares://Launcher/Assets/ImagePath/Rasklad/3.png",
+    "ImagePath6": "avares://Launcher/Assets/ImagePath/Rasklad/1.png",
+    "ImagePath7": "avares://Launcher/Assets/ImagePath/Rasklad/2.png",
+    "ExecutablePath": ""
+  },
+  {
     "Id": 2,
     "Name": "Очень важная оборона",
     "Description": "Игра построенная на захвате баз и их защите. В игре представлены следующие основные механики: ходьба. Стрельба. Захват точки. система очков. В игре есть 1 босс в виде шахматного коня, который будет атаковать базу игрока. За удержание точки даётся 0.5 очка/сек, максимально можно заработать 1000 очков, по достижению которых появляется главный босс. Игра заканчивается убийством главного босса - коня. Возрастное ограничение 16+.",

@@ -5,7 +5,8 @@
         Title="Launcher"
         Width="960" Height="577"
         CanResize="false"
-        Background="#1E1E1E">
+        Background="#1E1E1E"
+		>
 
 	<DockPanel>
 		<!-- Верхняя панель -->

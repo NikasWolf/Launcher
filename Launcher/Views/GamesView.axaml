@@ -107,31 +107,42 @@
 							<!--  -->
 							<!-- Нижняя часть: текст -->
 							<StackPanel Margin="10">
-								<!-- Строка имя, состояние, кнопка -->
-								<StackPanel Orientation="Horizontal">
-									<TextBlock Text="{Binding Name}"
-											   FontSize="16"
-											   FontWeight="Bold"
-											   Foreground="White"
-											   TextWrapping="Wrap"/>
+								<!-- Строка имя, состояние и кнопка справа -->
+								<Grid>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*"/>
+										<ColumnDefinition Width="Auto"/>
+									</Grid.ColumnDefinitions>
 
-									<TextBlock Text="{Binding Condition}"
-											   FontSize="12"
-											   Foreground="White"
-											   Margin="20,5,0,0"/>
-									<!-- Чёртова кнопка -->
-									<Button Content="{Binding ButtonText}"
-										Foreground="{Binding ButtonColor}"
-										Background="#4C6B22"
-										Click="OnAddToSelfClick"
-										Tag="{Binding}"/>
-								</StackPanel>
+									<StackPanel Grid.Column="0" Orientation="Horizontal">
+										<TextBlock Text="{Binding Name}"
+												   FontSize="16"
+												   FontWeight="Bold"
+												   Foreground="White"
+												   TextWrapping="Wrap"/>
+
+										<TextBlock Text="{Binding Condition}"
+												   FontSize="12"
+												   Foreground="White"
+												   Margin="20,5,0,0"/>
+									</StackPanel>
+
+									<Button Grid.Column="1"
+											Content="{Binding ButtonText}"
+											Foreground="{Binding ButtonColor}"
+											Background="#4C6B22"
+											Click="OnAddToSelfClick"
+											Tag="{Binding}"
+											Margin="10,0,0,0"/>
+								</Grid>
+
 								<!-- Строка тип, год релиза -->
-								<TextBlock  FontSize="12" Foreground="#C8C8C8" Margin="0,5,0,0">
+								<TextBlock FontSize="12" Foreground="#C8C8C8" Margin="0,5,0,0">
 									<Run Text="{Binding Genre}"/>
 									<Run Text=" Год релиза: "/>
 									<Run Text="{Binding Year}"/>
 								</TextBlock>
+
 								<!-- описание -->
 								<TextBlock Text="{Binding Description}"
 										   FontSize="11"
