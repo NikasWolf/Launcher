@@ -22746,11 +22746,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "X:\\Cods\\LauncherGit\\Launcher\\Launcher.Package\\Launcher.Package.wapproj",
+      "projectUniqueName": "X:\\Cods\\Мои проекты\\Лаунчер\\LauncherGit\\Launcher\\Launcher.Package\\Launcher.Package.wapproj",
       "projectName": "Launcher.Package",
-      "projectPath": "X:\\Cods\\LauncherGit\\Launcher\\Launcher.Package\\Launcher.Package.wapproj",
+      "projectPath": "X:\\Cods\\Мои проекты\\Лаунчер\\LauncherGit\\Launcher\\Launcher.Package\\Launcher.Package.wapproj",
       "packagesPath": "C:\\Users\\Никита Батунин\\.nuget\\packages\\",
-      "outputPath": "X:\\Cods\\LauncherGit\\Launcher\\Launcher.Package\\obj\\",
+      "outputPath": "X:\\Cods\\Мои проекты\\Лаунчер\\LauncherGit\\Launcher\\Launcher.Package\\obj\\",
       "projectStyle": "PackageReference",
       "UsingMicrosoftNETSdk": false,
       "fallbackFolders": [
@@ -22772,8 +22772,8 @@
         "uap10.0.14393": {
           "targetAlias": "net451",
           "projectReferences": {
-            "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Launcher.csproj": {
-              "projectPath": "X:\\Cods\\LauncherGit\\Launcher\\Launcher\\Launcher.csproj"
+            "X:\\Cods\\Мои проекты\\Лаунчер\\LauncherGit\\Launcher\\Launcher\\Launcher.csproj": {
+              "projectPath": "X:\\Cods\\Мои проекты\\Лаунчер\\LauncherGit\\Launcher\\Launcher\\Launcher.csproj"
             }
           }
         }
