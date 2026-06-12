@@ -14,16 +14,15 @@
 		
 		<ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Background="#4A4949">
 			<StackPanel>
-
 				<TextBlock Text="Мои игры" Foreground="White" Margin="5,10,5,5"/>
-
 				<ItemsControl x:Name="UserGamesList" Margin="0,0,0,10">
 					<ItemsControl.ItemTemplate>
 						<DataTemplate DataType="models:Game">
+							<!-- Кнопки игр -->
 							<Button Content="{Binding Name}"
                                     Foreground="#C8C8C8"
                                     Background="Transparent"
-                                    Width="162"
+                                    Width="150"
                                     Height="30"
                                     HorizontalContentAlignment="Left"
                                     Margin="5,2"
@@ -46,18 +45,17 @@
 						<Image x:Name="GameImage" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 					</Border>
 
-					<!-- Название и кнопки -->
+					<!-- Грид для выравнивания кнопок и текста -->
 					<Grid Margin="0,10,0,0">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="*"/>
 							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition Width="Auto"/>
-							<!-- добавили колонку -->
 						</Grid.ColumnDefinitions>
-
+						<!-- Название игры -->
 						<TextBlock x:Name="GameName" FontSize="24" FontWeight="Bold" Foreground="White" Grid.Column="0"/>
-
+						<!-- Скачать\запустить -->
 						<Button x:Name="InstallButton"
 								Grid.Column="1"
 								Padding="20,10"
@@ -65,7 +63,7 @@
 								HorizontalContentAlignment="Center"
 								VerticalContentAlignment="Center"
 								Click="OnInstallClick"/>
-
+						<!-- Удалить с устройства-->
 						<Button x:Name="DeleteButton"
 								Content="Удалить игру"
 								Foreground="#B85454"
@@ -76,7 +74,7 @@
 								HorizontalContentAlignment="Center"
 								VerticalContentAlignment="Center"
 								Click="OnDeleteClick"/>
-
+						<!-- убрать из списка -->
 						<Button x:Name="RemoveFromListButton"
 								Content="Убрать из списка"
 								Foreground="#C8C8C8"
@@ -89,15 +87,19 @@
 								Click="OnRemoveFromListClick"/>
 					</Grid>
 
-					<!-- Остальные поля -->
+					<!-- Жанр -->
 					<TextBlock x:Name="GameGenre" FontSize="14" Foreground="#C8C8C8" Margin="0,10,0,0"/>
+					<!-- Год -->
 					<TextBlock x:Name="GameYear" FontSize="14" Foreground="#C8C8C8"/>
+					<!-- Статус -->
 					<TextBlock x:Name="GameCondition" FontSize="14" Foreground="#C8C8C8"/>
+					<!-- Разработчик -->
+					<TextBlock x:Name="GameDeveloper" FontSize="14" Foreground="#C8C8C8"/>
+					<!-- Описание -->
 					<TextBlock x:Name="GameDescription" FontSize="12" Foreground="#C8C8C8" TextWrapping="Wrap" Margin="0,10,0,0"/>
 
 				</StackPanel>
 			</ScrollViewer>
 		</Border>
-
 	</Grid>
 </UserControl>

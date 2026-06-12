@@ -12,12 +12,13 @@
 		<!-- Верхняя панель -->
 		<Border DockPanel.Dock="Top" Height="45" Background="#2B2B2B">
 			<StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center" Margin="10,0">
+				<!-- Кнопка моё -->
 				<Button x:Name="MyButton"
                         Content="Моё"
                         Click="OnMyClick"
                         Foreground="#C8C8C8"
                         Background="Transparent"/>
-
+				<!-- Кнопка игры -->
 				<Button x:Name="GamesButton"
                         Content="Игры"
                         Click="OnGamesClick"

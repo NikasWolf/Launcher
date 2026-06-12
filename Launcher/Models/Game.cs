@@ -29,7 +29,7 @@ public class Game : INotifyPropertyChanged
     public int Id { get; set; }                             // Уникальный ID игры
     public string Name { get; set; } = string.Empty;        // Название игры
     public string Condition { get; set; } = string.Empty;   // Состояние игры (релиз\разработка)
-
+    public string Developer {  get; set; } = string.Empty;  // Разработчик
     public string Description { get; set; } = string.Empty; // Описание
     public string Genre { get; set; } = string.Empty;       // Жанр
     public int Year { get; set; }                           // Год выпуска

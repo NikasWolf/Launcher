@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "X:\\Cods\\\u041C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u041B\u0430\u0443\u043D\u0447\u0435\u0440\\LauncherGit\\Launcher\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|x:\\cods\\\u043C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u043B\u0430\u0443\u043D\u0447\u0435\u0440\\launchergit\\launcher\\launcher\\views\\myview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|solutionrelative:launcher\\views\\myview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|x:\\cods\\\u043C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u043B\u0430\u0443\u043D\u0447\u0435\u0440\\launchergit\\launcher\\launcher\\views\\myview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|solutionrelative:launcher\\views\\myview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|x:\\cods\\\u043C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u043B\u0430\u0443\u043D\u0447\u0435\u0440\\launchergit\\launcher\\launcher\\games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|solutionrelative:launcher\\games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|x:\\cods\\\u043C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u043B\u0430\u0443\u043D\u0447\u0435\u0440\\launchergit\\launcher\\launcher\\models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|solutionrelative:launcher\\models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|x:\\cods\\\u043C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u043B\u0430\u0443\u043D\u0447\u0435\u0440\\launchergit\\launcher\\launcher\\views\\mainwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{2C0349C3-5D66-4C9D-B7EF-7D5E523B5860}|Launcher\\Launcher.csproj|solutionrelative:launcher\\views\\mainwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +30,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MyView.axaml.cs",
+              "DocumentMoniker": "X:\\Cods\\\u041C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u041B\u0430\u0443\u043D\u0447\u0435\u0440\\LauncherGit\\Launcher\\Launcher\\Views\\MyView.axaml.cs",
+              "RelativeDocumentMoniker": "Launcher\\Views\\MyView.axaml.cs",
+              "ToolTip": "X:\\Cods\\\u041C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u041B\u0430\u0443\u043D\u0447\u0435\u0440\\LauncherGit\\Launcher\\Launcher\\Views\\MyView.axaml.cs",
+              "RelativeToolTip": "Launcher\\Views\\MyView.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T07:03:23.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Game.cs",
+              "DocumentMoniker": "X:\\Cods\\\u041C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u041B\u0430\u0443\u043D\u0447\u0435\u0440\\LauncherGit\\Launcher\\Launcher\\Models\\Game.cs",
+              "RelativeDocumentMoniker": "Launcher\\Models\\Game.cs",
+              "ToolTip": "X:\\Cods\\\u041C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u041B\u0430\u0443\u043D\u0447\u0435\u0440\\LauncherGit\\Launcher\\Launcher\\Models\\Game.cs",
+              "RelativeToolTip": "Launcher\\Models\\Game.cs",
+              "ViewState": "AgIAALAAAAAAAAAAAAAgwCAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T07:00:52.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "games.json",
+              "DocumentMoniker": "X:\\Cods\\\u041C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u041B\u0430\u0443\u043D\u0447\u0435\u0440\\LauncherGit\\Launcher\\Launcher\\games.json",
+              "RelativeDocumentMoniker": "Launcher\\games.json",
+              "ToolTip": "X:\\Cods\\\u041C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u041B\u0430\u0443\u043D\u0447\u0435\u0440\\LauncherGit\\Launcher\\Launcher\\games.json",
+              "RelativeToolTip": "Launcher\\games.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-10T06:39:36.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MyView.axaml",
+              "DocumentMoniker": "X:\\Cods\\\u041C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u041B\u0430\u0443\u043D\u0447\u0435\u0440\\LauncherGit\\Launcher\\Launcher\\Views\\MyView.axaml",
+              "RelativeDocumentMoniker": "Launcher\\Views\\MyView.axaml",
+              "ToolTip": "X:\\Cods\\\u041C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u041B\u0430\u0443\u043D\u0447\u0435\u0440\\LauncherGit\\Launcher\\Launcher\\Views\\MyView.axaml",
+              "RelativeToolTip": "Launcher\\Views\\MyView.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-06-10T06:32:13.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.axaml",
+              "DocumentMoniker": "X:\\Cods\\\u041C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u041B\u0430\u0443\u043D\u0447\u0435\u0440\\LauncherGit\\Launcher\\Launcher\\Views\\MainWindow.axaml",
+              "RelativeDocumentMoniker": "Launcher\\Views\\MainWindow.axaml",
+              "ToolTip": "X:\\Cods\\\u041C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u041B\u0430\u0443\u043D\u0447\u0435\u0440\\LauncherGit\\Launcher\\Launcher\\Views\\MainWindow.axaml",
+              "RelativeToolTip": "Launcher\\Views\\MainWindow.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-06-10T06:31:36.712Z",
+              "EditorCaption": ""
             }
           ]
         }

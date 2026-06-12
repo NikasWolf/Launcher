@@ -23,9 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AvaloniaResource Include="games.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AvaloniaResource>
+    <Content Include="games.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
