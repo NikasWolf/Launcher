@@ -2,32 +2,97 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:views="using:Launcher.Views"
         x:Class="Launcher.Views.MainWindow"
-        Title="Launcher"
+		
         Width="960" Height="577"
-        CanResize="false"
         Background="#1E1E1E"
+		
+		
+		SystemDecorations="None"
+		
 		>
 
 	<DockPanel>
-		<!-- Верхняя панель -->
-		<Border DockPanel.Dock="Top" Height="45" Background="#2B2B2B">
-			<StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center" Margin="10,0">
-				<!-- Кнопка моё -->
-				<Button x:Name="MyButton"
-                        Content="Моё"
-                        Click="OnMyClick"
-                        Foreground="#C8C8C8"
-                        Background="Transparent"/>
-				<!-- Кнопка игры -->
-				<Button x:Name="GamesButton"
-                        Content="Игры"
-                        Click="OnGamesClick"
-                        Foreground="#C8C8C8"
-                        Background="Transparent"/>
-			</StackPanel>
+		<!--Кастомная верхняя панель-->
+		<Border  x:Name="TitleBar"  DockPanel.Dock="Top" Height="32" Background="#3C3C3C" >
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				
+				<!--Иконка-->
+				<StackPanel Grid.Column="0" Orientation="Horizontal">
+					<Image
+						Source="/Assets/Launcher_ico.ico"
+						Width ="32"
+						Height ="32"
+						Margin ="0,0,5,0"
+						VerticalAlignment="Center"
+					/>
+					<Button Content="Настройки"/>
+					<Button Content="Аккаунт"/>
+					<Button Content="Каталоги"/>
+					<Button Content="Новости"/>
+					<TextBlock Text="V2.0.1"
+							   Foreground="#D9D9D9"
+							   VerticalAlignment="Bottom"
+							   Margin="10,0"
+							   />
+					<Button Content="Обновить"/>
+				</StackPanel>
+				
+				
+				
+				<!-- Ник и Кнопки управления-->
+				<StackPanel Grid.Column="2" Orientation="Horizontal">
+					<TextBlock Text="Nikas_Wolf"
+							   Foreground="#D9D9D9"
+							   FontSize ="20"
+							   VerticalAlignment="Center"
+							   />
+					<Button Content="_"
+							FontSize ="18"
+							Width="32"
+							Height="32"
+							Background="Transparent"
+							Foreground="#D9D9D9"
+							BorderThickness="0"
+							Click="OnMinimizeClick"							
+							HorizontalContentAlignment="Center" 						
+							/>
+					<Button Content="☐" 
+							FontSize ="18"
+							Width="32" 
+							Height="32" 
+							Background="Transparent" 
+							Foreground="#D9D9D9" 
+							BorderThickness="0" 
+							Click="OnMaximizeClick"
+							/>
+					<Button Content="✕" 
+							FontSize ="18"
+							Width="32" 
+							Height="32" 
+							Background="Transparent" 
+							Foreground="#D9D9D9" 
+							BorderThickness="0" 
+							Click="OnCloseClick"							
+							/>
+					
+				</StackPanel>
+				
+			</Grid>
 		</Border>
+		
+		
 
 		<!-- Здесь будет меняться содержимое -->
 		<ContentControl x:Name="MainContent"/>
+		
 	</DockPanel>
+	
+	
+	
 </Window>
+
