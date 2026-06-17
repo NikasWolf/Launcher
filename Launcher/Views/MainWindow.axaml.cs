@@ -18,6 +18,7 @@ public partial class MainWindow : Window
     // Ссылки на вкладки (UserControl'ы)
     private MyView _myView;        // Вкладка "Моё"
     private GamesView _gamesView;  // Вкладка "Игры"
+    
 
     //========= Конструктор ==========
     public MainWindow()
@@ -35,13 +36,14 @@ public partial class MainWindow : Window
         // 1. Создаём экземпляры вкладок
         _myView = new MyView();
         _gamesView = new GamesView();
+        
 
         // 2. Передаём ссылку на MyView в GamesView
         //    Это нужно, чтобы GamesView мог вызывать методы добавления игр
         _gamesView.SetMyView(_myView);
 
         // 3. По умолчанию показываем вкладку "Моё" - поменять на 
-        //MainContent.Content = _myView;
+        MainContent.Content = _myView;
     }
 
 
@@ -107,5 +109,29 @@ public partial class MainWindow : Window
                 game.UpdateButtonState(userGameService);
             }
         }
+    }
+
+    private void OnNewsClick(object? sender, RoutedEventArgs e)
+    {
+        var newsView = new NewsView();
+        MainContent.Content = newsView;
+    }
+
+    private void OnCatalogsClick(object? sender, RoutedEventArgs e)
+    {
+        var catalogView = new CatalogsView();
+        MainContent.Content = catalogView;
+    }
+
+    private void OnSettingsClick(object? sender, RoutedEventArgs e)
+    {
+        var settingsView = new SettingsView();
+        MainContent.Content = settingsView;
+    }
+
+    private void OnAccountClick(object? sender, RoutedEventArgs e)
+    {
+        var accountView = new AccountView();
+        MainContent.Content = accountView;
     }
 }
