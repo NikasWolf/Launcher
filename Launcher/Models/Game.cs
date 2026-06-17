@@ -36,7 +36,7 @@ public class Game : INotifyPropertyChanged
     public string ExecutablePath { get; set; } = string.Empty; // Путь к .exe файлу
 
     // ========== ЧАСТЬ 3: Пути к картинкам ==========
-
+    public string Icon {  get; set; } = string.Empty;       // Путь к иконке
     public string ImagePath { get; set; } = string.Empty;   // Путь к первой (основной) картинке
     public string ImagePath1 { get; set; } = string.Empty;  // Путь к маленькой картинке 1
     public string ImagePath2 { get; set; } = string.Empty;  // Путь к маленькой картинке 2
@@ -73,6 +73,9 @@ public class Game : INotifyPropertyChanged
 
     // ========== ЧАСТЬ 5: Свойства-картинки (Bitmap) для привязки в XAML ==========
 
+    // ========== ЧАСТЬ 5.1: Иконка ==========
+    public Bitmap? GameIcon => LoadImage(Icon);
+
     // Большая картинка (загружается из CurrentMainImagePath)
     public Bitmap? MainImage => LoadImage(CurrentMainImagePath);
 
@@ -91,20 +94,24 @@ public class Game : INotifyPropertyChanged
     // Возвращает Bitmap (объект изображения) или null, если загрузка не удалась
     private Bitmap? LoadImage(string path)
     {
+        System.Diagnostics.Debug.WriteLine($"LoadImage: trying to load '{path}'");
+
         try
         {
-            // Если путь пустой - возвращаем null
-            if (string.IsNullOrEmpty(path)) return null;
+            if (string.IsNullOrEmpty(path))
+            {
+                System.Diagnostics.Debug.WriteLine("LoadImage: path is null or empty");
+                return null;
+            }
 
-            // Создаём Uri (универсальный идентификатор ресурса) из пути
             var uri = new Uri(path);
-
-            // Загружаем картинку: AssetLoader.Open открывает файл, Bitmap создаёт изображение
-            return new Bitmap(AssetLoader.Open(uri));
+            var result = new Bitmap(AssetLoader.Open(uri));
+            System.Diagnostics.Debug.WriteLine($"LoadImage: SUCCESS for '{path}'");
+            return result;
         }
-        catch
+        catch (Exception ex)
         {
-            // Если ошибка (файл не найден, повреждён и т.д.) - возвращаем null
+            System.Diagnostics.Debug.WriteLine($"LoadImage: ERROR for '{path}' - {ex.Message}");
             return null;
         }
     }

@@ -4,9 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Launcher.Views.CatalogsView">
-	<StackPanel Orientation ="Horizontal" VerticalAlignment="Top">
-		<Button Content="Моё"  />
-		<Button Content="Игры" />
-		<Button Content="Программы" />
-	</StackPanel>
+
+	<DockPanel>
+		<StackPanel Orientation="Horizontal" VerticalAlignment="Top" DockPanel.Dock="Top">
+			<Button Content="Моё" Click="OnMyClick"/>
+			<Button Content="Игры" Click="OnGamesClick"/>
+			<Button Content="Программы"/>
+		</StackPanel>
+
+		<ContentControl x:Name="CatalogContent"/>
+	</DockPanel>
+
 </UserControl>

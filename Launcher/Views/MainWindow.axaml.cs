@@ -8,17 +8,14 @@ namespace Launcher.Views;         // Пространство имён представлений
 
 
 /// Главное окно приложения.
-/// Содержит верхнюю панель с кнопками "Моё" и "Игры".
-/// Переключает содержимое между вкладками MyView и GamesView.
+//содержит настройки верхней понели и шлав навигации
 
 public partial class MainWindow : Window
 {
     // ========== Ссылки ==========
 
     // Ссылки на вкладки (UserControl'ы)
-    private MyView _myView;        // Вкладка "Моё"
-    private GamesView _gamesView;  // Вкладка "Игры"
-    
+    private CatalogsView _catalogsView;//каталог
 
     //========= Конструктор ==========
     public MainWindow()
@@ -31,19 +28,9 @@ public partial class MainWindow : Window
         {
             titleBar.PointerPressed += OnWindowPointerPressed;
         }
-
-
-        // 1. Создаём экземпляры вкладок
-        _myView = new MyView();
-        _gamesView = new GamesView();
-        
-
-        // 2. Передаём ссылку на MyView в GamesView
-        //    Это нужно, чтобы GamesView мог вызывать методы добавления игр
-        _gamesView.SetMyView(_myView);
-
-        // 3. По умолчанию показываем вкладку "Моё" - поменять на 
-        MainContent.Content = _myView;
+        // по умолчанию открываем каталог
+        _catalogsView = new CatalogsView();
+        MainContent.Content = _catalogsView;
     }
 
 
@@ -77,61 +64,28 @@ public partial class MainWindow : Window
 
 
     // ========== ОБРАБОТЧИКИ ПЕРЕКЛЮЧЕНИЯ ВКЛАДОК ==========
-
-    /// Нажатие на кнопку "Моё".
-    /// Переключает на вкладку MyView и обновляет список добавленных игр.
-    private void OnMyClick(object? sender, RoutedEventArgs e)
-    {
-        // 1. Показываем вкладку "Моё"
-        MainContent.Content = _myView;
-        // 2. Обновляем список игр в "Моё"
-        _myView.LoadUserGames();
-    }
-
-
-    /// Переключает на вкладку GamesView и обновляет состояние кнопок.
-    private void OnGamesClick(object? sender, RoutedEventArgs e)
-    {
-        // 1. Показываем вкладку "Игры"
-        MainContent.Content = _gamesView;
-
-        // 2. Обновляем состояние всех кнопок "добавить себе"
-        //    При переключении на вкладку проверяем, какие игры уже в "Моё"
-        var userGameService = new UserGameService();
-
-        // 3. Получаем список игр из GamesView (из ItemsControl)
-        var games = _gamesView.GamesItemsControl.ItemsSource as System.Collections.IEnumerable;
-        if (games != null)
-        {
-            // 4. Для каждой игры обновляем состояние кнопки
-            foreach (Game game in games)
-            {
-                game.UpdateButtonState(userGameService);
-            }
-        }
-    }
-
-    private void OnNewsClick(object? sender, RoutedEventArgs e)
-    {
-        var newsView = new NewsView();
-        MainContent.Content = newsView;
-    }
-
-    private void OnCatalogsClick(object? sender, RoutedEventArgs e)
-    {
-        var catalogView = new CatalogsView();
-        MainContent.Content = catalogView;
-    }
-
+    //                   настройки
     private void OnSettingsClick(object? sender, RoutedEventArgs e)
     {
         var settingsView = new SettingsView();
         MainContent.Content = settingsView;
     }
-
+    //                   аккаунт
     private void OnAccountClick(object? sender, RoutedEventArgs e)
     {
         var accountView = new AccountView();
         MainContent.Content = accountView;
+    }
+    //                  каталоги
+    private void OnCatalogsClick(object? sender, RoutedEventArgs e)
+    {
+        var catalogView = new CatalogsView();
+        MainContent.Content = catalogView;
+    }
+    //                  новости
+    private void OnNewsClick(object? sender, RoutedEventArgs e)
+    {
+        var newsView = new NewsView();
+        MainContent.Content = newsView;
     }
 }

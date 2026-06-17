@@ -47,5 +47,8 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [X:/Cods/Мои проекты/Лаунчер/LauncherGit/Launcher/Launcher/Views/NewsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[X:/Cods/Мои проекты/Лаунчер/LauncherGit/Launcher/Launcher/Views/ProgramsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [X:/Cods/Мои проекты/Лаунчер/LauncherGit/Launcher/Launcher/Views/SettingsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

@@ -29,6 +29,12 @@ build_property.EnableCodeStyleSeverity =
 [X:/Cods/Мои проекты/Лаунчер/LauncherGit/Launcher/Launcher/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[X:/Cods/Мои проекты/Лаунчер/LauncherGit/Launcher/Launcher/Views/AccountView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[X:/Cods/Мои проекты/Лаунчер/LauncherGit/Launcher/Launcher/Views/CatalogsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [X:/Cods/Мои проекты/Лаунчер/LauncherGit/Launcher/Launcher/Views/GamesView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
@@ -36,4 +42,13 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [X:/Cods/Мои проекты/Лаунчер/LauncherGit/Launcher/Launcher/Views/MyView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[X:/Cods/Мои проекты/Лаунчер/LauncherGit/Launcher/Launcher/Views/NewsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[X:/Cods/Мои проекты/Лаунчер/LauncherGit/Launcher/Launcher/Views/ProgramsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[X:/Cods/Мои проекты/Лаунчер/LauncherGit/Launcher/Launcher/Views/SettingsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

@@ -57,6 +57,7 @@ public partial class MyView : UserControl
             var game = allGames.FirstOrDefault(g => g.Id == id); // Находим игру с таким ID
             if (game != null)
             {
+                game.RefreshInstallationState();  
                 _userGames.Add(game);                       // Добавляем найденную игру в список
             }
         }
@@ -140,6 +141,7 @@ public partial class MyView : UserControl
     {
         if (sender is Button btn && btn.Tag is Game game)  // Из кнопки достаём объект Game
         {
+            _currentDisplayedGame = game;
             ShowGameInfo(game);                            // Показываем информацию об игре
         }
     }
@@ -164,9 +166,14 @@ public partial class MyView : UserControl
         }
     }
 
-    // Клик по кнопке "Скачать"/"Запустить" - установка или запуск игры
     private async void OnInstallClick(object? sender, RoutedEventArgs e)
     {
+        // Получаем игру из Tag кнопки
+        if (sender is Button btn && btn.Tag is Game game)
+        {
+            _currentDisplayedGame = game;
+        }
+
         if (_currentDisplayedGame == null) return;
 
         // Если игра уже установлена - просто запускаем
@@ -179,25 +186,21 @@ public partial class MyView : UserControl
         // Если уже идёт установка - не начинаем новую
         if (_isInstalling) return;
 
-        _isInstalling = true;               // Блокируем повторные клики
-        InstallButton.IsEnabled = false;    // Отключаем кнопку на время установки
+        _isInstalling = true;
+        InstallButton.IsEnabled = false;
 
         try
         {
-            // Отслеживаем прогресс загрузки
             var progress = new Progress<int>(percent =>
             {
-                // Обновляем текст кнопки в UI потоке
                 Avalonia.Threading.Dispatcher.UIThread.Invoke(() =>
                 {
                     InstallButton.Content = $"Загрузка: {percent}%";
                 });
             });
 
-            // Скачиваем и устанавливаем игру
             await _currentDisplayedGame.Installer.InstallAsync(progress);
 
-            // После установки обновляем состояние кнопки
             await Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(() =>
             {
                 _currentDisplayedGame.RefreshInstallationState();
@@ -206,7 +209,6 @@ public partial class MyView : UserControl
         }
         catch (Exception ex)
         {
-            // В случае ошибки показываем сообщение
             await Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(() =>
             {
                 InstallButton.Content = "Ошибка";
@@ -215,7 +217,6 @@ public partial class MyView : UserControl
         }
         finally
         {
-            // Восстанавливаем кнопку (всегда выполняется)
             await Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(() =>
             {
                 _isInstalling = false;
@@ -251,5 +252,12 @@ public partial class MyView : UserControl
                 System.Diagnostics.Debug.WriteLine($"Ошибка удаления: {ex.Message}");
             }
         }
+    }
+
+    // маленькая кнопка скачать
+    private void OnMiniClick(object? sender, RoutedEventArgs e)
+    {
+        OnInstallClick(sender, e);  
+        OnGameClick(sender, e);     
     }
 }

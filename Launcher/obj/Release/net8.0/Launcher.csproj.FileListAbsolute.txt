@@ -188,3 +188,4 @@ X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\R
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Release\net8.0\Launcher.pdb
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Release\net8.0\Launcher.genruntimeconfig.cache
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Release\net8.0\ref\Launcher.dll
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Release\net8.0\games.json

@@ -6,7 +6,7 @@
 
 	<Grid>
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="162"/>
+			<ColumnDefinition Width="240"/>
 			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
 
@@ -18,16 +18,40 @@
 				<ItemsControl x:Name="UserGamesList" Margin="0,0,0,10">
 					<ItemsControl.ItemTemplate>
 						<DataTemplate DataType="models:Game">
-							<!-- Кнопки игр -->
-							<Button Content="{Binding Name}"
-                                    Foreground="#C8C8C8"
-                                    Background="Transparent"
-                                    Width="150"
-                                    Height="30"
-                                    HorizontalContentAlignment="Left"
-                                    Margin="5,2"
-                                    Click="OnGameClick"
-                                    Tag="{Binding}"/>
+							<StackPanel Orientation="Horizontal">
+							<Button Background="Transparent"
+										Height="30"
+										HorizontalContentAlignment="Left"
+										
+										Click="OnGameClick"
+										Tag="{Binding}">
+
+								<StackPanel Orientation="Horizontal" Spacing="5">
+									<!-- Иконка -->
+									<Image Source="{Binding GameIcon}"
+										   Width="20"
+										   Height="20"
+										   Stretch="UniformToFill"
+										   VerticalAlignment="Center"/>
+
+									<!-- Название игры -->
+									<TextBlock Text="{Binding Name}"
+											   Foreground="#C8C8C8"
+											   VerticalAlignment="Center"
+											   Width="120"
+											   />
+								</StackPanel>
+							</Button>
+							<Button x:Name="InstallButton"
+									Content="{Binding InstallButtonText}"
+									FontSize="10"
+									
+									MinHeight="21"
+									HorizontalAlignment="Right"
+									Click="OnMiniClick"
+									
+									Tag="{Binding}"/>
+							</StackPanel>
 						</DataTemplate>
 					</ItemsControl.ItemTemplate>
 				</ItemsControl>
