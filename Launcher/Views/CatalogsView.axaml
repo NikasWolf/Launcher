@@ -6,13 +6,17 @@
              x:Class="Launcher.Views.CatalogsView">
 
 	<DockPanel>
-		<StackPanel Orientation="Horizontal" VerticalAlignment="Top" DockPanel.Dock="Top">
+		<!-- Верхняя панель с кнопками -->
+		<StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
 			<Button Content="Моё" Click="OnMyClick"/>
 			<Button Content="Игры" Click="OnGamesClick"/>
 			<Button Content="Программы"/>
 		</StackPanel>
 
+		<!-- Линия -->
+		<Rectangle DockPanel.Dock="Top" Height="1" Fill="#2B2B2B"/>
+
+		<!-- Содержимое (занимает всё оставшееся место) -->
 		<ContentControl x:Name="CatalogContent"/>
 	</DockPanel>
-
 </UserControl>

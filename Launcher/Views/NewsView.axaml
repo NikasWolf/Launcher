@@ -2,10 +2,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="Launcher.Views.NewsView">
 
-	<TextBlock Text="Это окно Новости оно находится в разработке"
-				  Foreground="White"
-				  FontSize="24"
-				  HorizontalAlignment="Center"
-				  VerticalAlignment="Center"/>
+	<TextBlock Text="Это окно новости оно находится в разработке"
+					Foreground="White"
+					FontSize="24"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center"/>
 
 </UserControl>

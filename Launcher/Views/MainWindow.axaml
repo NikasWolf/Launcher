@@ -4,7 +4,7 @@
         x:Class="Launcher.Views.MainWindow"
 		
         Width="960" Height="577"
-        Background="#1E1E1E"
+        Background="#3C3C3C" 
 		
 		
 		SystemDecorations="None"
