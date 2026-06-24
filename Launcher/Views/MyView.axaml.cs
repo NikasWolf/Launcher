@@ -1,19 +1,20 @@
 // Подключаем необходимые пространства имён
 using Avalonia;                       // Основной фреймворк Avalonia
 using Avalonia.Controls;              // Элементы управления (кнопки, окна и т.д.)
+using Avalonia.Input;           // Типы кнопок для MessageBox (YesNo, OK и т.д.)
 using Avalonia.Interactivity;         // Обработка событий (клики, наведение)
 using Avalonia.Media;                 // Работа с цветами, кистями
 using Avalonia.Media.Imaging;         // Загрузка и работа с изображениями (Bitmap)
 using Avalonia.Platform;              // Доступ к ресурсам приложения (AssetLoader)
 using Launcher.Models;                // Наши модели данных (класс Game)
 using Launcher.Services;              // Наши сервисы (GameService, UserGameService)
+using MsBox.Avalonia;                 // Библиотека для всплывающих сообщений (MessageBox) 
+using MsBox.Avalonia.Enums;
 using System;                         // Базовые типы (string, int и т.д.)
 using System.Collections.ObjectModel; // ObservableCollection - список с уведомлениями об изменениях
 using System.Diagnostics;             // Отладка (Debug.WriteLine)
 using System.Linq;                    // LINQ (FirstOrDefault, Where и т.д.)
-using MsBox.Avalonia;                 // Библиотека для всплывающих сообщений (MessageBox)
-using MsBox.Avalonia.Enums;           // Типы кнопок для MessageBox (YesNo, OK и т.д.)
-
+using System.Threading.Tasks;
 namespace Launcher.Views;             // Пространство имён для представлений (экранов)
 
 // Класс MyView - пользовательский элемент управления (UserControl)
@@ -108,6 +109,8 @@ public partial class MyView : UserControl
 
         GameInfoPanel.IsVisible = true;               // Показываем панель с информацией
 
+        RightShadow.IsVisible = true;                 // Показываем тень
+
         // Заполняем поля данными из JSON
         GameName.Text = game.Name;
         GameGenre.Text = $"Жанр: {game.Genre}";
@@ -115,7 +118,7 @@ public partial class MyView : UserControl
         GameCondition.Text = $"Статус: {game.Condition}";
         GameDescription.Text = game.Description;
         GameDeveloper.Text = $"Разработчик: {game.Developer}";
-
+        GameAgeRest.Text = game.AgeRest;
         // Устанавливаем текст кнопки (Скачать/Запустить)
         InstallButton.Content = game.InstallButtonText;
 
@@ -135,7 +138,7 @@ public partial class MyView : UserControl
     }
 
     // ========== ОБРАБОТЧИКИ СОБЫТИЙ (КЛИКИ ПО КНОПКАМ) ==========
-
+    // ========== Левая понел
     // Клик по игре в левом списке - открываем информацию
     private void OnGameClick(object? sender, RoutedEventArgs e)
     {
@@ -155,6 +158,7 @@ public partial class MyView : UserControl
 
             // Очищаем и скрываем панель информации
             GameInfoPanel.IsVisible = false;
+            RightShadow.IsVisible = false;
             _currentDisplayedGame = null;
 
             GameName.Text = "";
@@ -165,9 +169,45 @@ public partial class MyView : UserControl
             GameImage.Source = null;
         }
     }
+    //======================== Правая понель 
+    // ----------------------- скачать
+    private bool _isHoveringMenu = false;
 
-    private async void OnInstallClick(object? sender, RoutedEventArgs e)
+    private void OnButtonPointerEnter(object? sender, PointerEventArgs e)
     {
+        MenuPopup.IsOpen = true;
+    }
+
+    private void OnButtonPointerLeave(object? sender, PointerEventArgs e)
+    {
+        // Не закрываем сразу — даём время зайти на меню
+        Task.Delay(200).ContinueWith(_ =>
+        {
+            Avalonia.Threading.Dispatcher.UIThread.Invoke(() =>
+            {
+                if (!_isHoveringMenu)
+                {
+                    MenuPopup.IsOpen = false;
+                }
+            });
+        });
+    }
+
+    private void OnMenuPointerEnter(object? sender, PointerEventArgs e)
+    {
+        _isHoveringMenu = true;
+    }
+
+    private void OnMenuPointerLeave(object? sender, PointerEventArgs e)
+    {
+        _isHoveringMenu = false;
+        MenuPopup.IsOpen = false;
+    }
+
+
+    // скачать с гита
+    private async void OnInstalGitHubClick(object? sender, RoutedEventArgs e)
+    {//не забыть что этот метод вызывается в маленькой кнопке в списке игр
         // Получаем игру из Tag кнопки
         if (sender is Button btn && btn.Tag is Game game)
         {
@@ -224,6 +264,15 @@ public partial class MyView : UserControl
             });
         }
     }
+    // скачать с сервера
+    private void OnInstalServerClick(object sender, RoutedEventArgs e)
+    {
+        // заготовка
+    }
+
+
+
+
 
     // Клик по кнопке "Удалить игру" - удаляем файлы игры с диска
     private async void OnDeleteClick(object? sender, RoutedEventArgs e)
@@ -257,7 +306,10 @@ public partial class MyView : UserControl
     // маленькая кнопка скачать
     private void OnMiniClick(object? sender, RoutedEventArgs e)
     {
-        OnInstallClick(sender, e);  
+        OnInstalGitHubClick(sender, e);  
         OnGameClick(sender, e);     
     }
+
+    //=============================маленькое меню=============
+
 }

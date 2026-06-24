@@ -29,11 +29,16 @@ public class Game : INotifyPropertyChanged
     public int Id { get; set; }                             // Уникальный ID игры
     public string Name { get; set; } = string.Empty;        // Название игры
     public string Condition { get; set; } = string.Empty;   // Состояние игры (релиз\разработка)
-    public string Developer {  get; set; } = string.Empty;  // Разработчик
-    public string Description { get; set; } = string.Empty; // Описание
-    public string Genre { get; set; } = string.Empty;       // Жанр
+    public string Developer { get; set; } = string.Empty;   // Разработчик
+    public string Genre { get; set; } = string.Empty;       // Жанр                                  
+    public string AgeRest {  get; set; } = string.Empty;    // Возрастное ограничение
     public int Year { get; set; }                           // Год выпуска
+    public string Description { get; set; } = string.Empty; // Описание
     public string ExecutablePath { get; set; } = string.Empty; // Путь к .exe файлу
+    
+    
+    
+    
 
     // ========== ЧАСТЬ 3: Пути к картинкам ==========
     public string Icon {  get; set; } = string.Empty;       // Путь к иконке
@@ -162,7 +167,7 @@ public class Game : INotifyPropertyChanged
         }
     }
 
-    // Добавь эти поля в секцию с путями к картинкам (где ImagePath1-7)
+    
     public string ExecutableName { get; set; } = string.Empty;
     public string DownloadUrl { get; set; } = string.Empty;
 
