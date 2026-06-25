@@ -174,6 +174,7 @@ public partial class MyView : UserControl
             GameDescription.Text = "";
             GameImage.Source = null;
         }
+        
     }
 
 
@@ -226,6 +227,7 @@ public partial class MyView : UserControl
     {
         _isHoveringMenu = false;
         MenuPopup.IsOpen = false;
+
     }
 
     //Запуск игры через скнопку запустить
@@ -371,10 +373,14 @@ public partial class MyView : UserControl
             if (_currentDisplayedGame == null) return;
             var box = MessageBoxManager.GetMessageBoxStandard(
                 "Ошибка - Игры нет :/",
-                "Этой игры и так нет на вашем устройстве, удалять нечего"
+                "Этой игры и так нет на вашем устройстве, удалять нечего",
+                ButtonEnum.Ok,
+                Icon.Warning
+
             );
 
             await box.ShowAsync();
+            
         }
 
         
@@ -388,6 +394,6 @@ public partial class MyView : UserControl
         
     }
 
-    //=============================маленькое меню=============
+   
 
 }

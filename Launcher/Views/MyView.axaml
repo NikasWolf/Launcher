@@ -114,9 +114,10 @@
 						</StackPanel>
 
 						<!-- Меню скачать -->
-						<StackPanel Grid.Column="1" Orientation="Horizontal">
+						<StackPanel Grid.Column="1" Orientation="Horizontal" Margin="0,0,10,0">
 							<Button x:Name="InstallButton"
-									Width="105"
+									HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+									Width="120"
 									Height="36"
 									PointerEntered="OnButtonPointerEnter"
 									PointerExited="OnButtonPointerLeave"
@@ -130,23 +131,24 @@
 								   Width="120">
 
 								<Border Background="#2B2B2B"
-										CornerRadius="10"
-										Padding="10"
-										BorderBrush="Gray"
-										BorderThickness="1"
+										CornerRadius="3"
+										Padding="3"
+										
 										PointerEntered="OnMenuPointerEnter"
 										PointerExited="OnMenuPointerLeave">
 
-									<StackPanel Spacing="5">
+									<StackPanel Spacing="5" HorizontalAlignment="Center">
 										<Button Content="С GitHub"
 												Click="OnInstalGitHubClick"
 												Width="105"
-												Height="36"/>
+												Height="36"
+												HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
 										<Button Content="С сервера"
 												Click="OnInstalServerClick"
 												Width="105"
-												Height="36"/>
+												Height="36"
+												HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 									</StackPanel>
 								</Border>
 							</Popup>
@@ -155,9 +157,11 @@
 						<!-- Меню Удалить -->
 						<StackPanel Grid.Column="2"
 									Orientation="Horizontal"
-									IsVisible="{Binding IsGameInstalled}">
+									IsVisible="{Binding IsGameInstalled}"
+									Margin="0,0,10,0">
 
 							<Button x:Name="DeletButton"
+									HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
 									Content="Удалить"
 									Width="105"
 									Height="36"
@@ -171,23 +175,24 @@
 								   Width="120">
 
 								<Border Background="#2B2B2B"
-										CornerRadius="10"
-										Padding="10"
-										BorderBrush="Gray"
-										BorderThickness="1"
+										CornerRadius="3"
+										Padding="3"
+										
 										PointerEntered="OnMenuPointerEnter2"
 										PointerExited="OnMenuPointerLeave2">
 
-									<StackPanel Spacing="5">
+									<StackPanel Spacing="5" HorizontalAlignment="Center">
 										<Button Content="С устройства"
 												Click="OnDeleteClick"
-												Width="105"
-												Height="36"/>
+												Width="110"
+												Height="36"
+												HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
 										<Button Content="С аккаунта"
 												Click="OnRemoveFromListClick"
-												Width="105"
-												Height="36"/>
+												Width="110"
+												Height="36"
+												HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 									</StackPanel>
 								</Border>
 							</Popup>
