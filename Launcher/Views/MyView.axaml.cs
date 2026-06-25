@@ -137,7 +137,13 @@ public partial class MyView : UserControl
         }
     }
 
+
+
+
+
+
     // ========== ОБРАБОТЧИКИ СОБЫТИЙ (КЛИКИ ПО КНОПКАМ) ==========
+
     // ========== Левая понел
     // Клик по игре в левом списке - открываем информацию
     private void OnGameClick(object? sender, RoutedEventArgs e)
@@ -169,13 +175,26 @@ public partial class MyView : UserControl
             GameImage.Source = null;
         }
     }
+
+
+
+
+
+
+
+
     //======================== Правая понель 
     // ----------------------- скачать
     private bool _isHoveringMenu = false;
 
+    //наведение на кнопку
     private void OnButtonPointerEnter(object? sender, PointerEventArgs e)
-    {
-        MenuPopup.IsOpen = true;
+    {// если игры не скачена то при навежении открывается меню
+        if (!_currentDisplayedGame.IsGameInstalled)
+        {
+            MenuPopup.IsOpen = true;
+            return;
+        }
     }
 
     private void OnButtonPointerLeave(object? sender, PointerEventArgs e)
@@ -193,17 +212,31 @@ public partial class MyView : UserControl
         });
     }
 
+    // наведение на меню
     private void OnMenuPointerEnter(object? sender, PointerEventArgs e)
     {
-        _isHoveringMenu = true;
+        if (!_currentDisplayedGame.IsGameInstalled)
+        {
+            _isHoveringMenu = true;
+            return;
+        }
+        
     }
-
     private void OnMenuPointerLeave(object? sender, PointerEventArgs e)
     {
         _isHoveringMenu = false;
         MenuPopup.IsOpen = false;
     }
 
+    //Запуск игры через скнопку запустить
+    private void OnPlayClick(object? sender, RoutedEventArgs e)
+    {
+        if (_currentDisplayedGame.IsGameInstalled)
+        {
+            _currentDisplayedGame.Installer.Launch();
+            return;
+        }
+    }
 
     // скачать с гита
     private async void OnInstalGitHubClick(object? sender, RoutedEventArgs e)
@@ -215,13 +248,6 @@ public partial class MyView : UserControl
         }
 
         if (_currentDisplayedGame == null) return;
-
-        // Если игра уже установлена - просто запускаем
-        if (_currentDisplayedGame.IsGameInstalled)
-        {
-            _currentDisplayedGame.Installer.Launch();
-            return;
-        }
 
         // Если уже идёт установка - не начинаем новую
         if (_isInstalling) return;
@@ -272,42 +298,94 @@ public partial class MyView : UserControl
 
 
 
+    //---------------- удаление
+
+    private bool _isHoveringMenu2 = false;
+
+    //наведение на кнопку
+    private void OnButtonPointerEnter2(object? sender, PointerEventArgs e)
+    {// если игры скачена то при навежении открывается меню
+        MenuPopup2.IsOpen = true;
+    }
+
+    private void OnButtonPointerLeave2(object? sender, PointerEventArgs e)
+    {
+        // Не закрываем сразу — даём время зайти на меню
+        Task.Delay(200).ContinueWith(_ =>
+        {
+            Avalonia.Threading.Dispatcher.UIThread.Invoke(() =>
+            {
+                if (!_isHoveringMenu2)
+                {
+                    MenuPopup2.IsOpen = false;
+                }
+            });
+        });
+    }
+
+    // наведение на меню
+    private void OnMenuPointerEnter2(object? sender, PointerEventArgs e)
+    {
+        _isHoveringMenu2 = true;
+
+    }
+    private void OnMenuPointerLeave2(object? sender, PointerEventArgs e)
+    {
+        _isHoveringMenu2 = false;
+        MenuPopup2.IsOpen = false;
+    }
 
 
     // Клик по кнопке "Удалить игру" - удаляем файлы игры с диска
     private async void OnDeleteClick(object? sender, RoutedEventArgs e)
     {
-        if (_currentDisplayedGame == null) return;
-
-        // Показываем диалог подтверждения
-        var box = MessageBoxManager.GetMessageBoxStandard(
-            "Подтверждение удаления",
-            $"Вы уверены, что хотите удалить игру \"{_currentDisplayedGame.Name}\" с компьютера?",
-            ButtonEnum.YesNo
-        );
-
-        var result = await box.ShowAsync();  // Ждём ответа пользователя
-
-        if (result == ButtonResult.Yes)      // Если нажал "Да"
+        if (_currentDisplayedGame.IsGameInstalled)
         {
-            try
+            if (_currentDisplayedGame == null) return;
+
+            // Показываем диалог подтверждения
+            var box = MessageBoxManager.GetMessageBoxStandard(
+                "Подтверждение удаления",
+                $"Вы уверены, что хотите удалить игру \"{_currentDisplayedGame.Name}\" с компьютера?",
+                ButtonEnum.YesNo
+            );
+
+            var result = await box.ShowAsync();  // Ждём ответа пользователя
+
+            if (result == ButtonResult.Yes)      // Если нажал "Да"
             {
-                _currentDisplayedGame.DeleteGame();      // Удаляем папку с игрой
-                UpdateInstallButtonState();               // Кнопка меняется на "Скачать"
-                System.Diagnostics.Debug.WriteLine("Игра удалена");
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"Ошибка удаления: {ex.Message}");
+                try
+                {
+                    _currentDisplayedGame.DeleteGame();      // Удаляем папку с игрой
+                    UpdateInstallButtonState();               // Кнопка меняется на "Скачать"
+                    System.Diagnostics.Debug.WriteLine("Игра удалена");
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Ошибка удаления: {ex.Message}");
+                }
             }
         }
+        else
+        {
+            if (_currentDisplayedGame == null) return;
+            var box = MessageBoxManager.GetMessageBoxStandard(
+                "Ошибка - Игры нет :/",
+                "Этой игры и так нет на вашем устройстве, удалять нечего"
+            );
+
+            await box.ShowAsync();
+        }
+
+        
     }
 
     // маленькая кнопка скачать
     private void OnMiniClick(object? sender, RoutedEventArgs e)
     {
         OnInstalGitHubClick(sender, e);  
-        OnGameClick(sender, e);     
+        OnGameClick(sender, e);
+        
     }
 
     //=============================маленькое меню=============

@@ -171,7 +171,7 @@ public class Game : INotifyPropertyChanged
     public string ExecutableName { get; set; } = string.Empty;
     public string DownloadUrl { get; set; } = string.Empty;
 
-    // Добавь свойства для состояния установки
+    //  свойства для состояния установки
     private bool _isGameInstalled;
     public bool IsGameInstalled
     {
@@ -186,7 +186,7 @@ public class Game : INotifyPropertyChanged
 
     public string InstallButtonText => IsGameInstalled ? "Запустить" : "Скачать";
 
-    // Добавь поле для установщика и метод обновления состояния
+    //  поле для установщика и метод обновления состояния
     private GameInstaller? _installer;
     public GameInstaller Installer => _installer ??= new GameInstaller(Name, DownloadUrl, ExecutableName);
 

@@ -119,13 +119,15 @@
 									Width="105"
 									Height="36"
 									PointerEntered="OnButtonPointerEnter"
-									PointerExited="OnButtonPointerLeave"/>
-
+									PointerExited="OnButtonPointerLeave"
+									Click="OnPlayClick"
+									/>
+									
 							<Popup x:Name="MenuPopup"
-       PlacementTarget="{Binding ElementName=InstallButton}"
-       Placement="Bottom"
-       IsOpen="False"
-       Width="120">
+								   PlacementTarget="{Binding ElementName=InstallButton}"
+								   Placement="Bottom"
+								   IsOpen="False"
+								   Width="120">
 
 								<Border Background="#2B2B2B"
 										CornerRadius="10"
@@ -143,6 +145,47 @@
 
 										<Button Content="С сервера"
 												Click="OnInstalServerClick"
+												Width="105"
+												Height="36"/>
+									</StackPanel>
+								</Border>
+							</Popup>
+						</StackPanel>
+
+						<!-- Меню Удалить -->
+						<StackPanel Grid.Column="2"
+									Orientation="Horizontal"
+									IsVisible="{Binding IsGameInstalled}">
+
+							<Button x:Name="DeletButton"
+									Content="Удалить"
+									Width="105"
+									Height="36"
+									PointerEntered="OnButtonPointerEnter2"
+									PointerExited="OnButtonPointerLeave2"/>
+
+							<Popup x:Name="MenuPopup2"
+								   PlacementTarget="{Binding ElementName=DeletButton}"
+								   Placement="Bottom"
+								   IsOpen="False"
+								   Width="120">
+
+								<Border Background="#2B2B2B"
+										CornerRadius="10"
+										Padding="10"
+										BorderBrush="Gray"
+										BorderThickness="1"
+										PointerEntered="OnMenuPointerEnter2"
+										PointerExited="OnMenuPointerLeave2">
+
+									<StackPanel Spacing="5">
+										<Button Content="С устройства"
+												Click="OnDeleteClick"
+												Width="105"
+												Height="36"/>
+
+										<Button Content="С аккаунта"
+												Click="OnRemoveFromListClick"
 												Width="105"
 												Height="36"/>
 									</StackPanel>
