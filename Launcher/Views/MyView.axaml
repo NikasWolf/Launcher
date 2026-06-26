@@ -50,7 +50,7 @@
 								<Button x:Name="InstallButton"
 										Content="{Binding InstallButtonText}"
 										FontSize="10"
-									
+										Background="#3C3C3C"
 										MinHeight="21"
 										HorizontalAlignment="Right"
 										Click="OnMiniClick"
@@ -105,6 +105,7 @@
 							<ColumnDefinition Width="*"/>
 							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
 							
 						</Grid.ColumnDefinitions>
 						<!-- Название игры и возрастное ограничение-->
@@ -122,6 +123,7 @@
 									PointerEntered="OnButtonPointerEnter"
 									PointerExited="OnButtonPointerLeave"
 									Click="OnPlayClick"
+									Background="#2B2B2B"
 									/>
 									
 							<Popup x:Name="MenuPopup"
@@ -157,8 +159,8 @@
 						<!-- Меню Удалить -->
 						<StackPanel Grid.Column="2"
 									Orientation="Horizontal"
-									IsVisible="{Binding IsGameInstalled}"
-									Margin="0,0,10,0">
+									Margin="0,0,10,0"
+									>
 
 							<Button x:Name="DeletButton"
 									HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
@@ -166,7 +168,9 @@
 									Width="105"
 									Height="36"
 									PointerEntered="OnButtonPointerEnter2"
-									PointerExited="OnButtonPointerLeave2"/>
+									PointerExited="OnButtonPointerLeave2"
+									Background="#2B2B2B"
+									/>
 
 							<Popup x:Name="MenuPopup2"
 								   PlacementTarget="{Binding ElementName=DeletButton}"
@@ -195,6 +199,49 @@
 												HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 									</StackPanel>
 								</Border>
+							</Popup>
+						</StackPanel>
+						<StackPanel Grid.Column="3">
+							<Panel  Margin="0,0,10,0" 
+									x:Name="InfoPanel"
+									PointerEntered="OnInfoPointerEnter"
+									PointerExited="OnInfoPointerLeave"
+									>
+								<Ellipse Width="30" Height="30" Fill="#2B2B2B"/>
+								<TextBlock Text="i" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							</Panel>
+							<Popup x:Name="MenuPopup3" 
+								   PlacementTarget="{Binding ElementName=InfoPanel}"
+								   Placement="Top"
+								   IsOpen="False"
+								   
+								   HorizontalOffset="-120">
+								<Border	Background="#2B2B2B"
+										CornerRadius="3"
+										Padding="3"
+										Width="279"
+										Height="148"
+										>
+									<TextBlock Text="Скачать:
+GitHub - скачать по ссылке 
+с серверов GitHub, если не заблокировано,
+то скачает хорошо.
+Сервер - скачать с нашего личного
+сервера, его не заблокируют но он
+может упасть\не работать\что нибудь :(
+Удалить:
+Из моего - удаляет продукт из аккаунта (левого 
+списка) и все его сохранения. 10 раз подумайте! 
+лучше просто удалите с устройства, вдруг пригодится?
+С устройства - удаляет все файлы продукта с вашего 
+устройства, он остаётся у вас на аккаунте вместе с 
+вашими сохранениями."
+               TextWrapping="Wrap"
+               FontSize="10"
+               Foreground="#C8C8C8"
+               LineHeight="14"/>
+								</Border>
+								
 							</Popup>
 						</StackPanel>
 						

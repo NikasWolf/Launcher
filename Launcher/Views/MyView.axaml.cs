@@ -28,6 +28,7 @@ public partial class MyView : UserControl
     private GameService _gameService;                // Сервис для загрузки всех игр из JSON
     private Game? _currentDisplayedGame;             // Текущая выбранная игра (отображается в правой панели)
     private bool _isInstalling = false;              // Флаг: идёт ли установка сейчас (блокирует повторные клики)
+    public bool ShowDeleteButton { get; set; }
 
     // ========== КОНСТРУКТОР ==========
     // Вызывается при создании MyView
@@ -42,6 +43,9 @@ public partial class MyView : UserControl
 
         LoadUserGames();                              // Загружаем добавленные игры из JSON
         UserGamesList.ItemsSource = _userGames;       // Привязываем список к ItemsControl в XAML
+
+        
+       
     }
 
     // ========== МЕТОДЫ РАБОТЫ СО СПИСКОМ ДОБАВЛЕННЫХ ИГР ==========
@@ -107,6 +111,7 @@ public partial class MyView : UserControl
 
         game.RefreshInstallationState();              // Обновляем статус установки
 
+        
         GameInfoPanel.IsVisible = true;               // Показываем панель с информацией
 
         RightShadow.IsVisible = true;                 // Показываем тень
@@ -394,6 +399,16 @@ public partial class MyView : UserControl
         
     }
 
-   
+    // информация 
+    private void OnInfoPointerEnter(object? sender, PointerEventArgs e)
+    {
+        MenuPopup3.IsOpen = true;
+    }
+
+    private void OnInfoPointerLeave(object? sender, PointerEventArgs e)
+    {
+        MenuPopup3.IsOpen = false;
+    }
+
 
 }

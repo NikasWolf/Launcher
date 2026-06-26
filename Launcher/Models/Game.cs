@@ -212,4 +212,5 @@ public class Game : INotifyPropertyChanged
         Installer.DeleteGameFiles();
         RefreshInstallationState();
     }
+
 }
