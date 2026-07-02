@@ -11,6 +11,7 @@ using Launcher.Services;              // Наши сервисы (GameService, UserGameServ
 using MsBox.Avalonia;                 // Библиотека для всплывающих сообщений (MessageBox) 
 using MsBox.Avalonia.Enums;
 using System;                         // Базовые типы (string, int и т.д.)
+using System.Collections.Generic;
 using System.Collections.ObjectModel; // ObservableCollection - список с уведомлениями об изменениях
 using System.Diagnostics;             // Отладка (Debug.WriteLine)
 using System.Linq;                    // LINQ (FirstOrDefault, Where и т.д.)
@@ -25,7 +26,7 @@ public partial class MyView : UserControl
 
     private UserGameService _userGameService;        // Сервис для работы с JSON (добавленные игры)
     private ObservableCollection<Game> _userGames;   // Список добавленных игр (автоматически обновляет UI)
-    private GameService _gameService;                // Сервис для загрузки всех игр из JSON
+    private DatabaseService _databaseService;               // Сервис для загрузки всех игр из БД
     private Game? _currentDisplayedGame;             // Текущая выбранная игра (отображается в правой панели)
     private bool _isInstalling = false;              // Флаг: идёт ли установка сейчас (блокирует повторные клики)
     public bool ShowDeleteButton { get; set; }
@@ -38,7 +39,7 @@ public partial class MyView : UserControl
 
         // Создаём экземпляры сервисов
         _userGameService = new UserGameService();    // Для работы с user_games.json
-        _gameService = new GameService();             // Для работы с games.json
+        _databaseService = new DatabaseService();             // Для работы с БД
         _userGames = new ObservableCollection<Game>(); // Создаём пустой список для отображения
 
         LoadUserGames();                              // Загружаем добавленные игры из JSON
@@ -54,7 +55,7 @@ public partial class MyView : UserControl
     public void LoadUserGames()
     {
         var addedIds = _userGameService.LoadUserGameIds();  // Получаем ID добавленных игр [1, 2, 3]
-        var allGames = _gameService.LoadGames();            // Получаем ВСЕ игры из каталога
+        var allGames = _databaseService.LoadGames();            // Получаем ВСЕ игры из каталога БД
 
         _userGames.Clear();                                 // Очищаем текущий список
         foreach (var id in addedIds)                        // Для каждого ID из добавленных...
@@ -433,4 +434,9 @@ public partial class MyView : UserControl
             NewComText.Text = "Отзывы";
         }
     }
+
+    
+
+
+
 }

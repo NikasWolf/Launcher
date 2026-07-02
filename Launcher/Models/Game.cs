@@ -4,153 +4,115 @@ using Launcher.Services;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.IO.Compression;
+using System.Net.Http;
+
 namespace Launcher.Models;
-using System.IO; // Для работы с путями и файлами
-using System.Net.Http; // Для скачивания
-using System.IO.Compression; // Для распаковки архивов
-using System.Diagnostics; // Для запуска процессов
 
-
-// INotifyPropertyChanged - уведомляет UI об изменениях свойств (чтобы обновлялись картинки)
 public class Game : INotifyPropertyChanged
 {
-    // ========== ЧАСТЬ 1: Уведомление об изменениях ==========
-
-    // Событие, которое вызывается при изменении свойств
     public event PropertyChangedEventHandler? PropertyChanged;
-
     protected void OnPropertyChanged([CallerMemberName] string? name = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 
-    // ========== ЧАСТЬ 2: Базовые свойства игры ==========
+    // ========== ОСНОВНЫЕ СВОЙСТВА ==========
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Condition { get; set; } = string.Empty;
+    public string Developer { get; set; } = string.Empty;
+    public string Genre { get; set; } = string.Empty;
+    public string AgeRest { get; set; } = string.Empty;
+    public string Year { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+    public string ExecutablePath { get; set; } = string.Empty;
+    public int Stasus { get; set; }
 
-    public int Id { get; set; }                             // Уникальный ID игры
-    public string Name { get; set; } = string.Empty;        // Название игры
-    public string Condition { get; set; } = string.Empty;   // Версия
-    public string Developer { get; set; } = string.Empty;   // Разработчик
-    public string Genre { get; set; } = string.Empty;       // Жанр                                  
-    public string AgeRest {  get; set; } = string.Empty;    // Возрастное ограничение
-    public string Year { get; set; } = string.Empty;        // Год выпуска
-    public string Description { get; set; } = string.Empty; // Описание
-    public string ExecutablePath { get; set; } = string.Empty; // Путь к .exe файлу
-    public int Stasus { get; set; }                          // Статус: 0-в разработке, 1-альфа, 2-бета, 3-релиз 
-    
-    
-    
+    // ========== КАРТИНКИ ==========
+    public string Icon { get; set; } = string.Empty;
+    public string ImagePath { get; set; } = string.Empty;
+    public string ImagePath1 { get; set; } = string.Empty;
+    public string ImagePath2 { get; set; } = string.Empty;
+    public string ImagePath3 { get; set; } = string.Empty;
+    public string ImagePath4 { get; set; } = string.Empty;
+    public string ImagePath5 { get; set; } = string.Empty;
+    public string ImagePath6 { get; set; } = string.Empty;
+    public string ImagePath7 { get; set; } = string.Empty;
 
-    // ========== ЧАСТЬ 3: Пути к картинкам ==========
-    public string Icon {  get; set; } = string.Empty;       // Путь к иконке
-    public string ImagePath { get; set; } = string.Empty;   // Путь к первой (основной) картинке
-    public string ImagePath1 { get; set; } = string.Empty;  // Путь к маленькой картинке 1
-    public string ImagePath2 { get; set; } = string.Empty;  // Путь к маленькой картинке 2
-    public string ImagePath3 { get; set; } = string.Empty;  // Путь к маленькой картинке 3
-    public string ImagePath4 { get; set; } = string.Empty;  // Путь к маленькой картинке 4
-    public string ImagePath5 { get; set; } = string.Empty;  // Путь к маленькой картинке 5
-    public string ImagePath6 { get; set; } = string.Empty;  // Путь к маленькой картинке 5
-    public string ImagePath7 { get; set; } = string.Empty;  // Путь к маленькой картинке 5
-
-    // ========== ЧАСТЬ 4: Текущая большая картинка (с уведомлением) ==========
-
-    // Поле для хранения текущей большой картинки
+    // ========== БОЛЬШАЯ КАРТИНКА ==========
     private string _currentMainImagePath = string.Empty;
-
     public string CurrentMainImagePath
     {
-        get
-        {
-            // Если _currentMainImagePath пустой → возвращаем ImagePath (первую картинку)
-            return string.IsNullOrEmpty(_currentMainImagePath) ? ImagePath : _currentMainImagePath;
-        }
+        get => string.IsNullOrEmpty(_currentMainImagePath) ? ImagePath : _currentMainImagePath;
         set
         {
-            // Сохраняем новое значение
             _currentMainImagePath = value;
-
-            // Уведомляем UI, что CurrentMainImagePath изменился
             OnPropertyChanged();
-
-            // Уведомляем UI, что MainImage тоже изменился
             OnPropertyChanged(nameof(MainImage));
         }
     }
 
-    // ========== ЧАСТЬ 5: Свойства-картинки (Bitmap) для привязки в XAML ==========
-
-    // ========== ЧАСТЬ 5.1: Иконка ==========
+    // ========== BITMAP ДЛЯ ПРИВЯЗКИ ==========
     public Bitmap? GameIcon => LoadImage(Icon);
-
-    // Большая картинка (загружается из CurrentMainImagePath)
     public Bitmap? MainImage => LoadImage(CurrentMainImagePath);
 
-    // Маленькие картинки (загружаются из соответствующих путей)
-    public Bitmap? SmallImage1 => LoadImage(ImagePath1);
-    public Bitmap? SmallImage2 => LoadImage(ImagePath2);
-    public Bitmap? SmallImage3 => LoadImage(ImagePath3);
-    public Bitmap? SmallImage4 => LoadImage(ImagePath4);
-    public Bitmap? SmallImage5 => LoadImage(ImagePath5);
-    public Bitmap? SmallImage6 => LoadImage(ImagePath5);
-    public Bitmap? SmallImage7 => LoadImage(ImagePath5);
-
-    // ========== ЧАСТЬ 6: Загрузка картинки ==========
-
-    // Метод загружает картинку из файла по пути path
-    // Возвращает Bitmap (объект изображения) или null, если загрузка не удалась
+    // ========== ЗАГРУЗКА КАРТИНКИ ==========
     private Bitmap? LoadImage(string path)
     {
-        System.Diagnostics.Debug.WriteLine($"LoadImage: trying to load '{path}'");
-
         try
         {
-            if (string.IsNullOrEmpty(path))
-            {
-                System.Diagnostics.Debug.WriteLine("LoadImage: path is null or empty");
-                return null;
-            }
-
+            if (string.IsNullOrEmpty(path)) return null;
             var uri = new Uri(path);
-            var result = new Bitmap(AssetLoader.Open(uri));
-            System.Diagnostics.Debug.WriteLine($"LoadImage: SUCCESS for '{path}'");
-            return result;
+            return new Bitmap(AssetLoader.Open(uri));
         }
         catch (Exception ex)
         {
-            System.Diagnostics.Debug.WriteLine($"LoadImage: ERROR for '{path}' - {ex.Message}");
+            Debug.WriteLine($"LoadImage error: {ex.Message}");
             return null;
         }
     }
-
-    // ========== ЧАСТЬ 7: метод для смены картинки ==========
 
     public void SetMainImage(string imagePath)
     {
         CurrentMainImagePath = imagePath;
     }
 
+    // ========== МАЛЕНЬКИЕ КАРТИНКИ ИЗ БД ==========
+    public List<string> Images { get; set; } = new List<string>();
 
-    // обновление кнопок
+    private List<Bitmap?> _loadedImages = new();
+    public List<Bitmap?> LoadedImages
+    {
+        get
+        {
+            if (_loadedImages.Count == 0 && Images.Count > 0)
+            {
+                foreach (var path in Images)
+                {
+                    _loadedImages.Add(LoadImage(path));
+                }
+            }
+            return _loadedImages;
+        }
+    }
 
+    // ========== КНОПКА "ДОБАВИТЬ СЕБЕ" ==========
     private string _buttonText = "добавить себе";
     public string ButtonText
     {
         get => _buttonText;
-        set
-        {
-            _buttonText = value;
-            OnPropertyChanged();
-        }
+        set { _buttonText = value; OnPropertyChanged(); }
     }
 
     private string _buttonColor = "#A8D514";
     public string ButtonColor
     {
         get => _buttonColor;
-        set
-        {
-            _buttonColor = value;
-            OnPropertyChanged();
-        }
+        set { _buttonColor = value; OnPropertyChanged(); }
     }
 
     public void UpdateButtonState(UserGameService userGameService)
@@ -167,11 +129,10 @@ public class Game : INotifyPropertyChanged
         }
     }
 
-    
+    // ========== УСТАНОВКА ==========
     public string ExecutableName { get; set; } = string.Empty;
     public string DownloadUrl { get; set; } = string.Empty;
 
-    //  свойства для состояния установки
     private bool _isGameInstalled;
     public bool IsGameInstalled
     {
@@ -186,7 +147,6 @@ public class Game : INotifyPropertyChanged
 
     public string InstallButtonText => IsGameInstalled ? "Запустить" : "Скачать";
 
-    //  поле для установщика и метод обновления состояния
     private GameInstaller? _installer;
     public GameInstaller Installer => _installer ??= new GameInstaller(Name, DownloadUrl, ExecutableName);
 
@@ -196,13 +156,8 @@ public class Game : INotifyPropertyChanged
         {
             IsGameInstalled = Installer.IsInstalled;
         }
-        catch (DirectoryNotFoundException)
+        catch
         {
-            IsGameInstalled = false;
-        }
-        catch (Exception ex)
-        {
-            System.Diagnostics.Debug.WriteLine($"RefreshInstallationState error: {ex.Message}");
             IsGameInstalled = false;
         }
     }
@@ -213,8 +168,7 @@ public class Game : INotifyPropertyChanged
         RefreshInstallationState();
     }
 
-    // ========================= обработчик тегов ============================
-
+    // ========== ТЕГИ ==========
     private string _tags = string.Empty;
     public string Tags
     {
@@ -227,7 +181,6 @@ public class Game : INotifyPropertyChanged
         }
     }
 
-    // Флаги тегов (0-3)
     private bool _tag0;
     public bool Tag0
     {
@@ -256,10 +209,8 @@ public class Game : INotifyPropertyChanged
         set { _tag3 = value; OnPropertyChanged(); }
     }
 
-    // Парсинг тегов
     private void ParseTags()
     {
-        // Сбрасываем все флаги
         Tag0 = false;
         Tag1 = false;
         Tag2 = false;
@@ -282,5 +233,4 @@ public class Game : INotifyPropertyChanged
             }
         }
     }
-
 }

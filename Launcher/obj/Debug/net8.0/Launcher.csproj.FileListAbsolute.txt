@@ -283,6 +283,7 @@ X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\refint\Launcher.dll
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.pdb
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.genruntimeconfig.cache
 X:\Cods\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\ref\Launcher.dll
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\win-x86\native\libSkiaSharp.pdb
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\Launcher.exe
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\games.json
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\Launcher.deps.json
@@ -318,10 +319,14 @@ X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\D
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\HarfBuzzSharp.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\MsBox.Avalonia.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\MicroCom.Runtime.dll
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\Microsoft.Data.Sqlite.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\SkiaSharp.dll
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\SQLitePCLRaw.core.dll
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\SQLitePCLRaw.provider.e_sqlite3.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\System.IO.Pipelines.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\System.Text.Json.dll
@@ -367,7 +372,29 @@ X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\D
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\win-x64\native\libSkiaSharp.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\win-x64\native\libSkiaSharp.pdb
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\win-x86\native\libSkiaSharp.dll
-X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\win-x86\native\libSkiaSharp.pdb
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\browser-wasm\nativeassets\net8.0\e_sqlite3.a
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-arm\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-arm64\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-armel\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-mips64\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-musl-riscv64\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-musl-s390x\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-ppc64le\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-riscv64\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-s390x\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-x64\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\linux-x86\native\libe_sqlite3.so
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\osx-x64\native\libe_sqlite3.dylib
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\win-arm\native\e_sqlite3.dll
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.csproj.AssemblyReference.cache
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Avalonia\Resources.Inputs.cache

@@ -15,99 +15,49 @@
 				<DataTemplate DataType="models:Game">
 					<Border Width="464" Height="342" Background="#4A4949" CornerRadius="10" Margin="5">
 						<StackPanel>
-							<!-- Верхняя часть: картинки -->
+
+							<!-- ========== КАРТИНКИ ========== -->
 							<DockPanel Height="230">
 
-								<!-- Маленькие картинки (справа) -->
+								<!-- МАЛЕНЬКИЕ КАРТИНКИ (справа) -->
 								<Border DockPanel.Dock="Right" Width="80" Margin="5">
 									<ScrollViewer VerticalScrollBarVisibility="Auto">
-										<StackPanel Spacing="5">
-
-											<Border CornerRadius="5" ClipToBounds="True" Height="40">
-												<Button Background="Transparent"
-												        BorderThickness="0"
-												        Padding="0"
-												        Click="SmallImage1_Click"
-												        Tag="{Binding}">
-													<Image Source="{Binding SmallImage1}" Stretch="UniformToFill"/>
-												</Button>
-											</Border>
-
-											<Border CornerRadius="5" ClipToBounds="True" Height="40">
-												<Button Background="Transparent"
-												        BorderThickness="0"
-												        Padding="0"
-												        Click="SmallImage2_Click"
-												        Tag="{Binding}">
-													<Image Source="{Binding SmallImage2}" Stretch="UniformToFill"/>
-												</Button>
-											</Border>
-
-											<Border CornerRadius="5" ClipToBounds="True" Height="40">
-												<Button Background="Transparent"
-												        BorderThickness="0"
-												        Padding="0"
-												        Click="SmallImage3_Click"
-												        Tag="{Binding}">
-													<Image Source="{Binding SmallImage3}" Stretch="UniformToFill"/>
-												</Button>
-											</Border>
-
-											<Border CornerRadius="5" ClipToBounds="True" Height="40">
-												<Button Background="Transparent"
-												        BorderThickness="0"
-												        Padding="0"
-												        Click="SmallImage4_Click"
-												        Tag="{Binding}">
-													<Image Source="{Binding SmallImage4}" Stretch="UniformToFill"/>
-												</Button>
-											</Border>
-
-											<Border CornerRadius="5" ClipToBounds="True" Height="40">
-												<Button Background="Transparent"
-												        BorderThickness="0"
-												        Padding="0"
-												        Click="SmallImage5_Click"
-												        Tag="{Binding}">
-													<Image Source="{Binding SmallImage5}" Stretch="UniformToFill"/>
-												</Button>
-											</Border>
-											<Border CornerRadius="5" ClipToBounds="True" Height="40">
-												<Button Background="Transparent"
-												        BorderThickness="0"
-												        Padding="0"
-												        Click="SmallImage6_Click"
-												        Tag="{Binding}">
-													<Image Source="{Binding SmallImage6}" Stretch="UniformToFill"/>
-												</Button>
-											</Border>
-											<Border CornerRadius="5" ClipToBounds="True" Height="40">
-												<Button Background="Transparent"
-												        BorderThickness="0"
-												        Padding="0"
-												        Click="SmallImage7_Click"
-												        Tag="{Binding}">
-													<Image Source="{Binding SmallImage7}" Stretch="UniformToFill"/>
-												</Button>
-											</Border>
-
-										</StackPanel>
+										<ItemsControl ItemsSource="{Binding LoadedImages}">
+											<ItemsControl.ItemsPanel>
+												<ItemsPanelTemplate>
+													<StackPanel Spacing="5"/>
+												</ItemsPanelTemplate>
+											</ItemsControl.ItemsPanel>
+											<ItemsControl.ItemTemplate>
+												<DataTemplate>
+													<Border CornerRadius="5" ClipToBounds="True" Height="40">
+														<Button Background="Transparent"
+                                                                BorderThickness="0"
+                                                                Padding="0"
+                                                                Click="SmallImage_Click"
+                                                                Tag="{Binding}">
+															<Image Source="{Binding}" Stretch="UniformToFill"/>
+														</Button>
+													</Border>
+												</DataTemplate>
+											</ItemsControl.ItemTemplate>
+										</ItemsControl>
 									</ScrollViewer>
 								</Border>
-								<!-- БОЛЬШАЯ КАРТИНКА (слева) - с сохранением пропорций -->
+
+								<!-- БОЛЬШАЯ КАРТИНКА (слева) -->
 								<Border CornerRadius="10,0,0,0"
-								        Background="#4A4949"
-								        ClipToBounds="True">
+                                        Background="#4A4949"
+                                        ClipToBounds="True">
 									<Image Source="{Binding MainImage}"
-									       Stretch="Uniform"
-									       HorizontalAlignment="Center"
-									       VerticalAlignment="Center"/>
+                                           Stretch="Uniform"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
 								</Border>
 							</DockPanel>
-							<!--  -->
-							<!-- Нижняя часть: текст -->
+
+							<!-- ========== ТЕКСТ ========== -->
 							<StackPanel Margin="10">
-								<!-- Строка имя, состояние и кнопка справа -->
 								<Grid>
 									<Grid.ColumnDefinitions>
 										<ColumnDefinition Width="*"/>
@@ -116,40 +66,38 @@
 
 									<StackPanel Grid.Column="0" Orientation="Horizontal">
 										<TextBlock Text="{Binding Name}"
-												   FontSize="16"
-												   FontWeight="Bold"
-												   Foreground="White"
-												   TextWrapping="Wrap"/>
-
+                                                   FontSize="16"
+                                                   FontWeight="Bold"
+                                                   Foreground="White"
+                                                   TextWrapping="Wrap"/>
 										<TextBlock Text="{Binding Condition}"
-												   FontSize="12"
-												   Foreground="White"
-												   Margin="20,5,0,0"/>
+                                                   FontSize="12"
+                                                   Foreground="White"
+                                                   Margin="20,5,0,0"/>
 									</StackPanel>
 
 									<Button Grid.Column="1"
-											Content="{Binding ButtonText}"
-											Foreground="{Binding ButtonColor}"
-											Background="#4C6B22"
-											Click="OnAddToSelfClick"
-											Tag="{Binding}"
-											Margin="10,0,0,0"/>
+                                            Content="{Binding ButtonText}"
+                                            Foreground="{Binding ButtonColor}"
+                                            Background="#4C6B22"
+                                            Click="OnAddToSelfClick"
+                                            Tag="{Binding}"
+                                            Margin="10,0,0,0"/>
 								</Grid>
 
-								<!-- Строка тип, год релиза -->
 								<TextBlock FontSize="12" Foreground="#C8C8C8" Margin="0,5,0,0">
 									<Run Text="{Binding Genre}"/>
 									<Run Text=" Год релиза: "/>
 									<Run Text="{Binding Year}"/>
 								</TextBlock>
 
-								<!-- описание -->
 								<TextBlock Text="{Binding Description}"
-										   FontSize="11"
-										   Foreground="#C8C8C8"
-										   TextWrapping="Wrap"
-										   MaxHeight="50"/>
+                                           FontSize="11"
+                                           Foreground="#C8C8C8"
+                                           TextWrapping="Wrap"
+                                           MaxHeight="50"/>
 							</StackPanel>
+
 						</StackPanel>
 					</Border>
 				</DataTemplate>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IqlfAPNySvg=",
+  "dgSpecHash": "v6WmVybO+HU=",
   "success": true,
   "projectFilePath": "X:\\Cods\\Мои проекты\\Лаунчер\\LauncherGit\\Launcher\\Launcher\\Launcher.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,8 @@
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\8.3.1.3\\harfbuzzsharp.nativeassets.win32.8.3.1.3.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\messagebox.avalonia\\12.0.0\\messagebox.avalonia.12.0.0.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\microcom.runtime\\0.11.4\\microcom.runtime.0.11.4.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.data.sqlite\\10.0.9\\microsoft.data.sqlite.10.0.9.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.data.sqlite.core\\10.0.9\\microsoft.data.sqlite.core.10.0.9.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.1\\microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512",
@@ -36,7 +38,12 @@
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\skiasharp.nativeassets.macos\\3.119.4\\skiasharp.nativeassets.macos.3.119.4.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\skiasharp.nativeassets.webassembly\\3.119.4\\skiasharp.nativeassets.webassembly.3.119.4.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\skiasharp.nativeassets.win32\\3.119.4\\skiasharp.nativeassets.win32.3.119.4.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.11\\sqlitepclraw.bundle_e_sqlite3.2.1.11.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\sqlitepclraw.core\\2.1.11\\sqlitepclraw.core.2.1.11.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.11\\sqlitepclraw.lib.e_sqlite3.2.1.11.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.11\\sqlitepclraw.provider.e_sqlite3.2.1.11.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\system.io.pipelines\\10.0.9\\system.io.pipelines.10.0.9.nupkg.sha512",
+    "C:\\Users\\Никита Батунин\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\system.text.encodings.web\\10.0.9\\system.text.encodings.web.10.0.9.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\system.text.json\\10.0.9\\system.text.json.10.0.9.nupkg.sha512",
     "C:\\Users\\Никита Батунин\\.nuget\\packages\\tmds.dbus.protocol\\0.92.0\\tmds.dbus.protocol.0.92.0.nupkg.sha512"
