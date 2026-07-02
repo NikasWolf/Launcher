@@ -119,8 +119,8 @@ public partial class MyView : UserControl
         // Заполняем поля данными из JSON
         GameName.Text = game.Name;
         GameGenre.Text = $"Жанр: {game.Genre}";
-        GameYear.Text = $"Год: {game.Year}";
-        GameCondition.Text = $"Статус: {game.Condition}";
+        GameYear.Text = $"Дата релиза: {game.Year}";
+        GameCondition.Text = $"Версия: {game.Condition}";
         GameDescription.Text = game.Description;
         GameDeveloper.Text = $"Разработчик: {game.Developer}";
         GameAgeRest.Text = game.AgeRest;
@@ -140,6 +140,13 @@ public partial class MyView : UserControl
                 GameImage.Source = null;                               // Если ошибка - картинки нет
             }
         }
+
+        // отображение тегов
+        // Управление видимостью тегов
+        Tag0Border.IsVisible = game.Tag0;
+        Tag1Border.IsVisible = game.Tag1;
+        Tag2Border.IsVisible = game.Tag2;
+        Tag3Border.IsVisible = game.Tag3;
     }
 
 
@@ -410,5 +417,20 @@ public partial class MyView : UserControl
         MenuPopup3.IsOpen = false;
     }
 
-
+    //================================== Новости \ отзывы =================
+    public bool NewCom = false;
+    private void OnNewComButton(object? sender, RoutedEventArgs e)
+    {
+        NewCom = !NewCom;
+        if (NewCom)
+        {
+            NewComButton.Content = "Отзывы";
+            NewComText.Text = "Новости";
+        }
+        else
+        {
+            NewComButton.Content = "Новости";
+            NewComText.Text = "Отзывы";
+        }
+    }
 }

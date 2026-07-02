@@ -17,7 +17,7 @@
 
 		<!-- ================================Левая панель (список)  фон в ScrollViewer============================================-->
 
-		<ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Background="#4A4949" > 
+		<ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Background="#4A4949" >
 			<StackPanel>
 				<TextBlock Text="Мои игры" Foreground="White" Margin="5,10,5,5"/>
 				<ItemsControl x:Name="UserGamesList" Margin="0,0,0,10">
@@ -75,21 +75,21 @@
        VerticalAlignment="Stretch"
        IsVisible="False"/>
 		<TextBlock Grid.Column="3"
-				   Text="Привет!" 
+				   Text="Привет!"
 				   Foreground="#C8C8C8"
 				   VerticalAlignment="Center"
 				   HorizontalAlignment="Center"
 				   FontSize="70"/>
-		
+
 		<!-- =============Правая панель (информация об игре) фон в StackPanel x:Name======================================-->
 		<Border Grid.Column="3" >
-			
+
 			<ScrollViewer VerticalScrollBarVisibility="Auto">
 				<StackPanel x:Name="GameInfoPanel"  IsVisible="False" Background="#4A4949" >
-					
-					
-					
-					
+
+
+
+
 					<!-- Картинка -->
 					<Border  Background="#4A4949" ClipToBounds="True" Height="234">
 						<Panel>
@@ -97,7 +97,7 @@
 							<Image Source="/Assets/Element/GradV.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 						</Panel>
-						</Border>
+					</Border>
 
 					<!-- Грид для выравнивания кнопок и текста -->
 					<Grid Margin="10,10,0,0">
@@ -106,7 +106,7 @@
 							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition Width="Auto"/>
-							
+
 						</Grid.ColumnDefinitions>
 						<!-- Название игры и возрастное ограничение-->
 						<StackPanel Orientation="Horizontal">
@@ -125,7 +125,7 @@
 									Click="OnPlayClick"
 									Background="#2B2B2B"
 									/>
-									
+
 							<Popup x:Name="MenuPopup"
 								   PlacementTarget="{Binding ElementName=InstallButton}"
 								   Placement="Bottom"
@@ -202,7 +202,7 @@
 							</Popup>
 						</StackPanel>
 						<StackPanel Grid.Column="3">
-							<Panel  Margin="0,0,10,0" 
+							<Panel  Margin="0,0,10,0"
 									x:Name="InfoPanel"
 									PointerEntered="OnInfoPointerEnter"
 									PointerExited="OnInfoPointerLeave"
@@ -210,7 +210,7 @@
 								<Ellipse Width="30" Height="30" Fill="#2B2B2B"/>
 								<TextBlock Text="i" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Panel>
-							<Popup x:Name="MenuPopup3" 
+							<Popup x:Name="MenuPopup3"
 								   PlacementTarget="{Binding ElementName=InfoPanel}"
 								   Placement="Top"
 								   IsOpen="False"
@@ -241,24 +241,82 @@ GitHub - скачать по ссылке
                Foreground="#C8C8C8"
                LineHeight="14"/>
 								</Border>
-								
+
 							</Popup>
 						</StackPanel>
+
+
+					</Grid>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
 						
+						<StackPanel Grid.Column="0">
+							<!--Версия игры-->
+							<TextBlock x:Name="GameCondition"	FontSize="14" Foreground="#C8C8C8" Margin="10,10,0,0"/>
+							<!-- Разработчик -->
+							<TextBlock x:Name="GameDeveloper"	FontSize="14" Foreground="#C8C8C8" Margin="10,0,0,0"/>
+							<!-- Жанр -->
+							<TextBlock x:Name="GameGenre"		FontSize="14" Foreground="#C8C8C8" Margin="10,0,0,0"/>
+							<!-- Год -->
+							<TextBlock x:Name="GameYear"		FontSize="14" Foreground="#C8C8C8" Margin="10,0,0,0"/>
+							<!-- Описание -->
+							<TextBlock x:Name="GameDescription" FontSize="12" Foreground="#C8C8C8" TextWrapping="Wrap" Margin="10,10,0,0" />
+						</StackPanel>
+						<!-- Контейнер для тегов -->
+						<WrapPanel x:Name="TagsPanel" MaxWidth="400" Margin="0,10,0,0" HorizontalAlignment="Right">
+
+							<!-- Тег 0 -->
+							<Border x:Name="Tag0Border" Margin="3">
+								<Image Source="/Assets/teg/T0.png" Width="100" Height="32"/>
+							</Border>
+
+							<!-- Тег 1 -->
+							<Border x:Name="Tag1Border"  Margin="3">
+								<Image Source="/Assets/teg/T1.png" Width="100" Height="32"/>
+							</Border>
+
+							<!-- Тег 2 -->
+							<Border x:Name="Tag2Border"  Margin="3">
+								<Image Source="/Assets/teg/T2.png" Width="100" Height="32"/>
+							</Border>
+
+							<!-- Тег 3 -->
+							<Border x:Name="Tag3Border"  Margin="3">
+								<Image Source="/Assets/teg/T3.png" Width="100" Height="32"/>
+							</Border>
+
+						</WrapPanel>
+					</Grid>
+					<!--Новости\отзывы-->
+					<Grid Margin="10">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+						
+						<TextBlock x:Name="NewComText"
+								   Text="Новости" 
+								   FontSize="34" 
+								   Grid.Column="0" 
+								   TextAlignment="Center"/>
+						<Button x:Name="NewComButton" 
+								Content="Новости"
+								Grid.Column="1" 
+								Click="OnNewComButton"/>
 						
 					</Grid>
+					<Border Background="#2B2B2B" Width="680" >
+						<TextBlock Text="Заголовок"/>
+						
 
-					<!-- Жанр -->
-					<TextBlock x:Name="GameGenre" FontSize="14" Foreground="#C8C8C8" Margin="10,10,0,0"/>
-					<!-- Год -->
-					<TextBlock x:Name="GameYear" FontSize="14" Foreground="#C8C8C8" Margin="10,0,0,0"/>
-					<!-- Статус -->
-					<TextBlock x:Name="GameCondition" FontSize="14" Foreground="#C8C8C8" Margin="10,0,0,0"/>
-					<!-- Разработчик -->
-					<TextBlock x:Name="GameDeveloper" FontSize="14" Foreground="#C8C8C8" Margin="10,0,0,0"/>
-					<!-- Описание -->
-					<TextBlock x:Name="GameDescription" FontSize="12" Foreground="#C8C8C8" TextWrapping="Wrap" Margin="10,10,0,0"/>
-					</StackPanel>
+					</Border>
+					
+
+
+				</StackPanel>
 				
 			</ScrollViewer>
 		</Border>

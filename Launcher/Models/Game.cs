@@ -28,14 +28,14 @@ public class Game : INotifyPropertyChanged
 
     public int Id { get; set; }                             // Уникальный ID игры
     public string Name { get; set; } = string.Empty;        // Название игры
-    public string Condition { get; set; } = string.Empty;   // Состояние игры (релиз\разработка)
+    public string Condition { get; set; } = string.Empty;   // Версия
     public string Developer { get; set; } = string.Empty;   // Разработчик
     public string Genre { get; set; } = string.Empty;       // Жанр                                  
     public string AgeRest {  get; set; } = string.Empty;    // Возрастное ограничение
-    public int Year { get; set; }                           // Год выпуска
+    public string Year { get; set; } = string.Empty;        // Год выпуска
     public string Description { get; set; } = string.Empty; // Описание
     public string ExecutablePath { get; set; } = string.Empty; // Путь к .exe файлу
-    
+    public int Stasus { get; set; }                          // Статус: 0-в разработке, 1-альфа, 2-бета, 3-релиз 
     
     
     
@@ -211,6 +211,76 @@ public class Game : INotifyPropertyChanged
     {
         Installer.DeleteGameFiles();
         RefreshInstallationState();
+    }
+
+    // ========================= обработчик тегов ============================
+
+    private string _tags = string.Empty;
+    public string Tags
+    {
+        get => _tags;
+        set
+        {
+            _tags = value;
+            OnPropertyChanged();
+            ParseTags();
+        }
+    }
+
+    // Флаги тегов (0-3)
+    private bool _tag0;
+    public bool Tag0
+    {
+        get => _tag0;
+        set { _tag0 = value; OnPropertyChanged(); }
+    }
+
+    private bool _tag1;
+    public bool Tag1
+    {
+        get => _tag1;
+        set { _tag1 = value; OnPropertyChanged(); }
+    }
+
+    private bool _tag2;
+    public bool Tag2
+    {
+        get => _tag2;
+        set { _tag2 = value; OnPropertyChanged(); }
+    }
+
+    private bool _tag3;
+    public bool Tag3
+    {
+        get => _tag3;
+        set { _tag3 = value; OnPropertyChanged(); }
+    }
+
+    // Парсинг тегов
+    private void ParseTags()
+    {
+        // Сбрасываем все флаги
+        Tag0 = false;
+        Tag1 = false;
+        Tag2 = false;
+        Tag3 = false;
+
+        if (string.IsNullOrEmpty(Tags)) return;
+
+        var parts = Tags.Split(',');
+        foreach (var part in parts)
+        {
+            if (int.TryParse(part.Trim(), out int index))
+            {
+                switch (index)
+                {
+                    case 0: Tag0 = true; break;
+                    case 1: Tag1 = true; break;
+                    case 2: Tag2 = true; break;
+                    case 3: Tag3 = true; break;
+                }
+            }
+        }
     }
 
 }

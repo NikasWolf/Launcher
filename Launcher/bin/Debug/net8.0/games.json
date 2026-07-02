@@ -6,7 +6,7 @@
     "Developer": "NikRetaNCAM",
     "Genre": "Аркада, головоломка",
     "AgeRest": "6+",
-    "Year": 2026,
+    "Year": "07.10.2026",
     "Description": "Р*бота - игра на время + запоминание: 10 секунд на изучение рандомно сгененированной карты, по истечению которых нужно собрать все предметы на этой карте и вернуться к финишу. Графика пиксельная, смахивает на рпг",
     "Icon": "avares://Launcher/Assets/icon/Error_Add_Game.png",
     "ImagePath": "avares://Launcher/Assets/ImagePath/Rbota/02.jpg",
@@ -18,7 +18,9 @@
     "ImagePath6": "avares://Launcher/Assets/ImagePath/Rbota/06.jpg",
     "ImagePath7": "avares://Launcher/Assets/ImagePath/Rbota/08.jpg",
     "ExecutableName": "Rbota.exe",
-    "DownloadUrl": "https://github.com/nr-ncam/r-bota-public/releases/download/v0.1.0/_windows.zip"
+    "DownloadUrl": "https://github.com/nr-ncam/r-bota-public/releases/download/v0.1.0/_windows.zip",
+    "Status": 2,
+    "Tags": "1"
   },
   {
     "Id": 2,
@@ -27,7 +29,7 @@
     "Developer": "Nikas_Wolf",
     "Genre": "Лаунчер",
     "AgeRest": "6+",
-    "Year": 2026,
+    "Year": "2026",
     "Description": "По заветам WarTunder-а, в лаунчере можно скачать лаунчер",
     "Icon": "avares://Launcher/Assets/icon/Error_Add_Game.png",
     "ImagePath": "avares://Launcher/Assets/ImagePath/Launcher/66.png",
@@ -39,7 +41,9 @@
     "ImagePath6": "avares://Launcher/Assets/ImagePath/Launcher/60.png",
     "ImagePath7": "avares://Launcher/Assets/ImagePath/Launcher/65.png",
     "ExecutableName": "Launcher.exe",
-    "DownloadUrl": "https://github.com/NikasWolf/Launcher/releases/download/V0.1/exe_Test_Launcher.zip"
+    "DownloadUrl": "https://github.com/NikasWolf/Launcher/releases/download/V0.1/exe_Test_Launcher.zip",
+    "Status": 0,
+    "Tags": "1"
   }
 ]
 
