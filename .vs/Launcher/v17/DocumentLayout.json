@@ -62,8 +62,7 @@
               "RelativeToolTip": "Launcher\\Views\\GamesView.axaml",
               "ViewState": "AgIAAFoAAAAAAAAAAAAAAGoAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-07-02T10:56:49.243Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-02T10:56:49.243Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "Launcher\\Views\\GamesView.axaml.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAuwFQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-02T10:45:13.858Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-02T10:45:13.858Z"
             },
             {
               "$type": "Document",
@@ -100,8 +98,7 @@
               "RelativeToolTip": "Launcher\\Views\\MyView.axaml",
               "ViewState": "AgIAABsBAAAAAAAAAAAqwDgBAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-06-19T07:14:36.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-19T07:14:36.828Z"
             },
             {
               "$type": "Document",
@@ -125,8 +122,7 @@
               "RelativeToolTip": "Launcher\\Models\\Game.cs",
               "ViewState": "AgIAAMsAAAAAAAAAAAAuwOsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-24T03:54:23.858Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-24T03:54:23.858Z"
             },
             {
               "$type": "Document",
@@ -138,8 +134,7 @@
               "RelativeToolTip": "Launcher\\Services\\GameService.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAArwCgAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-01T08:59:39.698Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-01T08:59:39.698Z"
             },
             {
               "$type": "Document",
@@ -149,7 +144,7 @@
               "RelativeDocumentMoniker": "Launcher\\Services\\DatabaseService.cs",
               "ToolTip": "X:\\Cods\\\u041C\u043E\u0438 \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\\u041B\u0430\u0443\u043D\u0447\u0435\u0440\\LauncherGit\\Launcher\\Launcher\\Services\\DatabaseService.cs",
               "RelativeToolTip": "Launcher\\Services\\DatabaseService.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAuwDkAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-02T10:39:13.128Z",
               "EditorCaption": ""
@@ -164,8 +159,7 @@
               "RelativeToolTip": "Launcher\\Views\\MyView.axaml.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAYwDkAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-19T07:35:50.006Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-19T07:35:50.006Z"
             }
           ]
         }
