@@ -1,11 +1,75 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="Launcher.Views.NewsView">
+             xmlns:models="clr-namespace:Launcher.Models"
+             x:Class="Launcher.Views.NewsView"
+             >
 
-	<TextBlock Text="Это окно новости оно находится в разработке"
-					Foreground="White"
-					FontSize="24"
-					HorizontalAlignment="Center"
-					VerticalAlignment="Center"/>
+	<ScrollViewer VerticalScrollBarVisibility="Auto">
+		<StackPanel Margin="20" Spacing="15">
 
+			<TextBlock Text="Новости"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="#D9D9D9"
+                       HorizontalAlignment="Center"/>
+
+			<ItemsControl x:Name="NewsItemsControl">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate DataType="models:News">
+						<Border Background="#4A4949"
+                                CornerRadius="10"
+                                Padding="15"
+                                Margin="0,0,0,10">
+
+							
+							<StackPanel Spacing="10">
+								<Grid>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*"/>
+										<ColumnDefinition Width="Auto"/>
+									</Grid.ColumnDefinitions>
+
+									<!-- Заголовок -->
+									<TextBlock Text="{Binding Title}"
+											   FontSize="22"
+											   FontWeight="Bold"
+											   Foreground="#D9D9D9"
+											   Grid.Column="0"
+											   />
+									<StackPanel Grid.Column="1" HorizontalAlignment="Right">
+										<!-- Название игры -->
+										<TextBlock Text="{Binding GameName}"
+												   FontSize="10"
+												   Foreground="#D9D9D9"
+												   Margin="0,0,0,5"/>
+
+										<!-- Дата -->
+										<TextBlock Text="{Binding Date}"
+												   FontSize="10"
+												   Foreground="#D9D9D9"
+												   HorizontalAlignment="Right"/>
+									</StackPanel>
+
+								</Grid>
+
+								<!-- Картинка -->
+								<Border CornerRadius="5" ClipToBounds="True" MinHeight="100" MinWidth="100" MaxHeight="200" MaxWidth="900"
+        IsVisible="{Binding HasImage}">
+									<Image Source="{Binding NewsImage}" Stretch="Uniform"/>
+								</Border>
+
+								<!-- Текст -->
+								<TextBlock Text="{Binding Content}"
+                                           FontSize="13"
+                                           Foreground="#C8C8C8"
+                                           TextWrapping="Wrap"/>
+							</StackPanel>
+
+						</Border>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+
+		</StackPanel>
+	</ScrollViewer>
 </UserControl>

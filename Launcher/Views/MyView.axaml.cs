@@ -124,6 +124,10 @@ public partial class MyView : UserControl
         Tag1Border.IsVisible = game.Tag1;
         Tag2Border.IsVisible = game.Tag2;
         Tag3Border.IsVisible = game.Tag3;
+
+        // Загружаем новости для игры
+        var news = _databaseService.LoadNewsForGame(game.Id);
+        GameNewsControl.ItemsSource = news;
     }
 
     // ========== ОБРАБОТЧИКИ СОБЫТИЙ ==========

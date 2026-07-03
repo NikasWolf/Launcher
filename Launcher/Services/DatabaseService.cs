@@ -118,4 +118,69 @@ public class DatabaseService
         command.Parameters.AddWithValue("@GameId", gameId);
         command.ExecuteNonQuery();
     }
+
+    //  ========= НОВОСТИ ===========
+    public List<News> LoadNews()
+    {
+        using var connection = new SqliteConnection(_connectionString);
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = @"
+        SELECT News.*, Games.Name as GameName 
+        FROM News 
+        LEFT JOIN Games ON News.GameId = Games.Id 
+        ORDER BY News.Date DESC";
+
+        using var reader = command.ExecuteReader();
+        var newsList = new List<News>();
+        while (reader.Read())
+        {
+            newsList.Add(new News
+            {
+                Id = reader.GetInt32(0),
+                GameId = reader.GetInt32(1),
+                Title = reader.GetString(2),
+                Content = reader.IsDBNull(3) ? "" : reader.GetString(3),
+                ImagePath = reader.IsDBNull(4) ? "" : reader.GetString(4),
+                Date = reader.IsDBNull(5) ? "" : reader.GetString(5),
+                GameName = reader.IsDBNull(6) ? "Без игры" : reader.GetString(6)
+            });
+        }
+
+        return newsList;
+    }
+
+    public List<News> LoadNewsForGame(int gameId)
+    {
+        using var connection = new SqliteConnection(_connectionString);
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = @"
+        SELECT News.*, Games.Name as GameName 
+        FROM News 
+        LEFT JOIN Games ON News.GameId = Games.Id 
+        WHERE News.GameId = @GameId 
+        ORDER BY News.Date DESC";
+        command.Parameters.AddWithValue("@GameId", gameId);
+
+        using var reader = command.ExecuteReader();
+        var newsList = new List<News>();
+        while (reader.Read())
+        {
+            newsList.Add(new News
+            {
+                Id = reader.GetInt32(0),
+                GameId = reader.GetInt32(1),
+                Title = reader.GetString(2),
+                Content = reader.IsDBNull(3) ? "" : reader.GetString(3),
+                ImagePath = reader.IsDBNull(4) ? "" : reader.GetString(4),
+                Date = reader.IsDBNull(5) ? "" : reader.GetString(5),
+                GameName = reader.IsDBNull(6) ? "Без игры" : reader.GetString(6)  // ← теперь 6-я колонка — GameName
+            });
+        }
+
+        return newsList;
+    }
 }

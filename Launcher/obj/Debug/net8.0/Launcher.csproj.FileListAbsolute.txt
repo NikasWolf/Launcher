@@ -291,6 +291,9 @@ X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\D
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.AssemblyInfo.cs
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.csproj.CoreCompileInputs.cache
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.sourcelink.json
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.dll
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\refint\Launcher.dll
+X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.pdb
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\Launcher.exe
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\Launcher.deps.json
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\Launcher.runtimeconfig.json
@@ -404,8 +407,5 @@ X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\D
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.csproj.Up2Date
-X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.dll
-X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\refint\Launcher.dll
-X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.pdb
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\Launcher.genruntimeconfig.cache
 X:\Cods\Мои проекты\Лаунчер\LauncherGit\Launcher\Launcher\obj\Debug\net8.0\ref\Launcher.dll
