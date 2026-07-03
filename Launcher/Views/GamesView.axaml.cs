@@ -18,12 +18,11 @@ public partial class GamesView : UserControl
     {
         InitializeComponent();
 
-        var userGameService = new UserGameService();
         var games = _databaseService.LoadGames();
 
         foreach (var game in games)
         {
-            game.UpdateButtonState(userGameService);
+            game.UpdateButtonState(_databaseService);
         }
 
         GamesItemsControl.ItemsSource = games;
@@ -36,12 +35,11 @@ public partial class GamesView : UserControl
 
     public void UpdateAllButtons()
     {
-        var userGameService = new UserGameService();
         var games = _databaseService.LoadGames();
 
         foreach (var game in games)
         {
-            game.UpdateButtonState(userGameService);
+            game.UpdateButtonState(_databaseService);
         }
 
         GamesItemsControl.ItemsSource = null;
@@ -52,11 +50,10 @@ public partial class GamesView : UserControl
     {
         if (sender is Button btn && btn.Tag is Game game && _myView != null)
         {
-            var userGameService = new UserGameService();
-            if (!userGameService.IsGameAdded(game.Id))
+            if (!_databaseService.IsGameAdded(game.Id))
             {
                 _myView.AddGame(game);
-                game.UpdateButtonState(userGameService);
+                game.UpdateButtonState(_databaseService);
             }
         }
     }

@@ -11,19 +11,18 @@ public partial class CatalogsView : UserControl
     private MyView _myView;
     private GamesView _gamesView;
     private ProgramsView _programsView;
+    private DatabaseService _databaseService = new DatabaseService();  //  добавить
 
     public CatalogsView()
     {
         InitializeComponent();
 
-        // Создаём вкладки
         _myView = new MyView();
         _gamesView = new GamesView();
         _programsView = new ProgramsView();
-        // Передаём ссылку на MyView в GamesView
+
         _gamesView.SetMyView(_myView);
-        
-        // По умолчанию показываем "Моё"
+
         CatalogContent.Content = _myView;
     }
 
@@ -37,14 +36,13 @@ public partial class CatalogsView : UserControl
     {
         CatalogContent.Content = _gamesView;
 
-        // Обновляем состояние кнопок
-        var userGameService = new UserGameService();
+        // Обновляем состояние кнопок через БД
         var games = _gamesView.GamesItemsControl.ItemsSource as IEnumerable;
         if (games != null)
         {
             foreach (Game game in games)
             {
-                game.UpdateButtonState(userGameService);
+                game.UpdateButtonState(_databaseService);  //  заменили
             }
         }
     }

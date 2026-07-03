@@ -16,6 +16,7 @@ public class DatabaseService
         _connectionString = $"Data Source={dbPath}";
     }
 
+    // ========== GAMES ==========
     public List<Game> LoadGames()
     {
         var games = new List<Game>();
@@ -62,5 +63,59 @@ public class DatabaseService
         }
 
         return games;
+    }
+
+    // ========== USER GAMES ==========
+    public List<int> LoadUserGameIds()
+    {
+        var ids = new List<int>();
+
+        using var connection = new SqliteConnection(_connectionString);
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = "SELECT GameId FROM UserGames";
+
+        using var reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+            ids.Add(reader.GetInt32(0));
+        }
+
+        return ids;
+    }
+
+    public bool IsGameAdded(int gameId)
+    {
+        using var connection = new SqliteConnection(_connectionString);
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = "SELECT COUNT(*) FROM UserGames WHERE GameId = @GameId";
+        command.Parameters.AddWithValue("@GameId", gameId);
+
+        return Convert.ToInt32(command.ExecuteScalar()) > 0;
+    }
+
+    public void AddUserGame(int gameId)
+    {
+        using var connection = new SqliteConnection(_connectionString);
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = "INSERT INTO UserGames (GameId) VALUES (@GameId)";
+        command.Parameters.AddWithValue("@GameId", gameId);
+        command.ExecuteNonQuery();
+    }
+
+    public void RemoveUserGame(int gameId)
+    {
+        using var connection = new SqliteConnection(_connectionString);
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = "DELETE FROM UserGames WHERE GameId = @GameId";
+        command.Parameters.AddWithValue("@GameId", gameId);
+        command.ExecuteNonQuery();
     }
 }

@@ -20,7 +20,6 @@ public class Game : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 
-    // ========== ОСНОВНЫЕ СВОЙСТВА ==========
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public string Condition { get; set; } = string.Empty;
@@ -32,7 +31,6 @@ public class Game : INotifyPropertyChanged
     public string ExecutablePath { get; set; } = string.Empty;
     public int Stasus { get; set; }
 
-    // ========== КАРТИНКИ ==========
     public string Icon { get; set; } = string.Empty;
     public string ImagePath { get; set; } = string.Empty;
     public string ImagePath1 { get; set; } = string.Empty;
@@ -43,7 +41,6 @@ public class Game : INotifyPropertyChanged
     public string ImagePath6 { get; set; } = string.Empty;
     public string ImagePath7 { get; set; } = string.Empty;
 
-    // ========== БОЛЬШАЯ КАРТИНКА ==========
     private string _currentMainImagePath = string.Empty;
     public string CurrentMainImagePath
     {
@@ -56,11 +53,9 @@ public class Game : INotifyPropertyChanged
         }
     }
 
-    // ========== BITMAP ДЛЯ ПРИВЯЗКИ ==========
     public Bitmap? GameIcon => LoadImage(Icon);
     public Bitmap? MainImage => LoadImage(CurrentMainImagePath);
 
-    // ========== ЗАГРУЗКА КАРТИНКИ ==========
     private Bitmap? LoadImage(string path)
     {
         try
@@ -69,21 +64,15 @@ public class Game : INotifyPropertyChanged
             var uri = new Uri(path);
             return new Bitmap(AssetLoader.Open(uri));
         }
-        catch (Exception ex)
+        catch
         {
-            Debug.WriteLine($"LoadImage error: {ex.Message}");
             return null;
         }
     }
 
-    public void SetMainImage(string imagePath)
-    {
-        CurrentMainImagePath = imagePath;
-    }
+    public void SetMainImage(string imagePath) => CurrentMainImagePath = imagePath;
 
-    // ========== МАЛЕНЬКИЕ КАРТИНКИ ИЗ БД ==========
     public List<string> Images { get; set; } = new List<string>();
-
     private List<Bitmap?> _loadedImages = new();
     public List<Bitmap?> LoadedImages
     {
@@ -100,7 +89,6 @@ public class Game : INotifyPropertyChanged
         }
     }
 
-    // ========== КНОПКА "ДОБАВИТЬ СЕБЕ" ==========
     private string _buttonText = "добавить себе";
     public string ButtonText
     {
@@ -115,9 +103,10 @@ public class Game : INotifyPropertyChanged
         set { _buttonColor = value; OnPropertyChanged(); }
     }
 
-    public void UpdateButtonState(UserGameService userGameService)
+    // ========== ИСПРАВЛЕННЫЙ МЕТОД ==========
+    public void UpdateButtonState(DatabaseService databaseService)
     {
-        if (userGameService.IsGameAdded(Id))
+        if (databaseService.IsGameAdded(Id))
         {
             ButtonText = "добавлено";
             ButtonColor = "#808080";
@@ -129,7 +118,6 @@ public class Game : INotifyPropertyChanged
         }
     }
 
-    // ========== УСТАНОВКА ==========
     public string ExecutableName { get; set; } = string.Empty;
     public string DownloadUrl { get; set; } = string.Empty;
 
@@ -168,7 +156,6 @@ public class Game : INotifyPropertyChanged
         RefreshInstallationState();
     }
 
-    // ========== ТЕГИ ==========
     private string _tags = string.Empty;
     public string Tags
     {

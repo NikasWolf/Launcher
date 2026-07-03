@@ -1,123 +1,102 @@
-// Подключаем необходимые пространства имён
-using Avalonia;                       // Основной фреймворк Avalonia
-using Avalonia.Controls;              // Элементы управления (кнопки, окна и т.д.)
-using Avalonia.Input;           // Типы кнопок для MessageBox (YesNo, OK и т.д.)
-using Avalonia.Interactivity;         // Обработка событий (клики, наведение)
-using Avalonia.Media;                 // Работа с цветами, кистями
-using Avalonia.Media.Imaging;         // Загрузка и работа с изображениями (Bitmap)
-using Avalonia.Platform;              // Доступ к ресурсам приложения (AssetLoader)
-using Launcher.Models;                // Наши модели данных (класс Game)
-using Launcher.Services;              // Наши сервисы (GameService, UserGameService)
-using MsBox.Avalonia;                 // Библиотека для всплывающих сообщений (MessageBox) 
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Input;
+using Avalonia.Interactivity;
+using Avalonia.Media;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
+using Launcher.Models;
+using Launcher.Services;
+using MsBox.Avalonia;
 using MsBox.Avalonia.Enums;
-using System;                         // Базовые типы (string, int и т.д.)
-using System.Collections.Generic;
-using System.Collections.ObjectModel; // ObservableCollection - список с уведомлениями об изменениях
-using System.Diagnostics;             // Отладка (Debug.WriteLine)
-using System.Linq;                    // LINQ (FirstOrDefault, Where и т.д.)
+using System;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
-namespace Launcher.Views;             // Пространство имён для представлений (экранов)
 
-// Класс MyView - пользовательский элемент управления (UserControl)
-// Отображает список добавленных игр и детальную информацию о выбранной игре
+namespace Launcher.Views;
+
 public partial class MyView : UserControl
 {
     // ========== ПОЛЯ КЛАССА ==========
-
-    private UserGameService _userGameService;        // Сервис для работы с JSON (добавленные игры)
-    private ObservableCollection<Game> _userGames;   // Список добавленных игр (автоматически обновляет UI)
-    private DatabaseService _databaseService;               // Сервис для загрузки всех игр из БД
-    private Game? _currentDisplayedGame;             // Текущая выбранная игра (отображается в правой панели)
-    private bool _isInstalling = false;              // Флаг: идёт ли установка сейчас (блокирует повторные клики)
+    private ObservableCollection<Game> _userGames;
+    private DatabaseService _databaseService;
+    private Game? _currentDisplayedGame;
+    private bool _isInstalling = false;
     public bool ShowDeleteButton { get; set; }
 
     // ========== КОНСТРУКТОР ==========
-    // Вызывается при создании MyView
     public MyView()
     {
-        InitializeComponent();                       // Загружает XAML разметку
+        InitializeComponent();
 
-        // Создаём экземпляры сервисов
-        _userGameService = new UserGameService();    // Для работы с user_games.json
-        _databaseService = new DatabaseService();             // Для работы с БД
-        _userGames = new ObservableCollection<Game>(); // Создаём пустой список для отображения
+        _databaseService = new DatabaseService();
+        _userGames = new ObservableCollection<Game>();
 
-        LoadUserGames();                              // Загружаем добавленные игры из JSON
-        UserGamesList.ItemsSource = _userGames;       // Привязываем список к ItemsControl в XAML
-
-        
-       
+        LoadUserGames();
+        UserGamesList.ItemsSource = _userGames;
     }
 
     // ========== МЕТОДЫ РАБОТЫ СО СПИСКОМ ДОБАВЛЕННЫХ ИГР ==========
 
-    // Загружает игры, которые пользователь добавил в "Моё"
     public void LoadUserGames()
     {
-        var addedIds = _userGameService.LoadUserGameIds();  // Получаем ID добавленных игр [1, 2, 3]
-        var allGames = _databaseService.LoadGames();            // Получаем ВСЕ игры из каталога БД
+        var addedIds = _databaseService.LoadUserGameIds();
+        var allGames = _databaseService.LoadGames();
 
-        _userGames.Clear();                                 // Очищаем текущий список
-        foreach (var id in addedIds)                        // Для каждого ID из добавленных...
+        _userGames.Clear();
+        foreach (var id in addedIds)
         {
-            var game = allGames.FirstOrDefault(g => g.Id == id); // Находим игру с таким ID
+            var game = allGames.FirstOrDefault(g => g.Id == id);
             if (game != null)
             {
-                game.RefreshInstallationState();  
-                _userGames.Add(game);                       // Добавляем найденную игру в список
+                game.RefreshInstallationState();
+                _userGames.Add(game);
             }
         }
     }
 
-    // Добавляет игру в "Моё" (сохраняет ID в JSON)
     public void AddGame(Game game)
     {
-        _userGameService.AddGame(game.Id);   // Сохраняем ID игры в user_games.json
-        LoadUserGames();                     // Обновляем список на экране
+        _databaseService.AddUserGame(game.Id);
+        LoadUserGames();
     }
 
-    // Удаляет игру из "Моё" (убирает ID из JSON)
     public void RemoveGame(Game game)
     {
-        _userGameService.RemoveGame(game.Id); // Удаляем ID из user_games.json
-        LoadUserGames();                      // Обновляем список на экране
+        _databaseService.RemoveUserGame(game.Id);
+        LoadUserGames();
     }
 
-    // Проверяет, добавлена ли игра в "Моё"
     public bool IsGameAdded(Game game)
     {
-        return _userGameService.IsGameAdded(game.Id); // Проверяем, есть ли ID в JSON
+        return _databaseService.IsGameAdded(game.Id);
     }
 
     // ========== МЕТОДЫ ОБНОВЛЕНИЯ КНОПКИ УСТАНОВКИ ==========
 
-    // Обновляет состояние кнопки "Скачать"/"Запустить"
     private void UpdateInstallButtonState()
     {
-        if (_currentDisplayedGame == null) return;  // Если нет выбранной игры - выходим
+        if (_currentDisplayedGame == null) return;
 
-        _currentDisplayedGame.RefreshInstallationState();       // Обновляем статус установки
-        InstallButton.Content = _currentDisplayedGame.InstallButtonText; // Меняем текст кнопки
-        System.Diagnostics.Debug.WriteLine($"UpdateInstallButtonState: Button text set to {InstallButton.Content}");
+        _currentDisplayedGame.RefreshInstallationState();
+        InstallButton.Content = _currentDisplayedGame.InstallButtonText;
+        Debug.WriteLine($"UpdateInstallButtonState: Button text set to {InstallButton.Content}");
     }
 
     // ========== МЕТОДЫ ОТОБРАЖЕНИЯ ИНФОРМАЦИИ ==========
 
-    // Открывает информацию об игре в правой панели
     public void ShowGameInfo(Game game)
     {
-        if (game == null) return;                     // Если нет игры - выходим
+        if (game == null) return;
 
-        _currentDisplayedGame = game;                 // Запоминаем выбранную игру
+        _currentDisplayedGame = game;
+        game.RefreshInstallationState();
 
-        game.RefreshInstallationState();              // Обновляем статус установки
+        GameInfoPanel.IsVisible = true;
+        RightShadow.IsVisible = true;
 
-        
-        GameInfoPanel.IsVisible = true;               // Показываем панель с информацией
-
-        RightShadow.IsVisible = true;                 // Показываем тень
-
-        // Заполняем поля данными из JSON
         GameName.Text = game.Name;
         GameGenre.Text = $"Жанр: {game.Genre}";
         GameYear.Text = $"Дата релиза: {game.Year}";
@@ -125,57 +104,45 @@ public partial class MyView : UserControl
         GameDescription.Text = game.Description;
         GameDeveloper.Text = $"Разработчик: {game.Developer}";
         GameAgeRest.Text = game.AgeRest;
-        // Устанавливаем текст кнопки (Скачать/Запустить)
+
         InstallButton.Content = game.InstallButtonText;
 
-        // Загружаем и отображаем картинку игры
         if (!string.IsNullOrEmpty(game.ImagePath))
         {
             try
             {
-                var uri = new Uri(game.ImagePath);                     // Создаём путь к файлу
-                GameImage.Source = new Bitmap(AssetLoader.Open(uri));  // Загружаем картинку
+                var uri = new Uri(game.ImagePath);
+                GameImage.Source = new Bitmap(AssetLoader.Open(uri));
             }
             catch
             {
-                GameImage.Source = null;                               // Если ошибка - картинки нет
+                GameImage.Source = null;
             }
         }
 
-        // отображение тегов
-        // Управление видимостью тегов
         Tag0Border.IsVisible = game.Tag0;
         Tag1Border.IsVisible = game.Tag1;
         Tag2Border.IsVisible = game.Tag2;
         Tag3Border.IsVisible = game.Tag3;
     }
 
+    // ========== ОБРАБОТЧИКИ СОБЫТИЙ ==========
 
-
-
-
-
-    // ========== ОБРАБОТЧИКИ СОБЫТИЙ (КЛИКИ ПО КНОПКАМ) ==========
-
-    // ========== Левая понел
-    // Клик по игре в левом списке - открываем информацию
     private void OnGameClick(object? sender, RoutedEventArgs e)
     {
-        if (sender is Button btn && btn.Tag is Game game)  // Из кнопки достаём объект Game
+        if (sender is Button btn && btn.Tag is Game game)
         {
             _currentDisplayedGame = game;
-            ShowGameInfo(game);                            // Показываем информацию об игре
+            ShowGameInfo(game);
         }
     }
 
-    // Клик по кнопке "Убрать из списка" - удаляем игру из "Моё"
     private void OnRemoveFromListClick(object? sender, RoutedEventArgs e)
     {
-        if (_currentDisplayedGame != null)                 // Если есть выбранная игра
+        if (_currentDisplayedGame != null)
         {
-            RemoveGame(_currentDisplayedGame);             // Удаляем её из JSON и списка
+            RemoveGame(_currentDisplayedGame);
 
-            // Очищаем и скрываем панель информации
             GameInfoPanel.IsVisible = false;
             RightShadow.IsVisible = false;
             _currentDisplayedGame = null;
@@ -187,23 +154,15 @@ public partial class MyView : UserControl
             GameDescription.Text = "";
             GameImage.Source = null;
         }
-        
     }
 
+    // ========================= ПРАВАЯ ПАНЕЛЬ =========================
 
-
-
-
-
-
-
-    //======================== Правая понель 
-    // ----------------------- скачать
+    // ----------------------- Скачать -----------------------
     private bool _isHoveringMenu = false;
 
-    //наведение на кнопку
     private void OnButtonPointerEnter(object? sender, PointerEventArgs e)
-    {// если игры не скачена то при навежении открывается меню
+    {
         if (!_currentDisplayedGame.IsGameInstalled)
         {
             MenuPopup.IsOpen = true;
@@ -213,7 +172,6 @@ public partial class MyView : UserControl
 
     private void OnButtonPointerLeave(object? sender, PointerEventArgs e)
     {
-        // Не закрываем сразу — даём время зайти на меню
         Task.Delay(200).ContinueWith(_ =>
         {
             Avalonia.Threading.Dispatcher.UIThread.Invoke(() =>
@@ -226,7 +184,6 @@ public partial class MyView : UserControl
         });
     }
 
-    // наведение на меню
     private void OnMenuPointerEnter(object? sender, PointerEventArgs e)
     {
         if (!_currentDisplayedGame.IsGameInstalled)
@@ -234,29 +191,24 @@ public partial class MyView : UserControl
             _isHoveringMenu = true;
             return;
         }
-        
     }
+
     private void OnMenuPointerLeave(object? sender, PointerEventArgs e)
     {
         _isHoveringMenu = false;
         MenuPopup.IsOpen = false;
-
     }
 
-    //Запуск игры через скнопку запустить
     private void OnPlayClick(object? sender, RoutedEventArgs e)
     {
         if (_currentDisplayedGame.IsGameInstalled)
         {
             _currentDisplayedGame.Installer.Launch();
-            return;
         }
     }
 
-    // скачать с гита
     private async void OnInstalGitHubClick(object? sender, RoutedEventArgs e)
-    {//не забыть что этот метод вызывается в маленькой кнопке в списке игр
-        // Получаем игру из Tag кнопки
+    {
         if (sender is Button btn && btn.Tag is Game game)
         {
             _currentDisplayedGame = game;
@@ -264,7 +216,6 @@ public partial class MyView : UserControl
 
         if (_currentDisplayedGame == null) return;
 
-        // Если уже идёт установка - не начинаем новую
         if (_isInstalling) return;
 
         _isInstalling = true;
@@ -294,7 +245,7 @@ public partial class MyView : UserControl
             {
                 InstallButton.Content = "Ошибка";
             });
-            System.Diagnostics.Debug.WriteLine($"Ошибка установки: {ex.Message}");
+            Debug.WriteLine($"Ошибка установки: {ex.Message}");
         }
         finally
         {
@@ -305,27 +256,22 @@ public partial class MyView : UserControl
             });
         }
     }
-    // скачать с сервера
+
     private void OnInstalServerClick(object sender, RoutedEventArgs e)
     {
         // заготовка
     }
 
-
-
-    //---------------- удаление
-
+    // ----------------------- Удаление -----------------------
     private bool _isHoveringMenu2 = false;
 
-    //наведение на кнопку
     private void OnButtonPointerEnter2(object? sender, PointerEventArgs e)
-    {// если игры скачена то при навежении открывается меню
+    {
         MenuPopup2.IsOpen = true;
     }
 
     private void OnButtonPointerLeave2(object? sender, PointerEventArgs e)
     {
-        // Не закрываем сразу — даём время зайти на меню
         Task.Delay(200).ContinueWith(_ =>
         {
             Avalonia.Threading.Dispatcher.UIThread.Invoke(() =>
@@ -338,46 +284,42 @@ public partial class MyView : UserControl
         });
     }
 
-    // наведение на меню
     private void OnMenuPointerEnter2(object? sender, PointerEventArgs e)
     {
         _isHoveringMenu2 = true;
-
     }
+
     private void OnMenuPointerLeave2(object? sender, PointerEventArgs e)
     {
         _isHoveringMenu2 = false;
         MenuPopup2.IsOpen = false;
     }
 
-
-    // Клик по кнопке "Удалить игру" - удаляем файлы игры с диска
     private async void OnDeleteClick(object? sender, RoutedEventArgs e)
     {
         if (_currentDisplayedGame.IsGameInstalled)
         {
             if (_currentDisplayedGame == null) return;
 
-            // Показываем диалог подтверждения
             var box = MessageBoxManager.GetMessageBoxStandard(
                 "Подтверждение удаления",
                 $"Вы уверены, что хотите удалить игру \"{_currentDisplayedGame.Name}\" с компьютера?",
                 ButtonEnum.YesNo
             );
 
-            var result = await box.ShowAsync();  // Ждём ответа пользователя
+            var result = await box.ShowAsync();
 
-            if (result == ButtonResult.Yes)      // Если нажал "Да"
+            if (result == ButtonResult.Yes)
             {
                 try
                 {
-                    _currentDisplayedGame.DeleteGame();      // Удаляем папку с игрой
-                    UpdateInstallButtonState();               // Кнопка меняется на "Скачать"
-                    System.Diagnostics.Debug.WriteLine("Игра удалена");
+                    _currentDisplayedGame.DeleteGame();
+                    UpdateInstallButtonState();
+                    Debug.WriteLine("Игра удалена");
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine($"Ошибка удаления: {ex.Message}");
+                    Debug.WriteLine($"Ошибка удаления: {ex.Message}");
                 }
             }
         }
@@ -389,25 +331,19 @@ public partial class MyView : UserControl
                 "Этой игры и так нет на вашем устройстве, удалять нечего",
                 ButtonEnum.Ok,
                 Icon.Warning
-
             );
 
             await box.ShowAsync();
-            
         }
-
-        
     }
 
-    // маленькая кнопка скачать
     private void OnMiniClick(object? sender, RoutedEventArgs e)
     {
-        OnInstalGitHubClick(sender, e);  
+        OnInstalGitHubClick(sender, e);
         OnGameClick(sender, e);
-        
     }
 
-    // информация 
+    // ========================= ИНФОРМАЦИЯ =========================
     private void OnInfoPointerEnter(object? sender, PointerEventArgs e)
     {
         MenuPopup3.IsOpen = true;
@@ -418,8 +354,9 @@ public partial class MyView : UserControl
         MenuPopup3.IsOpen = false;
     }
 
-    //================================== Новости \ отзывы =================
+    // ========================= НОВОСТИ / ОТЗЫВЫ =========================
     public bool NewCom = false;
+
     private void OnNewComButton(object? sender, RoutedEventArgs e)
     {
         NewCom = !NewCom;
@@ -434,9 +371,4 @@ public partial class MyView : UserControl
             NewComText.Text = "Отзывы";
         }
     }
-
-    
-
-
-
 }
