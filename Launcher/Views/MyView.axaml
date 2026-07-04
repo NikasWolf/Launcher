@@ -4,7 +4,7 @@
              xmlns:models="clr-namespace:Launcher.Models"
              x:Class="Launcher.Views.MyView"
 			 x:DataType="models:Game">
-
+ 
 
 
 	<Grid>
@@ -310,7 +310,7 @@ GitHub - скачать по ссылке
 								Click="OnNewComButton"/>
 						
 					</Grid>
-					<Border Background="#2B2B2B" Width="680">
+					<Border Background="#2B2B2B" Width="680" CornerRadius="5">
 						<StackPanel>
 							<!-- ← один контейнер -->
 							<TextBlock Text="Заголовок" Foreground="White" FontSize="16" FontWeight="Bold" Margin="5"/>

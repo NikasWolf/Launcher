@@ -13,15 +13,36 @@
 			</ItemsControl.ItemsPanel>
 			<ItemsControl.ItemTemplate>
 				<DataTemplate DataType="models:Game">
-					<Border Width="464" Height="342" Background="#4A4949" CornerRadius="10" Margin="5">
-						<StackPanel>
 
-							<!-- ========== КАРТИНКИ ========== -->
-							<DockPanel Height="230">
+					<Panel>
+						<Rectangle Fill="#2B2B2B" Width="462" Height="264" Margin="10,10,0,0"/>
+						<Border Width="462" Height="264"
+                                Background="#4A4949"
+                                CornerRadius="0"
+                                Margin="5" Padding="6"
+                                PointerPressed="OpenGameList_Click">
+							<StackPanel>
 
-								<!-- МАЛЕНЬКИЕ КАРТИНКИ (справа) -->
-								<Border DockPanel.Dock="Right" Width="80" Margin="5">
-									<ScrollViewer VerticalScrollBarVisibility="Auto">
+								<Grid>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="295"/>
+										<ColumnDefinition Width="50"/>
+										<ColumnDefinition Width="112" />
+									</Grid.ColumnDefinitions>
+
+									<!-- БОЛЬШАЯ КАРТИНКА (слева) -->
+									<Border Grid.Column="0"
+                                            Background="#4A4949"
+                                            ClipToBounds="True"
+                                            MaxHeight="184">
+										<Image Source="{Binding MainImage}"
+                                               Stretch="Uniform"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+									</Border>
+
+									<!-- МАЛЕНЬКИЕ КАРТИНКИ (справа) -->
+									<ScrollViewer Grid.Column="1" MaxHeight="184" VerticalScrollBarVisibility="Auto">
 										<ItemsControl ItemsSource="{Binding LoadedImages}">
 											<ItemsControl.ItemsPanel>
 												<ItemsPanelTemplate>
@@ -43,63 +64,65 @@
 											</ItemsControl.ItemTemplate>
 										</ItemsControl>
 									</ScrollViewer>
-								</Border>
 
-								<!-- БОЛЬШАЯ КАРТИНКА (слева) -->
-								<Border CornerRadius="10,0,0,0"
-                                        Background="#4A4949"
-                                        ClipToBounds="True">
-									<Image Source="{Binding MainImage}"
-                                           Stretch="Uniform"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"/>
-								</Border>
-							</DockPanel>
+									<!-- ТЕГИ  -->
+									<ScrollViewer Grid.Column="2" MaxHeight="184" VerticalScrollBarVisibility="Auto" Margin="6,0,6,0">
+										<StackPanel>
+											<Border Margin="3" IsVisible="{Binding Tag0}">
+												<Image Source="/Assets/teg/T0.png" Width="100" Height="32"/>
+											</Border>
+											<Border Margin="3" IsVisible="{Binding Tag1}">
+												<Image Source="/Assets/teg/T1.png" Width="100" Height="32"/>
+											</Border>
+											<Border Margin="3" IsVisible="{Binding Tag2}">
+												<Image Source="/Assets/teg/T2.png" Width="100" Height="32"/>
+											</Border>
+											<Border Margin="3" IsVisible="{Binding Tag3}">
+												<Image Source="/Assets/teg/T3.png" Width="100" Height="32"/>
+											</Border>
+										</StackPanel>
+									</ScrollViewer>
 
-							<!-- ========== ТЕКСТ ========== -->
-							<StackPanel Margin="10">
-								<Grid>
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition Width="*"/>
-										<ColumnDefinition Width="Auto"/>
-									</Grid.ColumnDefinitions>
-
-									<StackPanel Grid.Column="0" Orientation="Horizontal">
-										<TextBlock Text="{Binding Name}"
-                                                   FontSize="16"
-                                                   FontWeight="Bold"
-                                                   Foreground="White"
-                                                   TextWrapping="Wrap"/>
-										<TextBlock Text="{Binding Condition}"
-                                                   FontSize="12"
-                                                   Foreground="White"
-                                                   Margin="20,5,0,0"/>
-									</StackPanel>
-
-									<Button Grid.Column="1"
-                                            Content="{Binding ButtonText}"
-                                            Foreground="{Binding ButtonColor}"
-                                            Background="#4C6B22"
-                                            Click="OnAddToSelfClick"
-                                            Tag="{Binding}"
-                                            Margin="10,0,0,0"/>
 								</Grid>
 
-								<TextBlock FontSize="12" Foreground="#C8C8C8" Margin="0,5,0,0">
-									<Run Text="{Binding Genre}"/>
-									<Run Text=" Год релиза: "/>
-									<Run Text="{Binding Year}"/>
-								</TextBlock>
+								<!-- ========== ТЕКСТ ========== -->
+								<StackPanel Margin="10">
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*"/>
+											<ColumnDefinition Width="Auto"/>
+										</Grid.ColumnDefinitions>
 
-								<TextBlock Text="{Binding Description}"
-                                           FontSize="11"
-                                           Foreground="#C8C8C8"
-                                           TextWrapping="Wrap"
-                                           MaxHeight="50"/>
+										<StackPanel Grid.Column="0" Orientation="Horizontal">
+											<TextBlock Text="{Binding Name}"
+                                                       FontSize="16"
+                                                       FontWeight="Bold"
+                                                       Foreground="White"
+                                                       TextWrapping="Wrap"/>
+											<TextBlock Text="{Binding Condition}"
+                                                       FontSize="12"
+                                                       Foreground="White"
+                                                       Margin="20,5,0,0"/>
+										</StackPanel>
+
+										<Button Grid.Column="1"
+                                                Content="{Binding ButtonText}"
+                                                Foreground="{Binding ButtonColor}"
+                                                Background="#4C6B22"
+                                                Click="OnAddToSelfClick"
+                                                Tag="{Binding}"
+                                                Margin="10,0,0,0"/>
+									</Grid>
+
+									<TextBlock Text="{Binding Genre}" FontSize="12" Foreground="#C8C8C8" />
+									<TextBlock Text="{Binding Developer}" FontSize="12" Foreground="#C8C8C8"/>
+
+								</StackPanel>
+
 							</StackPanel>
+						</Border>
+					</Panel>
 
-						</StackPanel>
-					</Border>
 				</DataTemplate>
 			</ItemsControl.ItemTemplate>
 		</ItemsControl>

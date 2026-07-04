@@ -17,12 +17,13 @@ public partial class GamesView : UserControl
     public GamesView()
     {
         InitializeComponent();
-
+         
         var games = _databaseService.LoadGames();
 
         foreach (var game in games)
         {
             game.UpdateButtonState(_databaseService);
+            
         }
 
         GamesItemsControl.ItemsSource = games;
@@ -79,4 +80,12 @@ public partial class GamesView : UserControl
             }
         }
     }
+
+    //======= Открытие страницы игры
+    private void OpenGameList_Click(object? sender, RoutedEventArgs e)
+    {
+        System.Diagnostics.Debug.WriteLine("Открытие карточки игры ==============/*/*/**/*/");
+    }
+    
+   
 }

@@ -119,7 +119,7 @@ public partial class MyView : UserControl
                 GameImage.Source = null;
             }
         }
-
+         
         Tag0Border.IsVisible = game.Tag0;
         Tag1Border.IsVisible = game.Tag1;
         Tag2Border.IsVisible = game.Tag2;
