@@ -44,7 +44,8 @@ public class DatabaseService
                 ImagePath = reader.IsDBNull(9) ? "" : reader.GetString(9),
                 ExecutableName = reader.IsDBNull(10) ? "" : reader.GetString(10),
                 DownloadUrl = reader.IsDBNull(11) ? "" : reader.GetString(11),
-                Tags = reader.IsDBNull(12) ? "" : reader.GetString(12)
+                Tags = reader.IsDBNull(12) ? "" : reader.GetString(12),
+                Type = reader.IsDBNull(13) ? "game" : reader.GetString(13)
             });
         }
 
@@ -119,6 +120,60 @@ public class DatabaseService
         command.ExecuteNonQuery();
     }
 
+    // ========== USER PROGRAMS ==========
+    public List<int> LoadUserProgramIds()
+    {
+        var ids = new List<int>();
+
+        using var connection = new SqliteConnection(_connectionString);
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = "SELECT ProgramId FROM UserPrograms";
+
+        using var reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+            ids.Add(reader.GetInt32(0));
+        }
+
+        return ids;
+    }
+
+    public bool IsProgramAdded(int programId)
+    {
+        using var connection = new SqliteConnection(_connectionString);
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = "SELECT COUNT(*) FROM UserPrograms WHERE ProgramId = @ProgramId";
+        command.Parameters.AddWithValue("@ProgramId", programId);
+
+        return Convert.ToInt32(command.ExecuteScalar()) > 0;
+    }
+
+    public void AddUserProgram(int programId)
+    {
+        using var connection = new SqliteConnection(_connectionString);
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = "INSERT INTO UserPrograms (ProgramId) VALUES (@ProgramId)";
+        command.Parameters.AddWithValue("@ProgramId", programId);
+        command.ExecuteNonQuery();
+    }
+
+    public void RemoveUserProgram(int programId)
+    {
+        using var connection = new SqliteConnection(_connectionString);
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = "DELETE FROM UserPrograms WHERE ProgramId = @ProgramId";
+        command.Parameters.AddWithValue("@ProgramId", programId);
+        command.ExecuteNonQuery();
+    }
+
     //  ========= НОВОСТИ ===========
     public List<News> LoadNews()
     {
@@ -183,4 +238,5 @@ public class DatabaseService
 
         return newsList;
     }
+
 }

@@ -30,7 +30,7 @@ public class Game : INotifyPropertyChanged
     public string Description { get; set; } = string.Empty;
     public string ExecutablePath { get; set; } = string.Empty;
     public int Stasus { get; set; }
-
+    public string Type { get; set; } = "game";
     public string Icon { get; set; } = string.Empty;
     public string ImagePath { get; set; } = string.Empty;
     public string ImagePath1 { get; set; } = string.Empty;
@@ -106,7 +106,11 @@ public class Game : INotifyPropertyChanged
     // ========== ИСПРАВЛЕННЫЙ МЕТОД ==========
     public void UpdateButtonState(DatabaseService databaseService)
     {
-        if (databaseService.IsGameAdded(Id))
+        bool isAdded = Type == "game"
+            ? databaseService.IsGameAdded(Id)
+            : databaseService.IsProgramAdded(Id);
+
+        if (isAdded)
         {
             ButtonText = "добавлено";
             ButtonColor = "#808080";

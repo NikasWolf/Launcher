@@ -21,6 +21,7 @@ public partial class MyView : UserControl
 {
     // ========== œŒÀﬂ  À¿——¿ ==========
     private ObservableCollection<Game> _userGames;
+    private ObservableCollection<Game> _userPrograms;
     private DatabaseService _databaseService;
     private Game? _currentDisplayedGame;
     private bool _isInstalling = false;
@@ -33,45 +34,72 @@ public partial class MyView : UserControl
 
         _databaseService = new DatabaseService();
         _userGames = new ObservableCollection<Game>();
+        _userPrograms = new ObservableCollection<Game>();   
 
         LoadUserGames();
         UserGamesList.ItemsSource = _userGames;
+        UserProgramsList.ItemsSource = _userPrograms;
     }
 
     // ========== Ã≈“Œƒ€ –¿¡Œ“€ —Œ —œ»— ŒÃ ƒŒ¡¿¬À≈ÕÕ€’ »√– ==========
 
     public void LoadUserGames()
     {
-        var addedIds = _databaseService.LoadUserGameIds();
+        var gameIds = _databaseService.LoadUserGameIds();
+        var programIds = _databaseService.LoadUserProgramIds();
         var allGames = _databaseService.LoadGames();
 
         _userGames.Clear();
-        foreach (var id in addedIds)
+        _userPrograms.Clear();
+
+        // »„˚
+        foreach (var id in gameIds)
         {
-            var game = allGames.FirstOrDefault(g => g.Id == id);
+            var game = allGames.FirstOrDefault(g => g.Id == id && g.Type == "game");
             if (game != null)
             {
                 game.RefreshInstallationState();
                 _userGames.Add(game);
             }
         }
+
+        // œÓ„‡ÏÏ˚
+        foreach (var id in programIds)
+        {
+            var program = allGames.FirstOrDefault(g => g.Id == id && g.Type == "program");
+            if (program != null)
+            {
+                program.RefreshInstallationState();
+                _userPrograms.Add(program);
+            }
+        }
     }
 
     public void AddGame(Game game)
     {
-        _databaseService.AddUserGame(game.Id);
+        if (game.Type == "game")
+            _databaseService.AddUserGame(game.Id);
+        else if (game.Type == "program")
+            _databaseService.AddUserProgram(game.Id);
         LoadUserGames();
     }
 
     public void RemoveGame(Game game)
     {
-        _databaseService.RemoveUserGame(game.Id);
+        if (game.Type == "game")
+            _databaseService.RemoveUserGame(game.Id);
+        else if (game.Type == "program")
+            _databaseService.RemoveUserProgram(game.Id);
         LoadUserGames();
     }
 
     public bool IsGameAdded(Game game)
     {
-        return _databaseService.IsGameAdded(game.Id);
+        if (game.Type == "game")
+            return _databaseService.IsGameAdded(game.Id);
+        else if (game.Type == "program")
+            return _databaseService.IsProgramAdded(game.Id);
+        return false;
     }
 
     // ========== Ã≈“Œƒ€ Œ¡ÕŒ¬À≈Õ»ﬂ  ÕŒœ » ”—“¿ÕŒ¬ » ==========

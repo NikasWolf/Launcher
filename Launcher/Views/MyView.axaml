@@ -17,44 +17,75 @@
 
 		<!-- ================================Левая панель (список)  фон в ScrollViewer============================================-->
 
-		<ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Background="#4A4949" >
+		<ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Background="#4A4949">
 			<StackPanel>
-				<TextBlock Text="Мои игры" Foreground="White" Margin="5,10,5,5"/>
+
+				<!-- ===== ИГРЫ ===== -->
+				<TextBlock Text="Игры" Foreground="White" Margin="5,10,5,5" FontWeight="Bold"/>
 				<ItemsControl x:Name="UserGamesList" Margin="0,0,0,10">
 					<ItemsControl.ItemTemplate>
 						<DataTemplate DataType="models:Game">
 							<StackPanel Orientation="Horizontal">
 								<Button Background="Transparent"
-											Height="30"
-											HorizontalContentAlignment="Left"
-										
-											Click="OnGameClick"
-											Tag="{Binding}">
-
+										Height="30"
+										HorizontalContentAlignment="Left"
+										Click="OnGameClick"
+										Tag="{Binding}">
 									<StackPanel Orientation="Horizontal" Spacing="5">
-										<!-- Иконка -->
 										<Image Source="{Binding GameIcon}"
 											   Width="20"
 											   Height="20"
 											   Stretch="UniformToFill"
 											   VerticalAlignment="Center"/>
-
-										<!-- Название игры -->
 										<TextBlock Text="{Binding Name}"
 												   Foreground="#C8C8C8"
 												   VerticalAlignment="Center"
-												   Width="120"
-											   />
+												   Width="120"/>
 									</StackPanel>
 								</Button>
-								<Button x:Name="InstallButton"
+								<Button x:Name="GameInstallButton"
 										Content="{Binding InstallButtonText}"
 										FontSize="10"
 										Background="#3C3C3C"
 										MinHeight="21"
 										HorizontalAlignment="Right"
 										Click="OnMiniClick"
-									
+										Tag="{Binding}"/>
+							</StackPanel>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+
+				<!-- ===== ПРОГРАММЫ ===== -->
+				<TextBlock Text="Программы" Foreground="White" Margin="5,15,5,5" FontWeight="Bold"/>
+				<ItemsControl x:Name="UserProgramsList" Margin="0,0,0,10">
+					<ItemsControl.ItemTemplate>
+						<DataTemplate DataType="models:Game">
+							<StackPanel Orientation="Horizontal">
+								<Button Background="Transparent"
+										Height="30"
+										HorizontalContentAlignment="Left"
+										Click="OnGameClick"
+										Tag="{Binding}">
+									<StackPanel Orientation="Horizontal" Spacing="5">
+										<Image Source="{Binding GameIcon}"
+											   Width="20"
+											   Height="20"
+											   Stretch="UniformToFill"
+											   VerticalAlignment="Center"/>
+										<TextBlock Text="{Binding Name}"
+												   Foreground="#C8C8C8"
+												   VerticalAlignment="Center"
+												   Width="120"/>
+									</StackPanel>
+								</Button>
+								<Button x:Name="ProgramInstallButton"
+										Content="{Binding InstallButtonText}"
+										FontSize="10"
+										Background="#3C3C3C"
+										MinHeight="21"
+										HorizontalAlignment="Right"
+										Click="OnMiniClick"
 										Tag="{Binding}"/>
 							</StackPanel>
 						</DataTemplate>

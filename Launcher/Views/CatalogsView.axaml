@@ -10,7 +10,7 @@
 		<StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
 			<Button Content="Моё"	Click="OnMyClick"		Background="#3C3C3C" FontSize="17"/>
 			<Button Content="Игры"	Click="OnGamesClick"	Background="#3C3C3C" FontSize="17"/>
-			<Button Content="Программы"						Background="#3C3C3C" FontSize="17"/>
+			<Button Content="Программы" Click="OnProgramsClick"	Background="#3C3C3C" FontSize="17"/>
 		</StackPanel>
 
 		<!-- Линия -->

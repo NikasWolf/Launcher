@@ -21,7 +21,9 @@ public partial class CatalogsView : UserControl
         _gamesView = new GamesView();
         _programsView = new ProgramsView();
 
+        
         _gamesView.SetMyView(_myView);
+        _programsView.SetMyView(_myView);
 
         CatalogContent.Content = _myView;
     }
@@ -45,5 +47,10 @@ public partial class CatalogsView : UserControl
                 game.UpdateButtonState(_databaseService);  //  заменили
             }
         }
+    }
+    private void OnProgramsClick(object? sender, RoutedEventArgs e)
+    {
+        CatalogContent.Content = _programsView;
+        _programsView.UpdateAllButtons();
     }
 }

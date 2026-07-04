@@ -6,6 +6,7 @@ using Avalonia.Media.Imaging;
 using Avalonia.VisualTree;
 using Launcher.Models;
 using Launcher.Services;
+using System.Linq;
 
 namespace Launcher.Views;
 
@@ -17,13 +18,13 @@ public partial class GamesView : UserControl
     public GamesView()
     {
         InitializeComponent();
-         
-        var games = _databaseService.LoadGames();
+
+        var allGames = _databaseService.LoadGames();
+        var games = allGames.Where(g => g.Type == "game").ToList();   
 
         foreach (var game in games)
         {
             game.UpdateButtonState(_databaseService);
-            
         }
 
         GamesItemsControl.ItemsSource = games;
